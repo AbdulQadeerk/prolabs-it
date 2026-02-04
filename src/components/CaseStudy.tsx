@@ -14,16 +14,16 @@ export default function CaseStudy() {
         <div className="case-text">
           <h3>Kansas City cuts IT costs and accelerates patching</h3>
           <p>
-            Flash accelerates endpoint migration while cutting annual costs and improving deployment speed.
+            Kansas City unified endpoint management to reduce costs and dramatically accelerate patching outcomes.
           </p>
           <div className="stat-grid">
             <div className="stat">
-              <span className="stat-value">423+</span>
-              <span className="stat-label">endpoints managed</span>
+              <span className="stat-value">200K+</span>
+              <span className="stat-label">annual savings</span>
             </div>
             <div className="stat">
-              <span className="stat-value">2s</span>
-              <span className="stat-label">faster patch deployment</span>
+              <span className="stat-value">72</span>
+              <span className="stat-label">hours to minutes patch cycle reduction</span>
             </div>
           </div>
           <div className="case-logos">

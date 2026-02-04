@@ -1,18 +1,102 @@
+@font-face {
+  font-family: "Geologica";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("https://www.ninjaone.com/wp-content/uploads/2025/02/Geologica-VariableFont_CRSVSHRPslntwght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("https://www.ninjaone.com/wp-content/uploads/2025/02/FiraCode-VariableFont_wght.ttf")
+    format("truetype");
+}
+
 :root {
-  --primary-blue: #09344f;
-  --secondary-blue: #0a3b56;
-  --accent-blue: #7db9ff;
-  --highlight-green: #14f195;
-  --text-primary: #0a2f45;
-  --text-secondary: #5b6c7d;
-  --text-light: #ffffff;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f6f8fb;
-  --bg-dark: #072c40;
-  --font-main: 'Inter', sans-serif;
-  --container-width: 1180px;
+  --c-blue-0: #55ebff;
+  --c-blue-1: #007da5;
+  --c-blue-2: #004668;
+  --c-blue-3: #053856;
+  --c-blue-4: #09344f;
+  --c-blue-5: #0d2d44;
+  --c-blue-6: #122c3d;
+  --c-blue-bc: #bccad4;
+  --c-bright-green-1: #04ff88;
+  --c-button-hover: #48e275;
+  --c-dark-blue-1: #122c3d;
+  --c-dark-blue-2: #0d2d44;
+  --c-dark-blue-3: #09344f;
+  --c-dark-blue-4: #053856;
+  --c-dark-blue-5: #093b5f;
+  --c-gray-76: #767676;
+  --c-gray-af: #afafaf;
+  --c-gray-e4: #e4e4e4;
+  --c-green-dark: #068444;
+  --c-green-med: #00aa5f;
+  --c-light-0: #f9fbfb;
+  --c-light-1: #f4f8f8;
+  --c-light-2: #e9eded;
+  --c-light-3: #dfe3e3;
+  --c-light-4: #dfe3e3;
+  --c-light-blue-1: #55ebff;
+  --c-light-white-1: #f4f8f8;
+  --c-light-white-2: #f8fcfc;
+  --c-light-white-3: #f8f8f6;
+  --c-light-white-4: #fafaf8;
+  --c-medium-blue-1: #004668;
+  --c-medium-blue-2: #007da5;
+  --c-secondary-button: #f8f9f9;
+  --c-secondary-button-hover: #d6d6d6;
+  --c-vivid-green-0: #04ff88;
+  --c-white-0: #ffffff;
+  --site-width: 1400px;
+  --space-2xl: clamp(4rem, 3.6371rem + 1.6129vw, 5.25rem);
+  --space-2xl-3xl: clamp(4rem, 2.875rem + 5vw, 7.875rem);
+  --space-2xs: clamp(0.5rem, 0.4456rem + 0.2419vw, 0.6875rem);
+  --space-2xs-xs: clamp(0.5rem, 0.3548rem + 0.6452vw, 1rem);
+  --space-3xl: clamp(6rem, 5.4556rem + 2.4194vw, 7.875rem);
+  --space-3xs-2xs: clamp(0.25rem, 0.123rem + 0.5645vw, 0.6875rem);
+  --space-button-bottom: clamp(0.75rem, 0.8774rem + 0.3726vw, 1.25rem);
+  --space-button-top: clamp(0.875rem, 0.7774rem + 0.3226vw, 1.125rem);
+  --space-l: clamp(2rem, 1.8185rem + 0.8065vw, 2.625rem);
+  --space-l-xl: clamp(2rem, 1.4375rem + 2.5vw, 3.9375rem);
+  --space-m: clamp(1.5rem, 1.3548rem + 0.6452vw, 2rem);
+  --space-m-l: clamp(1.5rem, 1.1734rem + 1.4516vw, 2.625rem);
+  --space-s: clamp(1rem, 0.9093rem + 0.4032vw, 1.3125rem);
+  --space-s-l: clamp(1rem, 0.5282rem + 2.0968vw, 2.625rem);
+  --space-s-m: clamp(1rem, 0.7097rem + 1.2903vw, 2rem);
+  --space-xl: clamp(3rem, 2.7278rem + 1.2097vw, 3.9375rem);
+  --space-xl-2xl: clamp(3rem, 2.3468rem + 2.9032vw, 5.25rem);
+  --space-xs: clamp(0.75rem, 0.6774rem + 0.3226vw, 1rem);
+  --space-xs-s: clamp(0.75rem, 0.5867rem + 0.7258vw, 1.3125rem);
+  --step--2: clamp(0.6944rem, 0.6522rem + 0.1878vw, 0.84rem);
+  --step--1: clamp(0.8333rem, 0.7704rem + 0.2796vw, 1.05rem);
+  --step-0: clamp(1rem, 0.9093rem + 0.4032vw, 1.3125rem);
+  --step-1: clamp(1.2rem, 1.0721rem + 0.5685vw, 1.6406rem);
+  --step-2: clamp(1.44rem, 1.2627rem + 0.7881vw, 2.0508rem);
+  --step-3: clamp(1.728rem, 1.4854rem + 1.078vw, 2.5635rem);
+  --step-4: clamp(2.0736rem, 1.7453rem + 1.459vw, 3.2043rem);
+  --step-5: clamp(2.4883rem, 2.0479rem + 1.9576vw, 4.0054rem);
+  --step-6: clamp(2.986rem, 2.3993rem + 2.6075vw, 5.0068rem);
+
+  --primary-blue: var(--c-blue-4);
+  --secondary-blue: var(--c-blue-3);
+  --accent-blue: var(--c-blue-0);
+  --highlight-green: var(--c-bright-green-1);
+  --text-primary: var(--c-dark-blue-3);
+  --text-secondary: var(--c-gray-76);
+  --text-light: var(--c-white-0);
+  --bg-primary: var(--c-white-0);
+  --bg-secondary: var(--c-light-1);
+  --bg-dark: var(--c-dark-blue-2);
+  --font-main: "Geologica", "Inter", sans-serif;
+  --container-width: var(--site-width);
   --border-radius: 10px;
-  --shadow-sm: 0 8px 20px rgba(9, 52, 79, 0.08);
+  --shadow-sm: 0 18px 30px rgba(13, 45, 68, 0.08);
   --shadow-lg: 0 30px 70px rgba(6, 27, 43, 0.35);
   --transition: all 0.3s ease;
 }
@@ -33,6 +117,7 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.5;
+  font-weight: 320;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -61,7 +146,7 @@ button {
 }
 
 .container {
-  width: min(var(--container-width), 100% - 48px);
+  width: min(var(--container-width), 100% - 64px);
   margin: 0 auto;
 }
 
@@ -70,10 +155,10 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 11px 20px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  padding: 15px 21px;
+  border-radius: 60px;
+  font-weight: 320;
+  font-size: var(--step-0);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease,
     border-color 0.2s ease;
   border: 1px solid transparent;
@@ -87,7 +172,8 @@ button {
 .btn-primary {
   background: var(--highlight-green);
   color: #062a3b;
-  box-shadow: 0 10px 20px rgba(20, 241, 149, 0.25);
+  border: 1px solid var(--highlight-green);
+  box-shadow: 0 8px 18px rgba(4, 255, 136, 0.25);
 }
 
 .btn-primary:hover {
@@ -96,8 +182,8 @@ button {
 
 .btn-outline {
   background: transparent;
-  border-color: rgba(9, 52, 79, 0.25);
-  color: var(--primary-blue);
+  border-color: var(--c-dark-blue-3);
+  color: var(--c-dark-blue-3);
 }
 
 .btn-outline:hover {
