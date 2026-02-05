@@ -6,7 +6,7 @@ export default function Header() {
       <div className="top-hat">
         <div className="container top-hat-container">
           <div className="top-hat-left">
-            <span className="top-hat-message">NinjaOne is a Leader in the 2026 Gartner® Magic Quadrant™</span>
+            <span className="top-hat-message">Professional Labs — Unified IT operations, simplified.</span>
             <a className="top-hat-cta" href="#">
               Learn More <span aria-hidden="true">→</span>
             </a>
@@ -46,8 +46,8 @@ export default function Header() {
             <Link href="/">
               <div className="logo-wrapper">
                 <img
-                  src="https://www.ninjaone.com/wp-content/uploads/2023/04/primary-logo-block-2023.svg"
-                  alt="NinjaOne"
+                  src="/brand/prolabs-logo.svg"
+                  alt="Professional Labs"
                   className="logo-image"
                 />
               </div>
@@ -91,7 +91,7 @@ export default function Header() {
           </nav>
 
           <div className="header-actions">
-            <button className="btn btn-primary btn-small start-btn">Try it now, FREE!</button>
+            <button className="btn btn-primary btn-small start-btn">Get Started</button>
             <button className="menu-toggle" aria-label="Open menu">
               <span />
               <span />
@@ -105,13 +105,14 @@ export default function Header() {
         .header {
           position: sticky;
           top: 0;
-          background: var(--c-dark-blue-2);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.92);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid rgba(18, 56, 71, 0.12);
           z-index: 1000;
         }
 
         .top-hat {
-          background: #0b344e;
+          background: var(--bg-dark);
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
           font-size: 0.78rem;
           line-height: 1.2;
@@ -195,9 +196,8 @@ export default function Header() {
         }
 
         .logo-image {
-          height: 28px;
+          height: 30px;
           width: auto;
-          filter: brightness(0) invert(1);
         }
 
         .nav-menu {
@@ -212,7 +212,7 @@ export default function Header() {
 
         .nav-link {
           font-weight: 420;
-          color: rgba(255, 255, 255, 0.82);
+          color: rgba(18, 56, 71, 0.82);
           font-size: 0.82rem;
           letter-spacing: 0.3px;
           display: inline-flex;
@@ -221,7 +221,7 @@ export default function Header() {
         }
 
         .nav-link:hover {
-          color: var(--highlight-green);
+          color: var(--accent-blue);
         }
 
         .caret {
@@ -247,7 +247,7 @@ export default function Header() {
           width: 32px;
           height: 32px;
           border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 1px solid rgba(18, 56, 71, 0.22);
           background: transparent;
           align-items: center;
           justify-content: center;
@@ -258,7 +258,7 @@ export default function Header() {
           display: block;
           width: 16px;
           height: 2px;
-          background: white;
+          background: var(--primary-blue);
           border-radius: 999px;
         }
         

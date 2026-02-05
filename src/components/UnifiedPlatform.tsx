@@ -7,7 +7,7 @@ export default function UnifiedPlatform() {
     <section className="unified-section">
       <div className="container">
         <div className="section-header">
-          <span className="badge">NinjaOne Platform</span>
+          <span className="badge">Professional Labs Platform</span>
           <h2 className="title">Unified IT Operations Platform</h2>
           <div className="tabs">
             <button className="tab active">Overview</button>
@@ -51,7 +51,7 @@ export default function UnifiedPlatform() {
               <span>15,000 endpoints managed</span>
             </div>
             <p>
-              &ldquo;NinjaOne helped us unify endpoint management and deliver a better experience for our teams.&rdquo;
+              &ldquo;Professional Labs helped us unify endpoint management and deliver a better experience for our teams.&rdquo;
             </p>
             <button className="btn btn-primary btn-small">See the product</button>
           </div>
@@ -70,8 +70,8 @@ export default function UnifiedPlatform() {
         }
 
         .badge {
-          background-color: rgba(20, 241, 149, 0.15);
-          color: #0d8f62;
+          background-color: rgba(34, 167, 224, 0.16);
+          color: var(--c-blue-3);
           padding: 6px 12px;
           border-radius: 20px;
           font-weight: 600;

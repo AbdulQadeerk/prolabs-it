@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-label="Case study thumbnail">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#082638" />
+      <stop offset="55%" stop-color="#0B2F45" />
+      <stop offset="100%" stop-color="#123847" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#33B9EE" />
+      <stop offset="100%" stop-color="#22A7E0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="620" rx="32" fill="url(#bg)" />
+  <g opacity="0.35">
+    <circle cx="220" cy="170" r="120" fill="url(#accent)" />
+    <circle cx="980" cy="440" r="180" fill="url(#accent)" />
+  </g>
+  <g opacity="0.25">
+    <path d="M120 520 C260 420, 360 560, 520 460 S 760 460, 920 360 S 1080 360, 1160 290" fill="none" stroke="#33B9EE" stroke-width="10" stroke-linecap="round" />
+  </g>
+  <g>
+    <circle cx="600" cy="310" r="86" fill="rgba(255,255,255,0.92)" />
+    <path d="M580 270 L580 350 L655 310 Z" fill="#123847" />
+  </g>
+  <g opacity="0.92">
+    <rect x="90" y="72" width="260" height="14" rx="7" fill="rgba(255,255,255,0.65)" />
+    <rect x="90" y="102" width="380" height="10" rx="5" fill="rgba(255,255,255,0.42)" />
+  </g>
+</svg>
+

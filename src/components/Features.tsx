@@ -98,9 +98,9 @@ export default function Features() {
         }
 
         .feature-icon-wrapper {
-          color: #2b6cb0; 
+          color: var(--accent-blue); 
           margin-bottom: 24px;
-          background: #f2f7ff;
+          background: rgba(34, 167, 224, 0.12);
           width: 52px;
           height: 52px;
           display: flex;
@@ -123,7 +123,7 @@ export default function Features() {
         }
 
         .feature-link {
-          color: #2b6cb0;
+          color: var(--accent-blue);
           font-weight: 600;
           font-size: 0.85rem;
           display: inline-flex;

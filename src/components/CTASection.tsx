@@ -16,7 +16,7 @@ export default function CTASection() {
 
             <style jsx>{`
         .cta-section {
-          background: linear-gradient(135deg, #0b3248 0%, #082c40 100%);
+          background: linear-gradient(135deg, var(--bg-dark) 0%, #082638 100%);
           padding: 80px 0;
           position: relative;
           overflow: hidden;
@@ -29,8 +29,8 @@ export default function CTASection() {
           left: 0;
           right: 0;
           bottom: 0;
-          background-image: radial-gradient(circle at 20% 50%, rgba(20, 241, 149, 0.08) 0%, transparent 55%),
-                            radial-gradient(circle at 80% 40%, rgba(125, 185, 255, 0.1) 0%, transparent 55%),
+          background-image: radial-gradient(circle at 20% 50%, rgba(34, 167, 224, 0.10) 0%, transparent 55%),
+                            radial-gradient(circle at 80% 40%, rgba(51, 185, 238, 0.12) 0%, transparent 55%),
                             linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px),
                             linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
           background-size: auto, auto, 120px 120px, 120px 120px;

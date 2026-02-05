@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 320" role="img" aria-label="Professional Labs">
+  <defs>
+    <linearGradient id="cloudGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#33B9EE" />
+      <stop offset="52%" stop-color="#22A7E0" />
+      <stop offset="100%" stop-color="#178DC8" />
+    </linearGradient>
+    <mask id="cloudCutout">
+      <rect width="520" height="260" x="0" y="30" fill="#fff" />
+      <path
+        d="M120 210 C70 190 70 130 128 114"
+        fill="none"
+        stroke="#000"
+        stroke-width="30"
+        stroke-linecap="round"
+      />
+      <path
+        d="M220 210 C165 192 165 140 230 124"
+        fill="none"
+        stroke="#000"
+        stroke-width="28"
+        stroke-linecap="round"
+      />
+      <path
+        d="M360 202 C325 190 320 156 360 142"
+        fill="none"
+        stroke="#000"
+        stroke-width="26"
+        stroke-linecap="round"
+      />
+    </mask>
+  </defs>
+
+  <path
+    d="M185 240H125C66 240 20 194 20 135C20 86 57 46 107 45C125 45 142 49 157 57C178 30 211 12 247 12C297 12 339 45 354 91C364 88 374 86 385 86C433 86 470 124 470 173C470 215 438 240 400 240H185Z"
+    fill="url(#cloudGrad)"
+    mask="url(#cloudCutout)"
+  />
+</svg>
+

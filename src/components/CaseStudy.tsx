@@ -130,7 +130,7 @@ export default function CaseStudy() {
           align-items: center;
           justify-content: center;
           font-size: 1rem;
-          box-shadow: 0 14px 26px rgba(20, 241, 149, 0.35);
+          box-shadow: 0 14px 26px rgba(34, 167, 224, 0.35);
           position: relative;
           z-index: 1;
         }

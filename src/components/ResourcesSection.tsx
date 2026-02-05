@@ -1,21 +1,21 @@
 const resources = [
   {
     tag: "Event",
-    title: "NinjaOne Roadshow 2026",
+    title: "Professional Labs Roadshow 2026",
     desc: "Join the team for the latest product highlights and roadmap.",
     image:
       "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/09/GettyImages-1222775179-1-2-e1756840057814.jpg",
   },
   {
     tag: "Resource",
-    title: "NinjaOne Named #1 in UEM",
-    desc: "Read the report on why NinjaOne leads the market.",
+    title: "Professional Labs Named #1 in UEM",
+    desc: "Read the report on why Professional Labs leads the market.",
     image:
       "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/12/N1-1720-Gartner-Magic-Quadrant-landing-page-social-sharing-thumbnail-1.jpg",
   },
   {
     tag: "Resource",
-    title: "NinjaOne Product Tour",
+    title: "Professional Labs Product Tour",
     desc: "See how the platform unifies endpoint management.",
     image:
       "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2026/01/homepage-repositioning-social-share.jpg",
@@ -111,7 +111,7 @@ export default function ResourcesSection() {
         }
 
         .card-link {
-          color: #2b6cb0;
+          color: var(--accent-blue);
           font-weight: 600;
           font-size: 0.85rem;
         }

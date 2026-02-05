@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NinjaOne - Top-rated UEM & IT Management Software",
-  description: "The easiest IT management platform. No contracts or platform fees. Free onboarding and local support.",
+  title: "Professional Labs - Unified IT Operations",
+  description:
+    "Unified IT operations, endpoint security, and support — built for modern teams.",
 };
 
 export default function RootLayout({

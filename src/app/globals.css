@@ -1,42 +1,24 @@
-@font-face {
-  font-family: "Geologica";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("https://www.ninjaone.com/wp-content/uploads/2025/02/Geologica-VariableFont_CRSVSHRPslntwght.ttf")
-    format("truetype");
-}
-
-@font-face {
-  font-family: "Fira Code";
-  font-style: normal;
-  font-weight: 300 700;
-  font-display: swap;
-  src: url("https://www.ninjaone.com/wp-content/uploads/2025/02/FiraCode-VariableFont_wght.ttf")
-    format("truetype");
-}
-
 :root {
-  --c-blue-0: #55ebff;
-  --c-blue-1: #007da5;
-  --c-blue-2: #004668;
-  --c-blue-3: #053856;
-  --c-blue-4: #09344f;
-  --c-blue-5: #0d2d44;
-  --c-blue-6: #122c3d;
-  --c-blue-bc: #bccad4;
-  --c-bright-green-1: #04ff88;
-  --c-button-hover: #48e275;
+  --c-blue-0: #22a7e0; /* ProLabs sky */
+  --c-blue-1: #178dc8;
+  --c-blue-2: #0f6f9d;
+  --c-blue-3: #0d4f6c;
+  --c-blue-4: #123847; /* ProLabs ink */
+  --c-blue-5: #0b2f45;
+  --c-blue-6: #082638;
+  --c-blue-bc: #b5c6d1;
+  --c-bright-green-1: #22a7e0; /* Legacy name; brand accent */
+  --c-button-hover: #178dc8;
   --c-dark-blue-1: #122c3d;
   --c-dark-blue-2: #0d2d44;
   --c-dark-blue-3: #09344f;
   --c-dark-blue-4: #053856;
   --c-dark-blue-5: #093b5f;
-  --c-gray-76: #767676;
+  --c-gray-76: #4b6674;
   --c-gray-af: #afafaf;
   --c-gray-e4: #e4e4e4;
-  --c-green-dark: #068444;
-  --c-green-med: #00aa5f;
+  --c-green-dark: #0f6f9d;
+  --c-green-med: #178dc8;
   --c-light-0: #f9fbfb;
   --c-light-1: #f4f8f8;
   --c-light-2: #e9eded;
@@ -51,7 +33,7 @@
   --c-medium-blue-2: #007da5;
   --c-secondary-button: #f8f9f9;
   --c-secondary-button-hover: #d6d6d6;
-  --c-vivid-green-0: #04ff88;
+  --c-vivid-green-0: #22a7e0;
   --c-white-0: #ffffff;
   --site-width: 1400px;
   --space-2xl: clamp(4rem, 3.6371rem + 1.6129vw, 5.25rem);
@@ -86,14 +68,14 @@
   --primary-blue: var(--c-blue-4);
   --secondary-blue: var(--c-blue-3);
   --accent-blue: var(--c-blue-0);
-  --highlight-green: var(--c-bright-green-1);
-  --text-primary: var(--c-dark-blue-3);
+  --highlight-green: var(--c-blue-0);
+  --text-primary: var(--primary-blue);
   --text-secondary: var(--c-gray-76);
   --text-light: var(--c-white-0);
   --bg-primary: var(--c-white-0);
-  --bg-secondary: var(--c-light-1);
-  --bg-dark: var(--c-dark-blue-2);
-  --font-main: "Geologica", "Inter", sans-serif;
+  --bg-secondary: #f3faff;
+  --bg-dark: var(--c-blue-5);
+  --font-main: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
   --container-width: var(--site-width);
   --border-radius: 10px;
   --shadow-sm: 0 18px 30px rgba(13, 45, 68, 0.08);
@@ -165,15 +147,15 @@ button {
 }
 
 .btn:focus-visible {
-  outline: 2px solid rgba(20, 241, 149, 0.7);
+  outline: 2px solid rgba(34, 167, 224, 0.7);
   outline-offset: 2px;
 }
 
 .btn-primary {
-  background: var(--highlight-green);
-  color: #062a3b;
-  border: 1px solid var(--highlight-green);
-  box-shadow: 0 8px 18px rgba(4, 255, 136, 0.25);
+  background: var(--accent-blue);
+  color: var(--c-blue-6);
+  border: 1px solid var(--accent-blue);
+  box-shadow: 0 10px 20px rgba(34, 167, 224, 0.28);
 }
 
 .btn-primary:hover {
@@ -182,13 +164,14 @@ button {
 
 .btn-outline {
   background: transparent;
-  border-color: var(--c-dark-blue-3);
-  color: var(--c-dark-blue-3);
+  border-color: rgba(18, 56, 71, 0.55);
+  color: var(--primary-blue);
 }
 
 .btn-outline:hover {
-  border-color: var(--primary-blue);
+  border-color: var(--accent-blue);
   color: var(--primary-blue);
+  background: rgba(34, 167, 224, 0.06);
 }
 
 .btn-small {

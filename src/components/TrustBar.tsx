@@ -77,7 +77,7 @@ export default function TrustBar() {
 
       <style jsx>{`
         .trust-bar {
-          background-color: #0d2d44;
+          background-color: var(--bg-dark);
           padding: 22px 0 18px;
           --logo-gap: 40px;
         }

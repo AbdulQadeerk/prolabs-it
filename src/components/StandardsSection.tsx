@@ -9,7 +9,7 @@ export default function StandardsSection() {
   return (
     <section className="standards-section">
       <div className="container">
-        <h2>Built for IT. Backed by the world's strictest standards.</h2>
+        <h2>Built for IT. Backed by the world&apos;s strictest standards.</h2>
         <div className="badge-row">
           {badges.map((badge) => (
             <div key={badge} className="badge-circle">
@@ -43,7 +43,7 @@ export default function StandardsSection() {
           width: 90px;
           height: 90px;
           border-radius: 50%;
-          border: 2px solid #0b2f45;
+          border: 2px solid rgba(18, 56, 71, 0.22);
           display: flex;
           align-items: center;
           justify-content: center;

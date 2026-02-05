@@ -22,21 +22,21 @@ export default function Hero() {
             <button className="btn btn-outline">Watch a Demo</button>
           </div>
           <div className="hero-trust">
-            <div className="trust-badge">N</div>
+            <div className="trust-badge">PL</div>
             <p>Trusted by 17,000+ customers worldwide</p>
           </div>
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-glow"></div>
           <img className="hero-card hero-card-left" src={heroCardLeft} alt="Patching compliance" />
-          <img className="hero-man" src={heroMan} alt="IT professional using NinjaOne" />
+          <img className="hero-man" src={heroMan} alt="IT professional using Professional Labs" />
           <img className="hero-card hero-card-right" src={heroCardRight} alt="Patches installed" />
         </div>
       </div>
 
       <style jsx>{`
         .hero {
-          background: #0d2d44;
+          background: var(--bg-dark);
           color: white;
           padding: var(--space-xl) 0 var(--space-2xl);
           min-height: 640px;
@@ -87,14 +87,14 @@ export default function Hero() {
         }
 
         .hero :global(.btn-outline) {
-          border-color: rgba(4, 255, 136, 0.75);
+          border-color: rgba(34, 167, 224, 0.75);
           border-width: 1.5px;
           color: white;
           background: transparent;
         }
 
         .hero :global(.btn-outline:hover) {
-          border-color: rgba(4, 255, 136, 1);
+          border-color: rgba(34, 167, 224, 1);
           color: white;
         }
 
@@ -121,7 +121,7 @@ export default function Hero() {
           align-items: center;
           justify-content: center;
           font-weight: 800;
-          font-size: 0.65rem;
+          font-size: 0.55rem;
           color: var(--highlight-green);
         }
 
@@ -153,15 +153,6 @@ export default function Hero() {
           z-index: 3;
         }
 
-        .hero-image-glow {
-          position: absolute;
-          inset: -120px -180px -140px -80px;
-          background: radial-gradient(circle at 62% 35%, rgba(85, 235, 255, 0.22) 0%, transparent 62%),
-            radial-gradient(circle at 55% 65%, rgba(4, 255, 136, 0.1) 0%, transparent 70%);
-          filter: blur(40px);
-          z-index: 1;
-        }
-
         .hero-man {
           position: absolute;
           z-index: 2;
@@ -175,6 +166,15 @@ export default function Hero() {
           filter: drop-shadow(0 30px 50px rgba(6, 25, 38, 0.45));
         }
 
+        .hero-image-glow {
+          position: absolute;
+          inset: -120px -180px -140px -80px;
+          background: radial-gradient(circle at 62% 35%, rgba(34, 167, 224, 0.22) 0%, transparent 62%),
+            radial-gradient(circle at 55% 65%, rgba(23, 141, 200, 0.14) 0%, transparent 70%);
+          filter: blur(40px);
+          z-index: 1;
+        }
+
         .hero::before {
           content: '';
           position: absolute;
@@ -182,7 +182,7 @@ export default function Hero() {
           right: -25%;
           width: 900px;
           height: 900px;
-          background: radial-gradient(circle, rgba(4, 255, 136, 0.12) 0%, rgba(0,0,0,0) 70%);
+          background: radial-gradient(circle, rgba(34, 167, 224, 0.14) 0%, rgba(0,0,0,0) 70%);
           z-index: 1;
         }
 

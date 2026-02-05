@@ -11,8 +11,8 @@ export default function LeadershipBand() {
       <div className="container">
         <div className="leadership-card">
           <div className="leadership-content">
-            <p className="eyebrow">Canalys RMM & PSA Leadership Matrix</p>
-            <h3>IDC names NinjaOne a leader in Unified Endpoint Management Tools for 2025 - 2026</h3>
+            <p className="eyebrow">Industry Recognition</p>
+            <h3>Professional Labs delivers a unified IT experience for 2025 - 2026</h3>
             <button className="btn btn-outline btn-small">Read the report</button>
           </div>
           <div className="leadership-logos">
@@ -25,14 +25,14 @@ export default function LeadershipBand() {
 
       <style jsx>{`
         .leadership-band {
-          background: #0a2f45;
+          background: var(--bg-dark);
           padding: 46px 0 56px;
         }
 
         .leadership-card {
           border-radius: 18px;
           padding: 36px;
-          background: linear-gradient(135deg, #0c3248 0%, #083149 100%);
+          background: linear-gradient(135deg, #0c344e 0%, #082638 100%);
           border: 1px solid rgba(255, 255, 255, 0.08);
           position: relative;
           overflow: hidden;

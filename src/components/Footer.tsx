@@ -4,8 +4,12 @@ export default function Footer() {
             <div className="container">
                 <div className="footer-grid">
                     <div className="footer-col">
-                        <h3 className="footer-logo">NinjaOne</h3>
-                        <p className="copyright">&copy; {new Date().getFullYear()} NinjaOne. All rights reserved.</p>
+                        <img
+                          src="/brand/prolabs-logo-dark.svg"
+                          alt="Professional Labs"
+                          className="footer-logo-img"
+                        />
+                        <p className="copyright">&copy; {new Date().getFullYear()} Professional Labs. All rights reserved.</p>
                         <div className="social-links">
                             {/* Social icons would go here */}
                         </div>
@@ -54,6 +58,14 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-mobile">
+                    <div className="footer-mobile-brand">
+                        <img
+                          src="/brand/prolabs-logo-dark.svg"
+                          alt="Professional Labs"
+                          className="footer-logo-img"
+                        />
+                        <p className="copyright">&copy; {new Date().getFullYear()} Professional Labs. All rights reserved.</p>
+                    </div>
                     <details>
                         <summary>Products</summary>
                         <div className="footer-mobile-links">
@@ -112,7 +124,7 @@ export default function Footer() {
 
             <style jsx>{`
         .footer {
-          background-color: #0b2f45;
+          background-color: var(--bg-dark);
           color: #a7b6c6;
           padding: 70px 0 36px;
           font-size: 0.85rem;
@@ -125,10 +137,10 @@ export default function Footer() {
           margin-bottom: 60px;
         }
 
-        .footer-logo {
-          color: white;
-          font-size: 1.6rem;
-          margin-bottom: 20px;
+        .footer-logo-img {
+          height: 34px;
+          width: auto;
+          margin-bottom: 18px;
         }
 
         .footer-col h4 {
@@ -142,7 +154,7 @@ export default function Footer() {
         }
 
         .footer-col a:hover {
-          color: var(--highlight-green);
+          color: var(--accent-blue);
         }
 
         .footer-bottom {
@@ -166,6 +178,10 @@ export default function Footer() {
           border-top: 1px solid rgba(255, 255, 255, 0.08);
           padding-top: 24px;
           margin-top: 24px;
+        }
+
+        .footer-mobile-brand {
+          padding-bottom: 18px;
         }
 
         .footer-mobile details {

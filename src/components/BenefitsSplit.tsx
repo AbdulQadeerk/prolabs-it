@@ -17,7 +17,7 @@ export default function BenefitsSplit() {
             <h3>Streamline IT with a powerful, simple platform</h3>
             <p>Automate endpoint management, reduce costs, and improve resiliency across your organization.</p>
             <div className="card-media">
-              <img src={leftImg} alt="NinjaOne dashboard" />
+              <img src={leftImg} alt="Professional Labs dashboard" />
             </div>
           </div>
 
