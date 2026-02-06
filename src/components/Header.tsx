@@ -1,287 +1,335 @@
+'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="header">
+    <header className="site-header">
+      {/* Top Hat / Announcement Bar */}
       <div className="top-hat">
-        <div className="container top-hat-container">
-          <div className="top-hat-left">
-            <span className="top-hat-message">Professional Labs — Unified IT operations, simplified.</span>
-            <a className="top-hat-cta" href="#">
-              Learn More <span aria-hidden="true">→</span>
+        <div className="top-hat-inner">
+          <div className="top-hat-content">
+            <span className="announcement-text">
+              Professional Labs is a Leader in the 2026 Gartner® Magic Quadrant™
+            </span>
+            <a href="#" className="announcement-link">
+              Learn More <span>→</span>
             </a>
           </div>
-          <div className="top-hat-right">
-            <a className="top-hat-link" href="#">
-              Explore Demos <span aria-hidden="true">›</span>
-            </a>
-            <a className="top-hat-link" href="#">
-              Contact Us <span aria-hidden="true">›</span>
-            </a>
-            <button className="lang" aria-label="Language selector">
-              EN <span aria-hidden="true">▾</span>
-            </button>
-            <button className="search" aria-label="Search">
-              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-                <g
-                  strokeLinecap="square"
-                  strokeLinejoin="miter"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeMiterlimit="10"
-                >
-                  <line x1="22" y1="22" x2="15.656" y2="15.656"></line>
-                  <circle cx="10" cy="10" r="8"></circle>
-                </g>
-              </svg>
-            </button>
+          <div className="top-hat-actions">
+            <a href="#" className="hat-link">Explore Demos ›</a>
+            <a href="#" className="hat-link">Contact Us ›</a>
           </div>
         </div>
       </div>
 
-      <div className="main-bar">
-        <div className="container header-container">
-          <div className="logo">
-            <Link href="/">
-              <div className="logo-wrapper">
-                <img
-                  src="/brand/prolabs-logo.svg"
-                  alt="Professional Labs"
-                  className="logo-image"
-                />
-              </div>
-            </Link>
-          </div>
+      {/* Main Navigation */}
+      <nav className="main-nav">
+        <div className="nav-inner">
+          {/* Logo */}
+          <Link href="/" className="logo-link">
+            <Image
+              src="/brand/prolabs-logo-dark.png"
+              alt="Professional Labs"
+              width={120}
+              height={24}
+              priority
+              style={{ objectFit: 'contain' }}
+            />
+          </Link>
 
-          <nav className="nav-menu" aria-label="Primary">
-            <ul className="nav-list">
-              <li>
-                <Link href="#" className="nav-link">
-                  Products <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="nav-link">
-                  Solutions <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="nav-link">
-                  For MSPs <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-              <li><Link href="#" className="nav-link">Pricing</Link></li>
-              <li>
-                <Link href="#" className="nav-link">
-                  Partners <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="nav-link">
-                  Resources <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="nav-link">
-                  Company <span className="caret" aria-hidden="true">▾</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          {/* Navigation Links */}
+          <ul className="nav-links">
+            <li>
+              <a href="#">Products <span className="dropdown-arrow">▾</span></a>
+            </li>
+            <li>
+              <a href="#">Solutions <span className="dropdown-arrow">▾</span></a>
+            </li>
+            <li>
+              <a href="#">For MSPs</a>
+            </li>
+            <li>
+              <a href="#">Pricing</a>
+            </li>
+            <li>
+              <a href="#">Partners <span className="dropdown-arrow">▾</span></a>
+            </li>
+            <li>
+              <a href="#">Resources <span className="dropdown-arrow">▾</span></a>
+            </li>
+            <li>
+              <a href="#">Company <span className="dropdown-arrow">▾</span></a>
+            </li>
+          </ul>
 
-          <div className="header-actions">
-            <button className="btn btn-primary btn-small start-btn">Get Started</button>
-            <button className="menu-toggle" aria-label="Open menu">
-              <span />
-              <span />
-              <span />
+          {/* CTA Button */}
+          <div className="nav-cta">
+            <a href="#" className="cta-button">Try it now, FREE!</a>
+            <button className="mobile-menu-btn" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
           </div>
         </div>
-      </div>
+      </nav>
 
       <style jsx>{`
-        .header {
-          position: sticky;
+        /* ============================================
+           HEADER STYLES - NinjaOne Exact Match
+           ============================================ */
+        
+        .site-header {
+          position: fixed;
           top: 0;
-          background: rgba(255, 255, 255, 0.92);
+          left: 0;
+          right: 0;
+          width: 100%;
+          z-index: 9999;
+          background: linear-gradient(180deg, rgba(5, 56, 86, 0.95) 0%, rgba(5, 56, 86, 0.85) 100%);
           backdrop-filter: blur(10px);
-          border-bottom: 1px solid rgba(18, 56, 71, 0.12);
-          z-index: 1000;
+          -webkit-backdrop-filter: blur(10px);
         }
 
+        /* ---- TOP HAT / ANNOUNCEMENT BAR ---- */
         .top-hat {
-          background: var(--bg-dark);
+          background: transparent;
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          font-size: 0.78rem;
-          line-height: 1.2;
-          color: rgba(255, 255, 255, 0.88);
+          padding: 4px 0;
         }
 
-        .top-hat-container {
+        .top-hat-inner {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 10px 0;
-          gap: 18px;
         }
 
-        .top-hat-left {
+        .top-hat-content {
           display: flex;
           align-items: center;
-          gap: 14px;
-          min-width: 0;
+          gap: 12px;
         }
 
-        .top-hat-message {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+        .announcement-text {
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 12px;
+          font-weight: 400;
         }
 
-        .top-hat-cta {
-          color: var(--highlight-green);
-          font-weight: 520;
-          white-space: nowrap;
+        .announcement-link {
+          color: #22a7e0;
+          font-size: 12px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: color 0.2s;
         }
 
-        .top-hat-right {
+        .announcement-link:hover {
+          color: #4dc4f5;
+        }
+
+        .top-hat-actions {
           display: flex;
           align-items: center;
           gap: 16px;
-          flex: 0 0 auto;
         }
 
-        .top-hat-link {
-          color: rgba(255, 255, 255, 0.86);
-          white-space: nowrap;
+        .hat-link {
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 12px;
+          text-decoration: none;
+          transition: color 0.2s;
         }
 
-        .top-hat-link:hover {
-          color: var(--highlight-green);
+        .hat-link:hover {
+          color: #22a7e0;
         }
 
-        .lang {
-          border: 1px solid rgba(255, 255, 255, 0.18);
-          border-radius: 999px;
-          padding: 6px 10px;
-          color: rgba(255, 255, 255, 0.88);
-        }
-
-        .search {
-          width: 34px;
-          height: 34px;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.18);
+        .lang-selector {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          color: rgba(255, 255, 255, 0.9);
-        }
-
-        .main-bar {
-          padding: 14px 0;
-        }
-
-        .header-container {
-          display: flex;
-          align-items: center;
-          gap: 34px;
-        }
-
-        .logo-wrapper {
-          display: flex;
-          align-items: center;
-        }
-
-        .logo-image {
-          height: 30px;
-          width: auto;
-        }
-
-        .nav-menu {
-          margin: 0 auto;
-        }
-
-        .nav-list {
-          display: flex;
-          gap: 22px;
-          align-items: center;
-        }
-
-        .nav-link {
-          font-weight: 420;
-          color: rgba(18, 56, 71, 0.82);
-          font-size: 0.82rem;
-          letter-spacing: 0.3px;
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .nav-link:hover {
-          color: var(--accent-blue);
-        }
-
-        .caret {
-          font-size: 0.72rem;
-          opacity: 0.85;
-        }
-
-        .header-actions {
-          display: flex;
-          align-items: center;
-          gap: 14px;
-          flex-wrap: nowrap;
-        }
-        
-        .start-btn {
-           padding: 10px 18px;
-           font-size: 0.82rem;
-           font-weight: 520;
-        }
-
-        .menu-toggle {
-          display: none;
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-          border: 1px solid rgba(18, 56, 71, 0.22);
+          gap: 5px;
           background: transparent;
-          align-items: center;
-          justify-content: center;
-          gap: 3px;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50px;
+          padding: 4px 10px;
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 11px;
+          cursor: pointer;
+          transition: border-color 0.2s;
         }
 
-        .menu-toggle span {
-          display: block;
-          width: 16px;
-          height: 2px;
-          background: var(--primary-blue);
-          border-radius: 999px;
+        .lang-selector:hover {
+          border-color: rgba(255, 255, 255, 0.5);
         }
-        
+
+        .search-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 28px;
+          height: 28px;
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          color: rgba(255, 255, 255, 0.9);
+          cursor: pointer;
+          transition: border-color 0.2s;
+        }
+
+        .search-icon:hover {
+          border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ---- MAIN NAVIGATION ---- */
+        .main-nav {
+          background: transparent;
+          padding: 8px 0;
+        }
+
+        .nav-inner {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 24px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .logo-link {
+          display: flex;
+          align-items: center;
+          flex-shrink: 0;
+        }
+
+        /* ---- NAV LINKS ---- */
+        .nav-links {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          flex: 1;
+          margin-left: 50px;
+        }
+
+        .nav-links li a {
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 400;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 6px 0;
+          transition: color 0.2s;
+        }
+
+        .nav-links li a:hover {
+          color: #22a7e0;
+        }
+
+        .dropdown-arrow {
+          font-size: 10px;
+          opacity: 0.7;
+        }
+
+        /* ---- CTA SECTION ---- */
+        .nav-cta {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex-shrink: 0;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 18px;
+          background-color: #22a7e0;
+          color: #ffffff;
+          font-size: 13px;
+          font-weight: 500;
+          text-decoration: none;
+          border-radius: 60px;
+          transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+          background-color: #1a8fc4;
+          transform: translateY(-1px);
+        }
+
+        /* ---- MOBILE MENU BUTTON ---- */
+        .mobile-menu-btn {
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 4px;
+          width: 40px;
+          height: 40px;
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 50%;
+          cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+          width: 18px;
+          height: 2px;
+          background-color: #ffffff;
+          border-radius: 2px;
+        }
+
+        /* ---- RESPONSIVE STYLES ---- */
+        @media (max-width: 1200px) {
+          .nav-links {
+            gap: 18px;
+            margin-left: 30px;
+          }
+          
+          .nav-links li a {
+            font-size: 14px;
+          }
+        }
+
         @media (max-width: 1024px) {
-           .nav-menu { display: none; }
-           .header-container { justify-content: space-between; }
-           .menu-toggle { display: inline-flex; }
-           .top-hat-right { display: none; }
+          .nav-links {
+            display: none;
+          }
+          
+          .mobile-menu-btn {
+            display: flex;
+          }
+          
+          .top-hat-actions {
+            display: none;
+          }
         }
 
         @media (max-width: 768px) {
           .top-hat {
             display: none;
           }
-
-          .start-btn {
-            padding: 6px 12px;
-            font-size: 0.7rem;
+          
+          .main-nav {
+            padding: 12px 0;
           }
-
-          .menu-toggle {
-            width: 28px;
-            height: 28px;
+          
+          .nav-inner {
+            padding: 0 16px;
+          }
+          
+          .cta-button {
+            padding: 10px 18px;
+            font-size: 13px;
           }
         }
       `}</style>

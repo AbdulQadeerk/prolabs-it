@@ -11,19 +11,14 @@ export default function Hero() {
       <div className="container hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
-            Unify IT. <br />
-            <span className="text-highlight">Simplify work.</span>
+            Professional Managed Security and IT Support Services Provider
           </h1>
           <p className="hero-subtitle">
-            One platform to manage every device, protect every endpoint, and support every employee.
+            Professional Labs aim is to simplify that complexity.
           </p>
           <div className="hero-actions">
             <button className="btn btn-primary">Free Trial</button>
             <button className="btn btn-outline">Watch a Demo</button>
-          </div>
-          <div className="hero-trust">
-            <div className="trust-badge">PL</div>
-            <p>Trusted by 17,000+ customers worldwide</p>
           </div>
         </div>
         <div className="hero-image-wrapper">
@@ -36,10 +31,12 @@ export default function Hero() {
 
       <style jsx>{`
         .hero {
-          background: var(--bg-dark);
+          background: #053856;
           color: white;
-          padding: var(--space-xl) 0 var(--space-2xl);
-          min-height: 640px;
+          padding: 0;
+          min-height: auto;
+          height: calc(100vh - 5px);
+          max-height: calc(100vh - 5px);
           display: flex;
           align-items: center;
           position: relative;
@@ -49,22 +46,34 @@ export default function Hero() {
         .hero-container {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 0px;
+          gap: 24px;
           align-items: center;
           z-index: 2;
           position: relative;
+          padding: 75px 0 0;
+          height: 100%;
         }
 
         .hero-content {
-          max-width: 560px;
+          max-width: 500px;
+        }
+
+        .hero-tagline {
+          font-size: 0.8rem;
+          font-weight: 600;
+          color: #22a7e0;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          margin-bottom: 16px;
         }
 
         .hero-title {
-          font-size: var(--step-6);
-          line-height: 1.08;
-          margin-bottom: 20px;
-          font-weight: 368;
-          letter-spacing: -0.03em;
+          font-size: clamp(2rem, 3.5vw, 3.5rem);
+          line-height: 1.1;
+          margin-bottom: 12px;
+          font-weight: 700;
+          letter-spacing: -0.02em;
+          color: #ffffff;
         }
 
         .text-highlight {
@@ -72,107 +81,123 @@ export default function Hero() {
         }
 
         .hero-subtitle {
-          font-size: var(--step-1);
-          margin-bottom: var(--space-l);
-          color: rgba(226, 232, 240, 0.9);
-          max-width: 520px;
-          font-weight: 320;
+          font-size: clamp(1rem, 1.15vw, 1.15rem);
+          margin-bottom: 20px;
+          color: #ffffff;
+          max-width: 500px;
+          font-weight: 400;
           letter-spacing: -0.01em;
+          line-height: 1.45;
         }
 
         .hero-actions {
           display: flex;
-          gap: 16px;
-          margin-bottom: 22px;
+          gap: 14px;
+          margin-bottom: 0;
+        }
+
+        .hero :global(.btn) {
+          padding: 12px 24px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          border-radius: 50px;
+          text-transform: capitalize;
+          letter-spacing: -0.01em;
+        }
+
+        .hero :global(.btn-primary) {
+          background: #22a7e0;
+          color: #ffffff;
+          border: none;
+          font-weight: 700;
+          box-shadow: 0 4px 20px rgba(34, 167, 224, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .hero :global(.btn-primary:hover) {
+          background: #178dc8;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 30px rgba(34, 167, 224, 0.5);
         }
 
         .hero :global(.btn-outline) {
-          border-color: rgba(34, 167, 224, 0.75);
-          border-width: 1.5px;
-          color: white;
+          border-color: #ffffff;
+          border-width: 2px;
+          color: #ffffff;
+          font-weight: 600;
           background: transparent;
+          transition: all 0.3s ease;
         }
 
         .hero :global(.btn-outline:hover) {
-          border-color: rgba(34, 167, 224, 1);
-          color: white;
+          background: rgba(255, 255, 255, 0.15);
+          border-color: #ffffff;
+          transform: translateY(-2px);
         }
 
-        .hero-trust p {
-          font-size: 0.68rem;
-          text-transform: uppercase;
-          letter-spacing: 1.4px;
-          opacity: 0.85;
-        }
 
-        .hero-trust {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
 
-        .trust-badge {
-          width: 22px;
-          height: 22px;
-          border-radius: 50%;
-          background: #0a1d2b;
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 800;
-          font-size: 0.55rem;
-          color: var(--highlight-green);
-        }
+
+
+
 
         .hero-image-wrapper {
           position: relative;
-          display: block;
-          min-height: 560px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          height: 100%;
           width: 100%;
-          overflow: visible;
         }
 
         .hero-card {
           position: absolute;
-          z-index: 2;
+          z-index: 10;
           height: auto;
-          filter: drop-shadow(0 12px 24px rgba(6, 25, 38, 0.35));
+          filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+          transition: all 0.3s ease;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+
+        .hero-card:hover {
+          filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
+          transform: translateY(-4px);
         }
 
         .hero-card-left {
-          left: 0;
-          top: 84px;
-          width: 325px;
+          left: 50%;
+          top: 10%;
+          transform: translateX(-50%);
+          width: 300px;
         }
 
         .hero-card-right {
-          right: -7%;
-          bottom: 9%;
-          width: 348px;
-          z-index: 3;
+          right: 5%;
+          bottom: 25%;
+          width: 280px;
         }
 
         .hero-man {
-          position: absolute;
+          position: relative;
           z-index: 2;
-          right: -28px;
-          bottom: -24px;
-          width: clamp(520px, 44vw, 700px);
+          height: 100%;
+          max-height: calc(100vh - 155px);
+          width: auto;
           max-width: none;
-          height: auto;
           object-fit: contain;
-          object-position: bottom center;
-          filter: drop-shadow(0 30px 50px rgba(6, 25, 38, 0.45));
+          object-position: bottom right;
+          margin-right: -20px;
         }
 
         .hero-image-glow {
           position: absolute;
-          inset: -120px -180px -140px -80px;
-          background: radial-gradient(circle at 62% 35%, rgba(34, 167, 224, 0.22) 0%, transparent 62%),
-            radial-gradient(circle at 55% 65%, rgba(23, 141, 200, 0.14) 0%, transparent 70%);
-          filter: blur(40px);
+          inset: -100px -150px -120px -60px;
+          background: radial-gradient(circle at 55% 40%, rgba(34, 167, 224, 0.25) 0%, transparent 60%),
+            radial-gradient(circle at 60% 70%, rgba(23, 141, 200, 0.15) 0%, transparent 65%);
+          filter: blur(50px);
           z-index: 1;
+          opacity: 0.8;
         }
 
         .hero::before {
@@ -184,6 +209,23 @@ export default function Hero() {
           height: 900px;
           background: radial-gradient(circle, rgba(34, 167, 224, 0.14) 0%, rgba(0,0,0,0) 70%);
           z-index: 1;
+        }
+
+        @media (min-width: 1200px) {
+          .hero-card-left {
+            left: 12px;
+            top: 70px;
+          }
+
+          .hero-man {
+            right: -22px;
+            bottom: -10px;
+          }
+
+          .hero-card-right {
+            right: -54px;
+            bottom: 6%;
+          }
         }
 
         @media (max-width: 1024px) {

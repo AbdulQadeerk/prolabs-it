@@ -5,7 +5,7 @@ export default function Footer() {
                 <div className="footer-grid">
                     <div className="footer-col">
                         <img
-                          src="/brand/prolabs-logo-dark.svg"
+                          src="/brand/prolabs-logo-dark.png"
                           alt="Professional Labs"
                           className="footer-logo-img"
                         />
@@ -60,7 +60,7 @@ export default function Footer() {
                 <div className="footer-mobile">
                     <div className="footer-mobile-brand">
                         <img
-                          src="/brand/prolabs-logo-dark.svg"
+                          src="/brand/prolabs-logo-dark.png"
                           alt="Professional Labs"
                           className="footer-logo-img"
                         />
