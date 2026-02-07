@@ -58,6 +58,7 @@ export default function TrustBar() {
           color: #ffffff;
           margin-bottom: 48px;
           letter-spacing: -0.01em;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .stats-grid {
@@ -90,6 +91,7 @@ export default function TrustBar() {
           line-height: 1;
           margin-bottom: 12px;
           letter-spacing: -0.02em;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .stat-suffix {
@@ -104,6 +106,7 @@ export default function TrustBar() {
           color: rgba(255, 255, 255, 0.85);
           line-height: 1.4;
           letter-spacing: -0.01em;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         @media (max-width: 768px) {

@@ -118,6 +118,7 @@ export default function Header() {
           color: rgba(255, 255, 255, 0.9);
           font-size: 12px;
           font-weight: 400;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .announcement-link {
@@ -126,6 +127,7 @@ export default function Header() {
           font-weight: 600;
           text-decoration: none;
           transition: color 0.2s;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .announcement-link:hover {
@@ -143,6 +145,7 @@ export default function Header() {
           font-size: 12px;
           text-decoration: none;
           transition: color 0.2s;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .hat-link:hover {
@@ -228,6 +231,7 @@ export default function Header() {
           gap: 4px;
           padding: 6px 0;
           transition: color 0.2s;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .nav-links li a:hover {
@@ -259,6 +263,7 @@ export default function Header() {
           text-decoration: none;
           border-radius: 60px;
           transition: background-color 0.2s, transform 0.2s;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .cta-button:hover {

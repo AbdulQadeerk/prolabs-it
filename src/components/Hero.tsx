@@ -55,25 +55,17 @@ export default function Hero() {
         }
 
         .hero-content {
-          max-width: 500px;
-        }
-
-        .hero-tagline {
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #22a7e0;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          margin-bottom: 16px;
+          max-width: 600px;
         }
 
         .hero-title {
-          font-size: clamp(2rem, 3.5vw, 3.5rem);
+          font-size: clamp(2.5rem, 4.625vw, 4.625rem);
           line-height: 1.1;
           margin-bottom: 12px;
           font-weight: 700;
           letter-spacing: -0.02em;
           color: #ffffff;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .text-highlight {
@@ -81,13 +73,14 @@ export default function Hero() {
         }
 
         .hero-subtitle {
-          font-size: clamp(1rem, 1.15vw, 1.15rem);
+          font-size: clamp(1.125rem, 1.5vw, 1.5rem);
           margin-bottom: 20px;
           color: #ffffff;
           max-width: 500px;
           font-weight: 400;
           letter-spacing: -0.01em;
           line-height: 1.45;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .hero-actions {
@@ -98,11 +91,12 @@ export default function Hero() {
 
         .hero :global(.btn) {
           padding: 12px 24px;
-          font-size: 0.95rem;
+          font-size: 1.25rem;
           font-weight: 600;
           border-radius: 50px;
           text-transform: capitalize;
           letter-spacing: -0.01em;
+          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .hero :global(.btn-primary) {
