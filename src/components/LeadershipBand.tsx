@@ -1,107 +1,162 @@
 export default function LeadershipBand() {
-  const logos = [
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/g2-leader-winter26.svg",
-    "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:219/h:208/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/02/Canalys.png",
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/EndpointManagement_Leader_Enterprise_Leader.svg",
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/g2-best-usability-enterprise-winter26.svg",
-  ];
-
   return (
     <section className="leadership-band">
       <div className="container">
         <div className="leadership-card">
           <div className="leadership-content">
             <p className="eyebrow">Industry Recognition</p>
-            <h3>Professional Labs delivers a unified IT experience for 2025 - 2026</h3>
-            <button className="btn btn-outline btn-small">Read the report</button>
+            <h3>Professional Labs delivers a unified IT experience — trusted across 35+ countries since 1997</h3>
+            <p className="leadership-desc">
+              Our expertise helps organizations in accelerating their time to value and achieve significant business impact with Cyber Security, Cloud Services, and Managed Services.
+            </p>
+            <a href="#about" className="btn btn-outline btn-small">Learn More About Us</a>
           </div>
-          <div className="leadership-logos">
-            {logos.map((logo, index) => (
-              <img key={index} src={logo} alt="Leadership badge" />
-            ))}
+          <div className="leadership-stats">
+            <div className="lstat">
+              <span className="lstat-value">1997</span>
+              <span className="lstat-label">Founded</span>
+            </div>
+            <div className="lstat">
+              <span className="lstat-value">35+</span>
+              <span className="lstat-label">Countries</span>
+            </div>
+            <div className="lstat">
+              <span className="lstat-value">100+</span>
+              <span className="lstat-label">Clients</span>
+            </div>
+            <div className="lstat">
+              <span className="lstat-value">50+</span>
+              <span className="lstat-label">Engineers</span>
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .leadership-band {
-          background: var(--bg-dark);
-          padding: 46px 0 56px;
+          background: linear-gradient(180deg, #0b2f45 0%, #082638 100%);
+          padding: 48px 0 56px;
         }
 
         .leadership-card {
           border-radius: 18px;
-          padding: 36px;
+          padding: 40px;
           background: linear-gradient(135deg, #0c344e 0%, #082638 100%);
           border: 1px solid rgba(255, 255, 255, 0.08);
           position: relative;
           overflow: hidden;
+          display: grid;
+          grid-template-columns: 1.2fr 1fr;
+          gap: 48px;
+          align-items: center;
         }
 
         .leadership-card::after {
           content: "";
           position: absolute;
           inset: 0;
-          background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-          background-size: 120px 120px;
-          opacity: 0.35;
+          background-image:
+            linear-gradient(0deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+          background-size: 100px 100px;
+          opacity: 0.4;
           pointer-events: none;
         }
 
         .leadership-content {
           position: relative;
           z-index: 1;
-          max-width: 640px;
         }
 
         .eyebrow {
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 0.75rem;
-          letter-spacing: 1.4px;
+          color: #22a7e0;
+          font-size: 0.72rem;
+          letter-spacing: 2px;
           text-transform: uppercase;
           margin-bottom: 14px;
+          font-weight: 700;
         }
 
         h3 {
           color: white;
-          font-size: 1.6rem;
-          line-height: 1.3;
-          margin-bottom: 18px;
+          font-size: 1.5rem;
+          line-height: 1.35;
+          margin-bottom: 14px;
         }
 
-        .leadership-logos {
+        .leadership-desc {
+          color: rgba(255, 255, 255, 0.65);
+          font-size: 0.9rem;
+          line-height: 1.6;
+          margin-bottom: 20px;
+        }
+
+        .leadership-stats {
           position: relative;
           z-index: 1;
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
           gap: 20px;
-          margin-top: 24px;
-          align-items: center;
-          flex-wrap: wrap;
         }
 
-        .leadership-logos img {
-          height: 36px;
-          filter: brightness(0) invert(1);
-          opacity: 0.85;
+        .lstat {
+          text-align: center;
+          padding: 24px 16px;
+          background: rgba(34, 167, 224, 0.06);
+          border: 1px solid rgba(34, 167, 224, 0.12);
+          border-radius: 14px;
+          transition: all 0.3s ease;
+        }
+
+        .lstat:hover {
+          background: rgba(34, 167, 224, 0.12);
+          border-color: rgba(34, 167, 224, 0.3);
+          transform: translateY(-4px);
+        }
+
+        .lstat-value {
+          display: block;
+          font-size: 2rem;
+          font-weight: 700;
+          color: #22a7e0;
+          margin-bottom: 4px;
+          line-height: 1;
+        }
+
+        .lstat-label {
+          display: block;
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.6);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .leadership-band :global(.btn-outline) {
-          border-color: rgba(255, 255, 255, 0.5);
+          border-color: rgba(255, 255, 255, 0.4);
           color: white;
+        }
+
+        .leadership-band :global(.btn-outline:hover) {
+          border-color: #22a7e0;
+          color: #22a7e0;
+        }
+
+        @media (max-width: 1024px) {
+          .leadership-card {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
         }
 
         @media (max-width: 768px) {
           .leadership-card {
             padding: 28px;
           }
-
           h3 {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
           }
-
-          .leadership-logos {
-            flex-wrap: wrap;
+          .leadership-stats {
+            grid-template-columns: 1fr 1fr;
           }
         }
       `}</style>

@@ -1,24 +1,34 @@
 'use client';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       {/* Top Hat / Announcement Bar */}
       <div className="top-hat">
         <div className="top-hat-inner">
           <div className="top-hat-content">
             <span className="announcement-text">
-              Professional Labs is a Leader in the 2026 Gartner® Magic Quadrant™
+              Professional Labs — Trusted by 100+ Global Companies since 1997
             </span>
-            <a href="#" className="announcement-link">
-              Learn More <span>→</span>
+            <a href="#contact" className="announcement-link">
+              Get in Touch <span>→</span>
             </a>
           </div>
           <div className="top-hat-actions">
-            <a href="#" className="hat-link">Explore Demos ›</a>
-            <a href="#" className="hat-link">Contact Us ›</a>
+            <a href="tel:+97142866807" className="hat-link">+971 4 286 6807</a>
+            <a href="mailto:info@professionallabs.com" className="hat-link">info@professionallabs.com</a>
           </div>
         </div>
       </div>
@@ -26,47 +36,33 @@ export default function Header() {
       {/* Main Navigation */}
       <nav className="main-nav">
         <div className="nav-inner">
-          {/* Logo */}
           <Link href="/" className="logo-link">
             <Image
               src="/brand/prolabs-logo-dark.png"
               alt="Professional Labs"
-              width={120}
-              height={24}
+              width={130}
+              height={28}
               priority
               style={{ objectFit: 'contain' }}
             />
           </Link>
 
-          {/* Navigation Links */}
           <ul className="nav-links">
-            <li>
-              <a href="#">Products <span className="dropdown-arrow">▾</span></a>
-            </li>
-            <li>
-              <a href="#">Solutions <span className="dropdown-arrow">▾</span></a>
-            </li>
-            <li>
-              <a href="#">For MSPs</a>
-            </li>
-            <li>
-              <a href="#">Pricing</a>
-            </li>
-            <li>
-              <a href="#">Partners <span className="dropdown-arrow">▾</span></a>
-            </li>
-            <li>
-              <a href="#">Resources <span className="dropdown-arrow">▾</span></a>
-            </li>
-            <li>
-              <a href="#">Company <span className="dropdown-arrow">▾</span></a>
-            </li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services <span className="dropdown-arrow">▾</span></a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#tools">Our Tools</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
 
-          {/* CTA Button */}
           <div className="nav-cta">
-            <a href="#" className="cta-button">Try it now, FREE!</a>
-            <button className="mobile-menu-btn" aria-label="Menu">
+            <a href="#contact" className="cta-button">Get a Free Consultation</a>
+            <button
+              className="mobile-menu-btn"
+              aria-label="Menu"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
               <span></span>
               <span></span>
               <span></span>
@@ -75,11 +71,20 @@ export default function Header() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="mobile-menu">
+          <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
+          <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
+          <a href="#about" onClick={() => setMobileOpen(false)}>About Us</a>
+          <a href="#tools" onClick={() => setMobileOpen(false)}>Our Tools</a>
+          <a href="#resources" onClick={() => setMobileOpen(false)}>Resources</a>
+          <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
+          <a href="#contact" className="mobile-cta" onClick={() => setMobileOpen(false)}>Get a Free Consultation</a>
+        </div>
+      )}
+
       <style jsx>{`
-        /* ============================================
-           HEADER STYLES - NinjaOne Exact Match
-           ============================================ */
-        
         .site-header {
           position: fixed;
           top: 0;
@@ -87,16 +92,21 @@ export default function Header() {
           right: 0;
           width: 100%;
           z-index: 9999;
-          background: linear-gradient(180deg, rgba(5, 56, 86, 0.95) 0%, rgba(5, 56, 86, 0.85) 100%);
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          background: linear-gradient(180deg, rgba(5, 56, 86, 0.97) 0%, rgba(5, 56, 86, 0.92) 100%);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          transition: all 0.3s ease;
         }
 
-        /* ---- TOP HAT / ANNOUNCEMENT BAR ---- */
+        .site-header.scrolled {
+          background: rgba(5, 56, 86, 0.98);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
         .top-hat {
           background: transparent;
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          padding: 4px 0;
+          padding: 5px 0;
         }
 
         .top-hat-inner {
@@ -115,19 +125,19 @@ export default function Header() {
         }
 
         .announcement-text {
-          color: rgba(255, 255, 255, 0.9);
-          font-size: 12px;
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 14px;
           font-weight: 400;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          line-height: 1.2;
         }
 
         .announcement-link {
           color: #22a7e0;
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 600;
           text-decoration: none;
           transition: color 0.2s;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          line-height: 1.2;
         }
 
         .announcement-link:hover {
@@ -137,61 +147,24 @@ export default function Header() {
         .top-hat-actions {
           display: flex;
           align-items: center;
-          gap: 16px;
+          gap: 20px;
         }
 
         .hat-link {
-          color: rgba(255, 255, 255, 0.85);
-          font-size: 12px;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 14px;
           text-decoration: none;
           transition: color 0.2s;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          line-height: 1.2;
         }
 
         .hat-link:hover {
           color: #22a7e0;
         }
 
-        .lang-selector {
-          display: inline-flex;
-          align-items: center;
-          gap: 5px;
-          background: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 50px;
-          padding: 4px 10px;
-          color: rgba(255, 255, 255, 0.9);
-          font-size: 11px;
-          cursor: pointer;
-          transition: border-color 0.2s;
-        }
-
-        .lang-selector:hover {
-          border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .search-icon {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 28px;
-          height: 28px;
-          background: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 50%;
-          color: rgba(255, 255, 255, 0.9);
-          cursor: pointer;
-          transition: border-color 0.2s;
-        }
-
-        .search-icon:hover {
-          border-color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* ---- MAIN NAVIGATION ---- */
         .main-nav {
           background: transparent;
-          padding: 8px 0;
+          padding: 6px 0;
         }
 
         .nav-inner {
@@ -209,33 +182,47 @@ export default function Header() {
           flex-shrink: 0;
         }
 
-        /* ---- NAV LINKS ---- */
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 40px;
+          gap: 36px;
           list-style: none;
           margin: 0;
           padding: 0;
           flex: 1;
-          margin-left: 50px;
+          margin-left: 48px;
         }
 
         .nav-links li a {
           color: #ffffff;
-          font-size: 18px;
-          font-weight: 400;
+          font-size: 16.8px;
+          font-weight: 500;
           text-decoration: none;
           display: inline-flex;
           align-items: center;
           gap: 4px;
           padding: 6px 0;
           transition: color 0.2s;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          position: relative;
         }
 
         .nav-links li a:hover {
           color: #22a7e0;
+        }
+
+        .nav-links li a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: #22a7e0;
+          transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover::after {
+          width: 100%;
         }
 
         .dropdown-arrow {
@@ -243,7 +230,6 @@ export default function Header() {
           opacity: 0.7;
         }
 
-        /* ---- CTA SECTION ---- */
         .nav-cta {
           display: flex;
           align-items: center;
@@ -255,23 +241,24 @@ export default function Header() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 10px 18px;
+          padding: 15px 21px;
           background-color: #22a7e0;
           color: #ffffff;
           font-size: 16.8px;
-          font-weight: 500;
+          font-weight: 600;
+          line-height: 1.2;
           text-decoration: none;
           border-radius: 60px;
-          transition: background-color 0.2s, transform 0.2s;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 20px rgba(34, 167, 224, 0.3);
         }
 
         .cta-button:hover {
-          background-color: #1a8fc4;
+          background-color: #178dc8;
           transform: translateY(-1px);
+          box-shadow: 0 8px 30px rgba(34, 167, 224, 0.5);
         }
 
-        /* ---- MOBILE MENU BUTTON ---- */
         .mobile-menu-btn {
           display: none;
           flex-direction: column;
@@ -291,17 +278,48 @@ export default function Header() {
           height: 2px;
           background-color: #ffffff;
           border-radius: 2px;
+          transition: all 0.3s;
         }
 
-        /* ---- RESPONSIVE STYLES ---- */
+        .mobile-menu {
+          display: none;
+          flex-direction: column;
+          background: rgba(5, 56, 86, 0.98);
+          padding: 16px 24px 24px;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .mobile-menu a {
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          padding: 12px 0;
+          font-size: 15px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+          color: #22a7e0;
+        }
+
+        .mobile-cta {
+          margin-top: 12px;
+          background: #22a7e0 !important;
+          color: white !important;
+          text-align: center;
+          padding: 12px !important;
+          border-radius: 60px;
+          font-weight: 600;
+          border: none !important;
+        }
+
         @media (max-width: 1200px) {
           .nav-links {
-            gap: 18px;
-            margin-left: 30px;
+            gap: 20px;
+            margin-left: 24px;
           }
-          
           .nav-links li a {
-            font-size: 14px;
+            font-size: 15px;
           }
         }
 
@@ -309,12 +327,16 @@ export default function Header() {
           .nav-links {
             display: none;
           }
-          
           .mobile-menu-btn {
             display: flex;
           }
-          
+          .mobile-menu {
+            display: flex;
+          }
           .top-hat-actions {
+            display: none;
+          }
+          .cta-button {
             display: none;
           }
         }
@@ -323,18 +345,11 @@ export default function Header() {
           .top-hat {
             display: none;
           }
-          
           .main-nav {
-            padding: 12px 0;
+            padding: 10px 0;
           }
-          
           .nav-inner {
             padding: 0 16px;
-          }
-          
-          .cta-button {
-            padding: 10px 18px;
-            font-size: 13px;
           }
         }
       `}</style>

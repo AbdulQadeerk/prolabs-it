@@ -80,7 +80,8 @@
   --bg-primary: var(--c-white-0);
   --bg-secondary: #f3faff;
   --bg-dark: var(--c-blue-5);
-  --font-main: var(--font-geologica), "Geologica", sans-serif;
+  --font-main: var(--font-geologica), "Geologica", "Montserrat", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   --container-width: var(--site-width);
   --border-radius: 10px;
   --shadow-sm: 0 18px 30px rgba(13, 45, 68, 0.08);

@@ -1,136 +1,129 @@
 export default function TrustBar() {
   const stats = [
-    {
-      number: "50",
-      suffix: "+",
-      label: "Global Companies",
-    },
-    {
-      number: "100",
-      suffix: "+",
-      label: "Engineers and Developers",
-    },
-    {
-      number: "35",
-      suffix: "+",
-      label: "Customers",
-    },
-    {
-      number: "15",
-      suffix: "+",
-      label: "Presence in Countries",
-    },
-    {
-      number: "10",
-      suffix: "+",
-      label: "Years in Support",
-    },
+    { number: "50", suffix: "+", label: "Engineers & Developers" },
+    { number: "100", suffix: "+", label: "Global Customers" },
+    { number: "35", suffix: "+", label: "Countries" },
+    { number: "15", suffix: "+", label: "Years of Excellence" },
   ];
 
   return (
     <section className="trust-bar">
       <div className="container">
-        <h2 className="trust-heading">Trusted by</h2>
-        <div className="stats-grid">
-          {stats.map((stat, index) => (
-            <div key={index} className="stat-item">
-              <div className="stat-number">
-                {stat.number}
-                <span className="stat-suffix">{stat.suffix}</span>
+        <div className="trust-inner">
+          <div className="trust-label">
+            <h2 className="trust-heading">Trusted by</h2>
+            <p className="trust-sub">Global Companies</p>
+          </div>
+          <div className="trust-divider"></div>
+          <div className="stats-grid">
+            {stats.map((stat, index) => (
+              <div key={index} className="stat-item">
+                <div className="stat-number">
+                  {stat.number}
+                  <span className="stat-suffix">{stat.suffix}</span>
+                </div>
+                <div className="stat-label">{stat.label}</div>
               </div>
-              <div className="stat-label">{stat.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
       <style jsx>{`
         .trust-bar {
           background: linear-gradient(180deg, #0b2f45 0%, #053856 100%);
-          padding: 60px 0;
+          padding: 48px 0;
           position: relative;
         }
 
+        .trust-inner {
+          display: flex;
+          align-items: center;
+          gap: 48px;
+        }
+
+        .trust-label {
+          flex-shrink: 0;
+        }
+
         .trust-heading {
-          text-align: center;
-          font-size: clamp(1.5rem, 3vw, 2rem);
-          font-weight: 600;
+          font-size: 1.6rem;
+          font-weight: 700;
           color: #ffffff;
-          margin-bottom: 48px;
-          letter-spacing: -0.01em;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          margin-bottom: 4px;
+          line-height: 1.2;
+        }
+
+        .trust-sub {
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.6);
+          font-weight: 400;
+        }
+
+        .trust-divider {
+          width: 1px;
+          height: 60px;
+          background: rgba(34, 167, 224, 0.25);
+          flex-shrink: 0;
         }
 
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 40px;
-          max-width: 1200px;
-          margin: 0 auto;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 32px;
+          flex: 1;
         }
 
         .stat-item {
           text-align: center;
-          padding: 20px;
-          border-radius: 12px;
-          background: rgba(34, 167, 224, 0.05);
-          border: 1px solid rgba(34, 167, 224, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        .stat-item:hover {
-          background: rgba(34, 167, 224, 0.1);
-          border-color: rgba(34, 167, 224, 0.3);
-          transform: translateY(-4px);
         }
 
         .stat-number {
-          font-size: clamp(3rem, 5vw, 4.5rem);
+          font-size: clamp(2.5rem, 4.5vw, 3.5rem);
           font-weight: 700;
-          color: #22a7e0;
+          color: #ffffff;
           line-height: 1;
-          margin-bottom: 12px;
+          margin-bottom: 8px;
           letter-spacing: -0.02em;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
         }
 
         .stat-suffix {
-          font-size: 0.7em;
           color: #22a7e0;
-          opacity: 0.9;
+          font-size: 0.75em;
         }
 
         .stat-label {
-          font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+          font-size: 0.85rem;
           font-weight: 500;
-          color: rgba(255, 255, 255, 0.85);
-          line-height: 1.4;
-          letter-spacing: -0.01em;
-          font-family: 'Geologica', 'Montserrat', 'Helvetica', sans-serif;
+          color: rgba(255, 255, 255, 0.7);
+          line-height: 1.3;
+        }
+
+        @media (max-width: 1024px) {
+          .trust-inner {
+            flex-direction: column;
+            text-align: center;
+            gap: 32px;
+          }
+          .trust-divider {
+            width: 60px;
+            height: 1px;
+          }
         }
 
         @media (max-width: 768px) {
           .trust-bar {
-            padding: 40px 0;
+            padding: 36px 0;
           }
-
-          .trust-heading {
-            margin-bottom: 32px;
-          }
-
           .stats-grid {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 24px;
-          }
-
-          .stat-item {
-            padding: 16px;
           }
         }
 
         @media (max-width: 480px) {
           .stats-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
           }
         }

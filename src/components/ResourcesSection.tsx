@@ -1,46 +1,52 @@
 const resources = [
   {
-    tag: "Event",
-    title: "Professional Labs Roadshow 2026",
-    desc: "Join the team for the latest product highlights and roadmap.",
-    image:
-      "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/09/GettyImages-1222775179-1-2-e1756840057814.jpg",
+    tag: "Cybersecurity",
+    title: "Cybersecurity in the Age of Remote Work: Preparing for a New Wave",
+    desc: "Explore how remote work has reshaped cybersecurity and what your organization needs to stay protected.",
+    color: "#22a7e0",
   },
   {
-    tag: "Resource",
-    title: "Professional Labs Named #1 in UEM",
-    desc: "Read the report on why Professional Labs leads the market.",
-    image:
-      "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/12/N1-1720-Gartner-Magic-Quadrant-landing-page-social-sharing-thumbnail-1.jpg",
+    tag: "Automation",
+    title: "Unlocking the Power of AI & Automation in IT Service Management",
+    desc: "Discover how AI-driven automation is transforming IT service delivery and operational efficiency.",
+    color: "#178dc8",
   },
   {
-    tag: "Resource",
-    title: "Professional Labs Product Tour",
-    desc: "See how the platform unifies endpoint management.",
-    image:
-      "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:300/h:157/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2026/01/homepage-repositioning-social-share.jpg",
+    tag: "Data Backup",
+    title: "Why Data Backup & Disaster Recovery Plans Are Essential",
+    desc: "Learn why every business needs a robust backup and disaster recovery strategy to minimize downtime.",
+    color: "#0f6f9d",
+  },
+  {
+    tag: "Network Security",
+    title: "The Role of AI & Machine Learning in Cyber Defense",
+    desc: "How artificial intelligence and machine learning are revolutionizing threat detection and response.",
+    color: "#0d4f6c",
   },
 ];
 
 export default function ResourcesSection() {
   return (
-    <section className="resources-section">
+    <section id="resources" className="resources-section">
       <div className="container">
         <div className="section-header">
+          <p className="eyebrow">Latest Insights</p>
           <h2>Events, Updates, and Resources</h2>
+          <p className="section-desc">From digital transformation to data security — read what&apos;s shaping the future of modern IT services</p>
         </div>
         <div className="resources-grid">
-          {resources.map((item) => (
-            <article key={item.title} className="resource-card">
-              <div className="card-image">
-                <img src={item.image} alt={item.title} />
+          {resources.map((item, index) => (
+            <article key={index} className="resource-card">
+              <div className="card-header" style={{ background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}dd 100%)` }}>
+                <span className="card-tag">{item.tag}</span>
               </div>
-              <span className="card-tag">{item.tag}</span>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-              <a href="#" className="card-link">
-                Read more &rarr;
-              </a>
+              <div className="card-body">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <a href="#" className="card-link">
+                  Read more →
+                </a>
+              </div>
             </article>
           ))}
         </div>
@@ -54,66 +60,111 @@ export default function ResourcesSection() {
 
         .section-header {
           text-align: center;
-          margin-bottom: 40px;
+          margin-bottom: 48px;
+        }
+
+        .eyebrow {
+          color: #22a7e0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          margin-bottom: 12px;
         }
 
         h2 {
           color: var(--primary-blue);
-          font-size: 2rem;
+          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+          margin-bottom: 12px;
+        }
+
+        .section-desc {
+          color: var(--text-secondary);
+          font-size: 0.95rem;
+          max-width: 600px;
+          margin: 0 auto;
         }
 
         .resources-grid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 26px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 24px;
         }
 
         .resource-card {
           border: 1px solid #e2e8f0;
           border-radius: 16px;
-          padding: 18px;
           background: white;
-          box-shadow: 0 16px 24px rgba(15, 23, 42, 0.06);
-        }
-
-        .card-image {
-          height: 140px;
-          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
           overflow: hidden;
-          margin-bottom: 16px;
-          background: #e2e8f0;
+          transition: all 0.3s ease;
         }
 
-        .card-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
+        .resource-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 18px 40px rgba(34, 167, 224, 0.1);
+          border-color: rgba(34, 167, 224, 0.3);
+        }
+
+        .card-header {
+          height: 140px;
+          display: flex;
+          align-items: flex-end;
+          padding: 16px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card-header::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
         }
 
         .card-tag {
-          font-size: 0.7rem;
+          position: relative;
+          z-index: 1;
+          font-size: 0.65rem;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          color: #64748b;
+          letter-spacing: 1.5px;
+          color: white;
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(8px);
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-weight: 600;
+        }
+
+        .card-body {
+          padding: 20px;
         }
 
         h3 {
-          font-size: 1.05rem;
-          margin: 10px 0;
+          font-size: 0.95rem;
+          margin-bottom: 10px;
           color: var(--primary-blue);
+          line-height: 1.35;
+          font-weight: 700;
         }
 
         p {
           color: var(--text-secondary);
-          font-size: 0.9rem;
-          margin-bottom: 14px;
+          font-size: 0.85rem;
+          margin-bottom: 16px;
+          line-height: 1.5;
         }
 
         .card-link {
-          color: var(--accent-blue);
+          color: #22a7e0;
           font-weight: 600;
-          font-size: 0.85rem;
+          font-size: 0.8rem;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .card-link:hover {
+          color: #178dc8;
         }
 
         @media (max-width: 1024px) {

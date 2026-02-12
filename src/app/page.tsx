@@ -3,7 +3,6 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
-import PromoShowcase from '@/components/PromoShowcase';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import LeadershipBand from '@/components/LeadershipBand';
 import BenefitsSplit from '@/components/BenefitsSplit';

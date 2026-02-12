@@ -1,147 +1,207 @@
 export default function CaseStudy() {
-  const videoThumb =
-    "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:768/h:398/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2025/04/Flash-Parking-Customer-Story.jpg";
-  const logos = [
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/kansas-city.svg",
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/flash-logo-blue.svg",
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/carahsoft.svg",
-    "https://www.ninjaone.com/wp-content/uploads/2025/12/patra.svg",
+  const testimonials = [
+    {
+      quote: "Professional Labs help manage our Email and Domain Environment; they haven't failed us once. Professional Labs helped us by making full use of Microsoft Technologies ensuring secure access from anywhere to our environment in the time of COVID.",
+      author: "ADV. HUSSAIN NALWALA",
+      position: "Founder",
+      company: "CNS Juris",
+    },
   ];
 
   return (
     <section className="case-study">
-      <div className="container case-grid">
-        <div className="case-text">
-          <h3>Kansas City cuts IT costs and accelerates patching</h3>
-          <p>
-            Kansas City unified endpoint management to reduce costs and dramatically accelerate patching outcomes.
-          </p>
-          <div className="stat-grid">
-            <div className="stat">
-              <span className="stat-value">200K+</span>
-              <span className="stat-label">annual savings</span>
-            </div>
-            <div className="stat">
-              <span className="stat-value">72</span>
-              <span className="stat-label">hours to minutes patch cycle reduction</span>
-            </div>
-          </div>
-          <div className="case-logos">
-            {logos.map((logo) => (
-              <img key={logo} src={logo} alt="Partner logo" />
-            ))}
-          </div>
+      <div className="container">
+        <div className="section-header">
+          <p className="eyebrow">Client Testimonials</p>
+          <h2>Real feedback from businesses who trust our IT solutions</h2>
         </div>
-        <div className="case-media">
-          <div className="video-frame">
-            <img src={videoThumb} alt="Customer story" />
-            <span className="play">&#9654;</span>
+
+        <div className="case-grid">
+          <div className="case-text">
+            <div className="quote-mark">❝</div>
+            <blockquote className="case-quote">
+              {testimonials[0].quote}
+            </blockquote>
+            <div className="case-author">
+              <div className="author-avatar">
+                <span>{testimonials[0].author.charAt(0)}</span>
+              </div>
+              <div>
+                <div className="author-name">{testimonials[0].author}</div>
+                <div className="author-role">{testimonials[0].position}, {testimonials[0].company}</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="case-stats-side">
+            <div className="stat-card">
+              <span className="sc-value">99%</span>
+              <span className="sc-label">Client Satisfaction Rate</span>
+            </div>
+            <div className="stat-card">
+              <span className="sc-value">100+</span>
+              <span className="sc-label">Active Client Partnerships</span>
+            </div>
+            <div className="stat-card">
+              <span className="sc-value">15+</span>
+              <span className="sc-label">Years of Trusted Service</span>
+            </div>
+            <div className="stat-card">
+              <span className="sc-value">&lt;15m</span>
+              <span className="sc-label">Average Response Time</span>
+            </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .case-study {
-          background: var(--bg-primary);
+          background: var(--bg-secondary, #f3faff);
           padding: 80px 0;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .eyebrow {
+          color: #22a7e0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        h2 {
+          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+          color: var(--primary-blue);
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.25;
         }
 
         .case-grid {
           display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
+          grid-template-columns: 1.2fr 0.8fr;
           gap: 48px;
           align-items: center;
         }
 
-        h3 {
-          font-size: 1.5rem;
-          color: var(--primary-blue);
-          margin-bottom: 14px;
-        }
-
-        p {
-          color: var(--text-secondary);
-          font-size: 0.95rem;
-          margin-bottom: 22px;
-        }
-
-        .stat-grid {
-          display: flex;
-          gap: 26px;
-          margin-bottom: 18px;
-        }
-
-        .stat {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-
-        .stat-value {
-          color: var(--highlight-green);
-          font-size: 1.6rem;
-          font-weight: 800;
-        }
-
-        .stat-label {
-          font-size: 0.8rem;
-          color: var(--text-secondary);
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .case-logos {
-          display: flex;
-          gap: 16px;
-          flex-wrap: wrap;
-          align-items: center;
-        }
-
-        .case-logos img {
-          height: 20px;
-          opacity: 0.7;
-        }
-
-        .video-frame {
-          background: linear-gradient(135deg, #dfe7ef 0%, #cbd5e1 100%);
-          border-radius: 18px;
-          height: 260px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          overflow: hidden;
+        .case-text {
+          background: white;
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
           border: 1px solid #e2e8f0;
         }
 
-        .video-frame img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+        .quote-mark {
+          font-size: 3rem;
+          color: #22a7e0;
+          line-height: 1;
+          margin-bottom: 8px;
+          opacity: 0.3;
         }
 
-        .play {
-          width: 52px;
-          height: 52px;
+        .case-quote {
+          font-size: 1.05rem;
+          line-height: 1.7;
+          color: var(--primary-blue);
+          font-style: italic;
+          margin-bottom: 28px;
+          border: none;
+          padding: 0;
+        }
+
+        .case-author {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          border-top: 1px solid #e2e8f0;
+          padding-top: 20px;
+        }
+
+        .author-avatar {
+          width: 48px;
+          height: 48px;
           border-radius: 50%;
-          background: var(--highlight-green);
-          color: #062a3b;
-          display: inline-flex;
+          background: linear-gradient(135deg, #22a7e0 0%, #178dc8 100%);
+          display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1rem;
-          box-shadow: 0 14px 26px rgba(34, 167, 224, 0.35);
-          position: relative;
-          z-index: 1;
+          color: white;
+          font-weight: 700;
+          font-size: 1.2rem;
+          flex-shrink: 0;
+        }
+
+        .author-name {
+          font-weight: 700;
+          color: var(--primary-blue);
+          font-size: 0.9rem;
+          letter-spacing: 0.3px;
+        }
+
+        .author-role {
+          color: var(--text-secondary);
+          font-size: 0.8rem;
+        }
+
+        .case-stats-side {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+
+        .stat-card {
+          background: white;
+          border-radius: 14px;
+          padding: 24px 18px;
+          text-align: center;
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+          border: 1px solid #e2e8f0;
+          transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(34, 167, 224, 0.12);
+          border-color: rgba(34, 167, 224, 0.3);
+        }
+
+        .sc-value {
+          display: block;
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #22a7e0;
+          margin-bottom: 6px;
+          line-height: 1;
+        }
+
+        .sc-label {
+          display: block;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          line-height: 1.3;
         }
 
         @media (max-width: 900px) {
           .case-grid {
             grid-template-columns: 1fr;
           }
+          .case-stats-side {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
 
-          .video-frame {
-            height: 220px;
+        @media (max-width: 480px) {
+          .case-stats-side {
+            grid-template-columns: 1fr;
+          }
+          .case-text {
+            padding: 28px;
           }
         }
       `}</style>

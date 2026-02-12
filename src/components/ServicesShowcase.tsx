@@ -1,242 +1,318 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
+import {
+  ShieldCheck,
+  Cloud,
+  Mail,
+  Lock,
+  Shield,
+  Monitor,
+  Headphones,
+  Network,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
 
 interface Service {
-    id: string;
-    name: string;
-    title: string;
-    description: string;
-    features: string[];
-    image: string;
-    stats?: {
-        label: string;
-        value: string;
-    };
-    testimonial?: {
-        quote: string;
-        author: string;
-        position: string;
-        company: string;
-    };
+  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
+  title: string;
+  description: string;
 }
 
 const services: Service[] = [
-    {
-        id: 'endpoint',
-        name: 'Endpoint Management',
-        title: 'Endpoint Management, Unified',
-        description: 'Unify visibility and control across all devices to reduce complexity, improve efficiency, and strengthen security all from a single console.',
-        features: [
-            'Automate time-consuming tasks',
-            'Real-time monitoring reduces issues faster'
-        ],
-        image: '/services/endpoint.png',
-        stats: {
-            label: 'endpoints managed',
-            value: '15,000'
-        },
-        testimonial: {
-            quote: 'Before, I needed 10-15 different tools to execute what NinjaOne does in its centralized, single pane of glass. NinjaOne makes life so much easier.',
-            author: 'ERNIE TURNER',
-            position: 'DIRECTOR OF IT',
-            company: 'VETCOR'
-        }
-    },
-    {
-        id: 'mobile',
-        name: 'Mobile Device Management',
-        title: 'Mobile Device Management',
-        description: 'Secure and manage mobile devices across your organization with comprehensive MDM capabilities, supporting iOS, Android, and other mobile platforms.',
-        features: [
-            'Centralized device enrollment',
-            'App and security policy management'
-        ],
-        image: '/services/mobile.png'
-    },
-    {
-        id: 'patch',
-        name: 'Patch Management',
-        title: 'Patch Management',
-        description: 'Automate patch deployment across all endpoints to ensure security and compliance while reducing manual effort and minimizing vulnerabilities.',
-        features: [
-            'Automated patch scheduling',
-            'Comprehensive patch compliance reporting'
-        ],
-        image: '/services/patch.png'
-    },
-    {
-        id: 'backup',
-        name: 'Backup',
-        title: 'Backup & Recovery',
-        description: 'Protect critical business data with reliable backup solutions and rapid recovery capabilities to minimize downtime and data loss.',
-        features: [
-            'Automated cloud and local backups',
-            'Quick recovery from any point in time'
-        ],
-        image: '/services/backup.png'
-    },
-    {
-        id: 'remote',
-        name: 'Remote Control',
-        title: 'Remote Control & Support',
-        description: 'Provide instant remote support to end-users with secure, fast remote desktop access and troubleshooting capabilities.',
-        features: [
-            'One-click remote access',
-            'Multi-platform support for all devices'
-        ],
-        image: '/services/remote.png'
-    },
-    {
-        id: 'service-desk',
-        name: 'Service Desk',
-        title: 'Service Desk & Ticketing',
-        description: 'Streamline IT support operations with integrated ticketing, asset management, and workflow automation for enhanced productivity.',
-        features: [
-            'Automated ticket routing and assignment',
-            'SLA tracking and performance metrics'
-        ],
-        image: '/services/service-desk.png'
-    },
-    {
-        id: 'integrations',
-        name: 'Integrations',
-        title: 'Seamless Integrations',
-        description: 'Connect with your existing tools and platforms through powerful integrations to create a unified IT operations ecosystem.',
-        features: [
-            'Pre-built integrations with popular tools',
-            'Custom API for flexible integrations'
-        ],
-        image: '/services/integrations.png'
-    }
+  {
+    icon: ShieldCheck,
+    title: "Managed SOC Service",
+    description: "Keep your Security Operations Strong and Scalable",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud Managed Services",
+    description: "Streamline cloud operations with managed services.",
+  },
+  {
+    icon: Mail,
+    title: "Email Security",
+    description:
+      "Beware of phishing. Protect Email Data. Professional Labs Email Security. protects your inbox",
+  },
+  {
+    icon: Lock,
+    title: "Microsoft Cloud App Security",
+    description: "Securing User Behavior with Microsoft Cloud App Security",
+  },
+  {
+    icon: Shield,
+    title: "Azure Security Service",
+    description:
+      "Safeguard your data and applications with Azure's reliable security services.",
+  },
+  {
+    icon: Monitor,
+    title: "Azure Virtual Desktop",
+    description: "Virtually access a secure remote desktop from anywhere.",
+  },
+  {
+    icon: Headphones,
+    title: "IT Help Desk Service",
+    description:
+      "Our IT Help Desk Services will manage your IT infrastructure and software",
+  },
+  {
+    icon: Network,
+    title: "Network and Security Services",
+    description: "Network and Security Services from Pro Labs It",
+  },
+  {
+    icon: Briefcase,
+    title: "Modern Workplace",
+    description: "Redefine work with an employee-first approach",
+  },
 ];
 
 export default function ServicesShowcase() {
-    const [activeTab, setActiveTab] = useState('endpoint');
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeService = services[activeIndex];
+  const ActiveIcon = activeService.icon;
 
-    const activeService = services.find(s => s.id === activeTab) || services[0];
+  return (
+    <section id="services" className="services-showcase">
+      <div className="container">
+        <div className="section-header">
+          <p className="eyebrow">Our Core Services</p>
+          <h2 className="section-title">Unified IT Operations Platform</h2>
+          <p className="section-subtitle">
+            Comprehensive, scalable IT services designed to empower growing
+            businesses
+          </p>
+        </div>
 
-    return (
-        <section className="services-showcase">
-            <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Unified IT Operations Platform</h2>
-                </div>
-
-                {/* Tabs Navigation */}
-                <div className="tabs-container">
-                    <div className="tabs-nav">
-                        {services.map((service) => (
-                            <button
-                                key={service.id}
-                                className={`tab-button ${activeTab === service.id ? 'active' : ''}`}
-                                onClick={() => setActiveTab(service.id)}
-                            >
-                                {service.name}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Tab Content */}
-                <div className="tab-content">
-                    <div className="content-grid">
-                        {/* Left Side - Content */}
-                        <div className="content-left">
-                            <h3 className="service-title">{activeService.title}</h3>
-                            <p className="service-description">{activeService.description}</p>
-
-                            {/* Features List */}
-                            <div className="features-list">
-                                {activeService.features.map((feature, index) => (
-                                    <div key={index} className="feature-item">
-                                        <div className="feature-icon">
-                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <path d="M13.5 4L6 11.5L2.5 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                            </svg>
-                                        </div>
-                                        <span className="feature-text">{feature}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <a href="#" className="learn-more-link">
-                                More about {activeService.name} →
-                            </a>
-
-                            {/* Service Image/Screenshot */}
-                            <div className="service-image-wrapper">
-                                <div className="service-image-placeholder">
-                                    <span className="placeholder-text">Service Screenshot</span>
-                                    {/* Image will be added here */}
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right Side - Stats & Testimonial */}
-                        <div className="content-right">
-                            {activeService.stats && (
-                                <div className="stats-card">
-                                    <div className="company-logo">
-                                        <svg width="100" height="32" viewBox="0 0 100 32">
-                                            <text x="0" y="24" fill="#0D2D44" fontSize="20" fontWeight="600">vetcor</text>
-                                        </svg>
-                                    </div>
-                                    <div className="stat-value">{activeService.stats.value}</div>
-                                    <div className="stat-label">{activeService.stats.label}</div>
-                                </div>
-                            )}
-
-                            {activeService.testimonial && (
-                                <div className="testimonial-card">
-                                    <div className="quote-icon">❝</div>
-                                    <p className="testimonial-quote">{activeService.testimonial.quote}</p>
-                                    <div className="testimonial-author">
-                                        <div className="author-name">{activeService.testimonial.author}</div>
-                                        <div className="author-position">
-                                            {activeService.testimonial.position}, {activeService.testimonial.company}
-                                        </div>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="cta-section">
-                    <button className="cta-button">See the product</button>
-                </div>
+        <div className="showcase-stage">
+          <div className="showcase-panel">
+            <div className="panel-icon">
+              <ActiveIcon size={62} strokeWidth={1.6} />
             </div>
+            <h3 className="panel-title">{activeService.title}</h3>
+            <p className="panel-description">{activeService.description}</p>
+            <a href="#contact" className="panel-link">
+              Explore service <ArrowRight size={18} />
+            </a>
+          </div>
 
-            <style jsx>{`
+          <div className="selector-rail">
+            {services.map((service, index) => {
+              const ServiceIcon = service.icon;
+
+              return (
+                <button
+                  key={service.title}
+                  className={`selector-pill ${activeIndex === index ? "active" : ""}`}
+                  onClick={() => setActiveIndex(index)}
+                >
+                  <ServiceIcon size={16} strokeWidth={2} />
+                  <span>{service.title}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="tabs-container">
+          <div className="tabs-nav">
+            {services.map((service, index) => (
+              <button
+                key={service.title}
+                className={`tab-button ${activeIndex === index ? "active" : ""}`}
+                onClick={() => setActiveIndex(index)}
+              >
+                <span className="tab-name">{service.title}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
         .services-showcase {
           background: #ffffff;
-          padding: 60px 0 80px;
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
+          padding: 80px 0;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 36px;
+          margin-bottom: 40px;
+        }
+
+        .eyebrow {
+          color: #22a7e0;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 0.75rem;
+          font-weight: 700;
+          margin-bottom: 12px;
         }
 
         .section-title {
-          font-size: 2.5rem;
+          font-size: clamp(1.8rem, 3vw, 2.5rem);
           font-weight: 700;
-          color: #0d2d44;
-          margin: 0;
+          color: #123847;
+          margin-bottom: 12px;
           letter-spacing: -0.02em;
         }
 
-        /* Tabs Navigation */
+        .section-subtitle {
+          color: #4b6674;
+          font-size: 1rem;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .showcase-stage {
+          position: relative;
+          margin-top: 8px;
+          border-radius: 10px;
+          padding: 52px 28px 26px;
+          background: #083a57;
+          overflow: hidden;
+          border: 1px solid rgba(23, 141, 200, 0.22);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        }
+
+        .showcase-stage::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(34, 167, 224, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(34, 167, 224, 0.08) 1px, transparent 1px);
+          background-size: 54px 54px, 54px 54px;
+          pointer-events: none;
+          opacity: 0.35;
+        }
+
+        .showcase-panel {
+          position: relative;
+          z-index: 2;
+          width: min(100%, 760px);
+          margin: 0 auto;
+          text-align: center;
+          background: #0d3f5f;
+          border: 1px solid rgba(34, 167, 224, 0.35);
+          border-radius: 4px;
+          padding: 56px 52px 72px;
+        }
+
+        .showcase-panel::before,
+        .showcase-panel::after {
+          content: "";
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          border-color: #22a7e0;
+          border-style: solid;
+        }
+
+        .showcase-panel::before {
+          left: -1px;
+          top: -1px;
+          border-width: 2px 0 0 2px;
+        }
+
+        .showcase-panel::after {
+          right: -1px;
+          bottom: -1px;
+          border-width: 0 2px 2px 0;
+        }
+
+        .panel-icon {
+          color: #22a7e0;
+          display: inline-flex;
+          margin-bottom: 18px;
+        }
+
+        .panel-title {
+          color: #ffffff;
+          font-size: clamp(2rem, 3.2vw, 3.2rem);
+          font-weight: 700;
+          line-height: 1.08;
+          margin-bottom: 14px;
+          letter-spacing: -0.02em;
+        }
+
+        .panel-description {
+          color: rgba(255, 255, 255, 0.82);
+          font-size: clamp(1rem, 1.5vw, 1.32rem);
+          line-height: 1.4;
+          max-width: 760px;
+          margin: 0 auto 24px;
+        }
+
+        .panel-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: #22a7e0;
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: gap 0.2s ease;
+        }
+
+        .panel-link:hover {
+          gap: 12px;
+        }
+
+        .selector-rail {
+          position: relative;
+          z-index: 3;
+          width: fit-content;
+          max-width: 100%;
+          margin: -42px auto 0;
+          border-radius: 16px;
+          background: #1a5678;
+          border: 1px solid rgba(34, 167, 224, 0.24);
+          padding: 8px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+
+        .selector-rail::-webkit-scrollbar {
+          display: none;
+        }
+
+        .selector-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          white-space: nowrap;
+          border-radius: 10px;
+          border: 1px solid transparent;
+          background: transparent;
+          color: rgba(225, 241, 250, 0.82);
+          padding: 10px 14px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.2s ease;
+        }
+
+        .selector-pill:hover {
+          background: rgba(255, 255, 255, 0.08);
+          color: #ffffff;
+        }
+
+        .selector-pill.active {
+          background: rgba(34, 167, 224, 0.2);
+          color: #ffffff;
+          border-color: rgba(34, 167, 224, 0.5);
+        }
+
         .tabs-container {
-          margin-bottom: 0;
+          margin-top: 16px;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           scrollbar-width: none;
@@ -248,308 +324,103 @@ export default function ServicesShowcase() {
 
         .tabs-nav {
           display: flex;
-          gap: 0;
-          justify-content: center;
-          border-bottom: 2px solid #e5eaee;
+          gap: 8px;
+          justify-content: flex-start;
+          width: fit-content;
+          margin: 0 auto;
+          padding: 0 2px 6px;
+          border-radius: 999px;
           min-width: fit-content;
         }
 
         .tab-button {
           position: relative;
-          background: transparent;
-          border: none;
-          padding: 14px 24px;
-          font-size: 0.875rem;
-          font-weight: 600;
-          color: #5e7282;
+          background: #f1f4f5;
+          border: 1px solid #e2e8ec;
+          border-radius: 999px;
+          padding: 8px 14px;
+          font-size: 0.83rem;
+          font-weight: 500;
+          color: #3a596c;
           cursor: pointer;
           white-space: nowrap;
-          transition: all 0.2s ease;
-          border-bottom: 3px solid transparent;
-          margin-bottom: -2px;
-        }
-
-        .tab-button:hover {
-          color: #0d2d44;
-        }
-
-        .tab-button.active {
-          color: #0d2d44;
-          border-bottom-color: #00d4aa;
-        }
-
-        /* Tab Content */
-        .tab-content {
-          background: linear-gradient(135deg, #d4eff0 0%, #dff2f3 100%);
-          border-radius: 12px;
-          padding: 48px 44px;
-          min-height: 500px;
-        }
-
-        .content-grid {
-          display: grid;
-          grid-template-columns: 1fr 340px;
-          gap: 36px;
-        }
-
-        /* Left Content */
-        .content-left {
+          transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease;
           display: flex;
-          flex-direction: column;
-          gap: 24px;
-        }
-
-        .service-title {
-          font-size: 1.875rem;
-          font-weight: 700;
-          color: #0d2d44;
-          margin: 0 0 12px 0;
-          letter-spacing: -0.02em;
+          align-items: center;
           line-height: 1.2;
         }
 
-        .service-description {
-          font-size: 0.9375rem;
-          line-height: 1.55;
-          color: #2d4a5c;
-          margin: 0 0 20px 0;
+        .tab-button:hover {
+          color: #123847;
+          border-color: #cfdae0;
         }
 
-        /* Features */
-        .features-list {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 18px;
+        .tab-button.active {
+          color: #123847;
+          background: #ffffff;
+          border-color: #d7e0e6;
         }
 
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          background: rgba(255, 255, 255, 0.7);
-          padding: 10px 14px;
-          border-radius: 6px;
-          backdrop-filter: blur(10px);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .feature-icon {
-          flex-shrink: 0;
-          width: 18px;
-          height: 18px;
-          background: #00d4aa;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: white;
-        }
-
-        .feature-text {
-          font-size: 0.875rem;
-          color: #0d2d44;
-          font-weight: 500;
-          line-height: 1.4;
-        }
-
-        .learn-more-link {
-          font-size: 0.9375rem;
-          font-weight: 600;
-          color: #00a885;
-          text-decoration: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 4px;
-          transition: gap 0.3s ease;
-        }
-
-        .learn-more-link:hover {
-          gap: 8px;
-        }
-
-        /* Service Image */
-        .service-image-wrapper {
-          flex: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          min-height: 280px;
-        }
-
-        .service-image-placeholder {
-          width: 100%;
-          background: rgba(255, 255, 255, 0.8);
-          border-radius: 10px;
-          padding: 48px 32px;
-          text-align: center;
-          border: 2px dashed #b8cdd6;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        .placeholder-text {
-          color: #7a92a3;
-          font-size: 1rem;
-          font-weight: 500;
-        }
-
-        /* Right Content */
-        .content-right {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .stats-card {
-          background: white;
-          border-radius: 10px;
-          padding: 28px 24px;
-          text-align: center;
-          box-shadow: 0 2px 10px rgba(13, 45, 68, 0.08);
-        }
-
-        .company-logo {
-          margin-bottom: 24px;
-          display: flex;
-          justify-content: center;
-        }
-
-        .stat-value {
-          font-size: 2.75rem;
-          font-weight: 700;
-          color: #0d2d44;
-          margin-bottom: 6px;
-          line-height: 1;
-        }
-
-        .stat-label {
-          font-size: 0.9375rem;
-          color: #5e7282;
-          font-weight: 500;
-        }
-
-        .testimonial-card {
-          background: white;
-          border-radius: 10px;
-          padding: 28px 24px;
-          box-shadow: 0 2px 10px rgba(13, 45, 68, 0.08);
-          flex: 1;
-        }
-
-        .quote-icon {
-          font-size: 2.5rem;
-          color: #0d2d44;
-          line-height: 1;
-          margin-bottom: 10px;
-          opacity: 0.15;
-        }
-
-        .testimonial-quote {
-          font-size: 0.875rem;
-          line-height: 1.6;
-          color: #2d4a5c;
-          margin: 0 0 20px 0;
-        }
-
-        .testimonial-author {
-          border-top: 1px solid #e5eaee;
-          padding-top: 16px;
-        }
-
-        .author-name {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: #0d2d44;
-          letter-spacing: 0.8px;
-          margin-bottom: 4px;
-        }
-
-        .author-position {
-          font-size: 0.75rem;
-          color: #5e7282;
-        }
-
-        /* CTA Section */
-        .cta-section {
-          text-align: center;
-          margin-top: 48px;
-        }
-
-        .cta-button {
-          background: #00d4aa;
-          color: #0d2d44;
-          border: none;
-          padding: 15px 44px;
-          border-radius: 50px;
-          font-size: 1rem;
-          font-weight: 700;
-          cursor: pointer;
-          box-shadow: 0 6px 20px rgba(0, 212, 170, 0.25);
-          transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-          background: #00bd97;
-          transform: translateY(-2px);
-          box-shadow: 0 10px 28px rgba(0, 212, 170, 0.35);
-        }
-
-        /* Responsive Design */
         @media (max-width: 1024px) {
-          .content-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
+          .showcase-panel {
+            padding: 42px 28px 62px;
           }
-
-          .content-right {
-            flex-direction: row;
-            gap: 20px;
-          }
-
-          .stats-card,
-          .testimonial-card {
-            flex: 1;
+          .selector-rail {
+            margin-top: -34px;
           }
         }
 
         @media (max-width: 768px) {
-          .section-title {
-            font-size: 1.8rem;
+          .services-showcase {
+            padding: 60px 0;
           }
-
-          .tab-content {
-            padding: 24px;
+          .showcase-stage {
+            padding: 36px 12px 18px;
           }
-
-          .tab-content {
-            padding: 28px 20px;
+          .showcase-panel {
+            padding: 32px 16px 52px;
           }
-
-          .service-title {
-            font-size: 1.5rem;
+          .panel-title {
+            font-size: clamp(1.35rem, 6vw, 2rem);
           }
-
-          .service-image-wrapper {
-            min-height: 220px;
+          .panel-description {
+            font-size: 0.95rem;
+            line-height: 1.45;
+            margin-bottom: 16px;
           }
-
-          .content-right {
-            flex-direction: column;
+          .panel-link {
+            font-size: 1rem;
           }
-
+          .selector-rail {
+            margin-top: -28px;
+            padding: 6px;
+            border-radius: 12px;
+          }
+          .selector-pill {
+            padding: 8px 11px;
+            font-size: 0.8rem;
+          }
+          .tabs-container {
+            margin-top: 12px;
+          }
           .tabs-nav {
-            padding: 0 10px;
+            margin: 0;
+            padding-bottom: 2px;
           }
-
           .tab-button {
-            padding: 12px 16px;
-            font-size: 0.85rem;
+            padding: 8px 10px;
+            font-size: 0.72rem;
+          }
+          .tab-name {
+            max-width: 132px;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 }
