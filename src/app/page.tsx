@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import TrustBar from '@/components/TrustBar';
 import PromoShowcase from '@/components/PromoShowcase';
-import UnifiedPlatform from '@/components/UnifiedPlatform';
+import ServicesShowcase from '@/components/ServicesShowcase';
 import LeadershipBand from '@/components/LeadershipBand';
 import BenefitsSplit from '@/components/BenefitsSplit';
 import CaseStudy from '@/components/CaseStudy';
@@ -22,8 +22,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
-        <PromoShowcase />
-        <UnifiedPlatform />
+        <ServicesShowcase />
         <LeadershipBand />
         <BenefitsSplit />
         <CaseStudy />

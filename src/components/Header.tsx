@@ -258,7 +258,7 @@ export default function Header() {
           padding: 10px 18px;
           background-color: #22a7e0;
           color: #ffffff;
-          font-size: 13px;
+          font-size: 16.8px;
           font-weight: 500;
           text-decoration: none;
           border-radius: 60px;
