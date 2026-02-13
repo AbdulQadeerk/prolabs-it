@@ -15,66 +15,137 @@ import {
 } from "lucide-react";
 
 interface Service {
-  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>;
+  id: string;
+  name: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
+  features: string[];
 }
 
 const services: Service[] = [
   {
-    icon: ShieldCheck,
+    id: "soc",
+    name: "Managed SOC",
+    icon: <ShieldCheck size={28} strokeWidth={1.5} />,
     title: "Managed SOC Service",
-    description: "Keep your Security Operations Strong and Scalable",
+    description:
+      "Keep your Security Operations Strong and Scalable. Our 24/7 SOC monitors your environment, detects threats in real-time, and responds to incidents before they impact your business.",
+    features: [
+      "Round-the-clock threat monitoring",
+      "Automated incident response workflows",
+      "Advanced threat intelligence integration",
+    ],
   },
   {
-    icon: Cloud,
+    id: "cloud",
+    name: "Cloud Services",
+    icon: <Cloud size={28} strokeWidth={1.5} />,
     title: "Cloud Managed Services",
-    description: "Streamline cloud operations with managed services.",
+    description:
+      "Streamline cloud operations with managed services. We help you migrate, optimize, and manage your cloud infrastructure for maximum efficiency and cost savings.",
+    features: [
+      "Cloud migration and optimization",
+      "Multi-cloud environment management",
+      "Cost monitoring and optimization",
+    ],
   },
   {
-    icon: Mail,
+    id: "email",
+    name: "Email Security",
+    icon: <Mail size={28} strokeWidth={1.5} />,
     title: "Email Security",
     description:
-      "Beware of phishing. Protect Email Data. Professional Labs Email Security. protects your inbox",
+      "Beware of phishing. Protect Email Data. Professional Labs Email Security protects your inbox from advanced threats, phishing attacks, and data breaches.",
+    features: [
+      "Advanced phishing detection",
+      "Email encryption and DLP",
+      "Real-time threat intelligence",
+    ],
   },
   {
-    icon: Lock,
+    id: "cloudapp",
+    name: "Cloud App Security",
+    icon: <Lock size={28} strokeWidth={1.5} />,
     title: "Microsoft Cloud App Security",
-    description: "Securing User Behavior with Microsoft Cloud App Security",
+    description:
+      "Securing User Behavior with Microsoft Cloud App Security. Gain visibility into cloud app usage, detect shadow IT, and enforce data protection policies.",
+    features: [
+      "Shadow IT discovery",
+      "User behavior analytics",
+      "Data loss prevention policies",
+    ],
   },
   {
-    icon: Shield,
+    id: "azure",
+    name: "Azure Security",
+    icon: <Shield size={28} strokeWidth={1.5} />,
     title: "Azure Security Service",
     description:
-      "Safeguard your data and applications with Azure's reliable security services.",
+      "Safeguard your data and applications with Azure's reliable security services. Comprehensive protection for your cloud workloads and hybrid environments.",
+    features: [
+      "Azure Security Center management",
+      "Network security group configuration",
+      "Compliance and governance automation",
+    ],
   },
   {
-    icon: Monitor,
+    id: "avd",
+    name: "Azure Virtual Desktop",
+    icon: <Monitor size={28} strokeWidth={1.5} />,
     title: "Azure Virtual Desktop",
-    description: "Virtually access a secure remote desktop from anywhere.",
+    description:
+      "Virtually access a secure remote desktop from anywhere. Deploy and scale Windows desktops and apps on Azure with built-in security.",
+    features: [
+      "Multi-session Windows 11 experience",
+      "Secure remote access from any device",
+      "Cost-effective virtual desktop infrastructure",
+    ],
   },
   {
-    icon: Headphones,
+    id: "helpdesk",
+    name: "IT Help Desk",
+    icon: <Headphones size={28} strokeWidth={1.5} />,
     title: "IT Help Desk Service",
     description:
-      "Our IT Help Desk Services will manage your IT infrastructure and software",
+      "Our IT Help Desk Services will manage your IT infrastructure and software. Get 24/7 support, rapid resolution, and proactive monitoring.",
+    features: [
+      "24/7 multi-channel support",
+      "SLA-driven resolution tracking",
+      "Proactive system monitoring",
+    ],
   },
   {
-    icon: Network,
+    id: "network",
+    name: "Network & Security",
+    icon: <Network size={28} strokeWidth={1.5} />,
     title: "Network and Security Services",
-    description: "Network and Security Services from Pro Labs It",
+    description:
+      "Network and Security Services from Professional Labs. Design, deploy, and manage robust network infrastructure with enterprise-grade security.",
+    features: [
+      "Network design and implementation",
+      "Firewall and intrusion prevention",
+      "Network performance monitoring",
+    ],
   },
   {
-    icon: Briefcase,
+    id: "workplace",
+    name: "Modern Workplace",
+    icon: <Briefcase size={28} strokeWidth={1.5} />,
     title: "Modern Workplace",
-    description: "Redefine work with an employee-first approach",
+    description:
+      "Redefine work with an employee-first approach. Transform your workplace with Microsoft 365, collaboration tools, and productivity solutions.",
+    features: [
+      "Microsoft 365 deployment and management",
+      "Collaboration and productivity tools",
+      "Employee experience optimization",
+    ],
   },
 ];
 
 export default function ServicesShowcase() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeService = services[activeIndex];
-  const ActiveIcon = activeService.icon;
+  const [activeTab, setActiveTab] = useState("soc");
+  const activeService = services.find((s) => s.id === activeTab) || services[0];
 
   return (
     <section id="services" className="services-showcase">
@@ -88,48 +159,97 @@ export default function ServicesShowcase() {
           </p>
         </div>
 
-        <div className="showcase-stage">
-          <div className="showcase-panel">
-            <div className="panel-icon">
-              <ActiveIcon size={62} strokeWidth={1.6} />
-            </div>
-            <h3 className="panel-title">{activeService.title}</h3>
-            <p className="panel-description">{activeService.description}</p>
-            <a href="#contact" className="panel-link">
-              Explore service <ArrowRight size={18} />
-            </a>
-          </div>
-
-          <div className="selector-rail">
-            {services.map((service, index) => {
-              const ServiceIcon = service.icon;
-
-              return (
-                <button
-                  key={service.title}
-                  className={`selector-pill ${activeIndex === index ? "active" : ""}`}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  <ServiceIcon size={16} strokeWidth={2} />
-                  <span>{service.title}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
+        {/* Tabs */}
         <div className="tabs-container">
           <div className="tabs-nav">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <button
-                key={service.title}
-                className={`tab-button ${activeIndex === index ? "active" : ""}`}
-                onClick={() => setActiveIndex(index)}
+                key={service.id}
+                className={`tab-button ${activeTab === service.id ? "active" : ""}`}
+                onClick={() => setActiveTab(service.id)}
               >
-                <span className="tab-name">{service.title}</span>
+                <span className="tab-icon">{service.icon}</span>
+                <span className="tab-name">{service.name}</span>
               </button>
             ))}
           </div>
+        </div>
+
+        {/* Content */}
+        <div className="tab-content">
+          <div className="content-grid">
+            <div className="content-left">
+              <h3 className="service-title">{activeService.title}</h3>
+              <p className="service-description">{activeService.description}</p>
+
+              <div className="features-list">
+                {activeService.features.map((feature, index) => (
+                  <div key={index} className="feature-item">
+                    <div className="feature-icon">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.5 4L6 11.5L2.5 8"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <span className="feature-text">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href="#" className="learn-more-link">
+                More about {activeService.name} <ArrowRight size={16} />
+              </a>
+            </div>
+
+            <div className="content-right">
+              {/* Service Visual Card */}
+              <div className="service-visual">
+                <div className="visual-icon">{activeService.icon}</div>
+                <div className="visual-details">
+                  <h4>{activeService.title}</h4>
+                  <div className="visual-metrics">
+                    <div className="metric">
+                      <span className="metric-value">99.9%</span>
+                      <span className="metric-label">Uptime</span>
+                    </div>
+                    <div className="metric">
+                      <span className="metric-value">24/7</span>
+                      <span className="metric-label">Support</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Testimonial */}
+              <div className="testimonial-card">
+                <div className="quote-icon">❝</div>
+                <p className="testimonial-quote">
+                  Professional Labs help manage our Email and Domain
+                  Environment; they haven&apos;t failed us once.
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-name">ADV. HUSSAIN NALWALA</div>
+                  <div className="author-position">Founder, CNS Juris</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="cta-section">
+          <a href="#contact" className="cta-button">
+            Explore All Services
+          </a>
         </div>
       </div>
 
@@ -168,154 +288,12 @@ export default function ServicesShowcase() {
           margin: 0 auto;
         }
 
-        .showcase-stage {
-          position: relative;
-          margin-top: 8px;
-          border-radius: 10px;
-          padding: 52px 28px 26px;
-          background: #083a57;
-          overflow: hidden;
-          border: 1px solid rgba(23, 141, 200, 0.22);
-          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-        }
-
-        .showcase-stage::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(34, 167, 224, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34, 167, 224, 0.08) 1px, transparent 1px);
-          background-size: 54px 54px, 54px 54px;
-          pointer-events: none;
-          opacity: 0.35;
-        }
-
-        .showcase-panel {
-          position: relative;
-          z-index: 2;
-          width: min(100%, 760px);
-          margin: 0 auto;
-          text-align: center;
-          background: #0d3f5f;
-          border: 1px solid rgba(34, 167, 224, 0.35);
-          border-radius: 4px;
-          padding: 56px 52px 72px;
-        }
-
-        .showcase-panel::before,
-        .showcase-panel::after {
-          content: "";
-          position: absolute;
-          width: 12px;
-          height: 12px;
-          border-color: #22a7e0;
-          border-style: solid;
-        }
-
-        .showcase-panel::before {
-          left: -1px;
-          top: -1px;
-          border-width: 2px 0 0 2px;
-        }
-
-        .showcase-panel::after {
-          right: -1px;
-          bottom: -1px;
-          border-width: 0 2px 2px 0;
-        }
-
-        .panel-icon {
-          color: #22a7e0;
-          display: inline-flex;
-          margin-bottom: 18px;
-        }
-
-        .panel-title {
-          color: #ffffff;
-          font-size: clamp(2rem, 3.2vw, 3.2rem);
-          font-weight: 700;
-          line-height: 1.08;
-          margin-bottom: 14px;
-          letter-spacing: -0.02em;
-        }
-
-        .panel-description {
-          color: rgba(255, 255, 255, 0.82);
-          font-size: clamp(1rem, 1.5vw, 1.32rem);
-          line-height: 1.4;
-          max-width: 760px;
-          margin: 0 auto 24px;
-        }
-
-        .panel-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: #22a7e0;
-          font-size: 1.2rem;
-          font-weight: 600;
-          text-decoration: none;
-          transition: gap 0.2s ease;
-        }
-
-        .panel-link:hover {
-          gap: 12px;
-        }
-
-        .selector-rail {
-          position: relative;
-          z-index: 3;
-          width: fit-content;
-          max-width: 100%;
-          margin: -42px auto 0;
-          border-radius: 16px;
-          background: #1a5678;
-          border: 1px solid rgba(34, 167, 224, 0.24);
-          padding: 8px;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-        }
-
-        .selector-rail::-webkit-scrollbar {
-          display: none;
-        }
-
-        .selector-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          white-space: nowrap;
-          border-radius: 10px;
-          border: 1px solid transparent;
-          background: transparent;
-          color: rgba(225, 241, 250, 0.82);
-          padding: 10px 14px;
-          font-size: 0.9rem;
-          font-weight: 500;
-          transition: all 0.2s ease;
-        }
-
-        .selector-pill:hover {
-          background: rgba(255, 255, 255, 0.08);
-          color: #ffffff;
-        }
-
-        .selector-pill.active {
-          background: rgba(34, 167, 224, 0.2);
-          color: #ffffff;
-          border-color: rgba(34, 167, 224, 0.5);
-        }
-
         .tabs-container {
-          margin-top: 16px;
+          margin-bottom: 0;
           overflow-x: auto;
           -webkit-overflow-scrolling: touch;
           scrollbar-width: none;
+          padding: 2px 0 10px;
         }
 
         .tabs-container::-webkit-scrollbar {
@@ -324,52 +302,285 @@ export default function ServicesShowcase() {
 
         .tabs-nav {
           display: flex;
-          gap: 8px;
+          gap: 4px;
           justify-content: flex-start;
-          width: fit-content;
+          width: max-content;
           margin: 0 auto;
-          padding: 0 2px 6px;
+          padding: 4px;
           border-radius: 999px;
+          border: 1px solid #e2e8ec;
+          background: #eef2f3;
           min-width: fit-content;
         }
 
         .tab-button {
           position: relative;
-          background: #f1f4f5;
-          border: 1px solid #e2e8ec;
+          background: transparent;
+          border: 1px solid transparent;
           border-radius: 999px;
-          padding: 8px 14px;
-          font-size: 0.83rem;
+          padding: 11px 18px;
+          font-size: 1rem;
           font-weight: 500;
-          color: #3a596c;
+          color: #123847;
           cursor: pointer;
           white-space: nowrap;
           transition:
             background-color 0.2s ease,
             border-color 0.2s ease,
-            color 0.2s ease;
+            box-shadow 0.2s ease;
           display: flex;
           align-items: center;
-          line-height: 1.2;
+          gap: 0;
+          line-height: 1.15;
         }
 
         .tab-button:hover {
-          color: #123847;
-          border-color: #cfdae0;
+          background: rgba(255, 255, 255, 0.55);
         }
 
         .tab-button.active {
           color: #123847;
           background: #ffffff;
-          border-color: #d7e0e6;
+          border-color: #e0e7eb;
+          box-shadow: 0 1px 2px rgba(18, 56, 71, 0.08);
+        }
+
+        .tab-icon {
+          display: none;
+          align-items: center;
+          color: inherit;
+        }
+
+        .tab-button.active .tab-icon {
+          color: #22a7e0;
+        }
+
+        .tab-content {
+          background: linear-gradient(
+            135deg,
+            #e8f4f8 0%,
+            #f0f8fb 50%,
+            #edf6fa 100%
+          );
+          border-radius: 0 0 16px 16px;
+          padding: 48px 40px;
+          min-height: 440px;
+        }
+
+        .content-grid {
+          display: grid;
+          grid-template-columns: 1fr 360px;
+          gap: 40px;
+        }
+
+        .content-left {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .service-title {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #123847;
+          letter-spacing: -0.02em;
+          line-height: 1.2;
+        }
+
+        .service-description {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          color: #4b6674;
+        }
+
+        .features-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(255, 255, 255, 0.8);
+          padding: 12px 16px;
+          border-radius: 8px;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-icon {
+          flex-shrink: 0;
+          width: 22px;
+          height: 22px;
+          background: #22a7e0;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+        }
+
+        .feature-text {
+          font-size: 0.875rem;
+          color: #123847;
+          font-weight: 500;
+        }
+
+        .learn-more-link {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #22a7e0;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          transition: gap 0.3s ease;
+        }
+
+        .learn-more-link:hover {
+          gap: 10px;
+        }
+
+        .content-right {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .service-visual {
+          background: white;
+          border-radius: 12px;
+          padding: 28px 24px;
+          box-shadow: 0 2px 12px rgba(18, 56, 71, 0.08);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+        }
+
+        .visual-icon {
+          width: 56px;
+          height: 56px;
+          background: rgba(34, 167, 224, 0.1);
+          border-radius: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #22a7e0;
+        }
+
+        .visual-details h4 {
+          font-size: 1.05rem;
+          color: #123847;
+          font-weight: 700;
+          margin-bottom: 16px;
+        }
+
+        .visual-metrics {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+        }
+
+        .metric {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+        }
+
+        .metric-value {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: #22a7e0;
+          line-height: 1;
+        }
+
+        .metric-label {
+          font-size: 0.75rem;
+          color: #5e7282;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .testimonial-card {
+          background: white;
+          border-radius: 12px;
+          padding: 28px 24px;
+          box-shadow: 0 2px 12px rgba(18, 56, 71, 0.08);
+          flex: 1;
+        }
+
+        .quote-icon {
+          font-size: 2.2rem;
+          color: #123847;
+          line-height: 1;
+          margin-bottom: 8px;
+          opacity: 0.12;
+        }
+
+        .testimonial-quote {
+          font-size: 0.875rem;
+          line-height: 1.6;
+          color: #4b6674;
+          font-style: italic;
+          margin-bottom: 18px;
+        }
+
+        .testimonial-author {
+          border-top: 1px solid #e5eaee;
+          padding-top: 14px;
+        }
+
+        .author-name {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: #123847;
+          letter-spacing: 0.5px;
+          margin-bottom: 2px;
+        }
+
+        .author-position {
+          font-size: 0.75rem;
+          color: #5e7282;
+        }
+
+        .cta-section {
+          text-align: center;
+          margin-top: 48px;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: #22a7e0;
+          color: white;
+          border: none;
+          padding: 15px 44px;
+          border-radius: 50px;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          box-shadow: 0 6px 25px rgba(34, 167, 224, 0.3);
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+
+        .cta-button:hover {
+          background: #178dc8;
+          transform: translateY(-2px);
+          box-shadow: 0 10px 35px rgba(34, 167, 224, 0.4);
         }
 
         @media (max-width: 1024px) {
-          .showcase-panel {
-            padding: 42px 28px 62px;
+          .content-grid {
+            grid-template-columns: 1fr;
           }
-          .selector-rail {
-            margin-top: -34px;
+          .content-right {
+            flex-direction: row;
           }
         }
 
@@ -377,47 +588,26 @@ export default function ServicesShowcase() {
           .services-showcase {
             padding: 60px 0;
           }
-          .showcase-stage {
-            padding: 36px 12px 18px;
+          .tab-content {
+            padding: 28px 20px;
           }
-          .showcase-panel {
-            padding: 32px 16px 52px;
+          .service-title {
+            font-size: 1.4rem;
           }
-          .panel-title {
-            font-size: clamp(1.35rem, 6vw, 2rem);
-          }
-          .panel-description {
-            font-size: 0.95rem;
-            line-height: 1.45;
-            margin-bottom: 16px;
-          }
-          .panel-link {
-            font-size: 1rem;
-          }
-          .selector-rail {
-            margin-top: -28px;
-            padding: 6px;
-            border-radius: 12px;
-          }
-          .selector-pill {
-            padding: 8px 11px;
-            font-size: 0.8rem;
-          }
-          .tabs-container {
-            margin-top: 12px;
+          .content-right {
+            flex-direction: column;
           }
           .tabs-nav {
             margin: 0;
-            padding-bottom: 2px;
+            border-radius: 20px;
+            padding: 3px;
           }
           .tab-button {
-            padding: 8px 10px;
-            font-size: 0.72rem;
+            padding: 10px 14px;
+            font-size: 0.86rem;
           }
-          .tab-name {
-            max-width: 132px;
-            overflow: hidden;
-            text-overflow: ellipsis;
+          .tab-icon {
+            display: none;
           }
         }
       `}</style>
