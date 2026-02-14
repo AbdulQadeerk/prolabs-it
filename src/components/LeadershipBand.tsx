@@ -1,6 +1,10 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function LeadershipBand() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="leadership-band">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`leadership-band ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="leadership-card">
           <div className="leadership-content">
@@ -159,6 +163,27 @@ export default function LeadershipBand() {
             grid-template-columns: 1fr 1fr;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .leadership-band:not(.animate-in) .leadership-card {
+          opacity: 0; transform: translateY(32px);
+        }
+        .leadership-band:not(.animate-in) .lstat {
+          opacity: 0; transform: translateY(20px);
+        }
+        .leadership-band.animate-in .leadership-card {
+          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .leadership-band.animate-in .lstat {
+          animation: revealUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .leadership-band.animate-in .lstat:nth-child(1) { animation-delay: 0.2s; }
+        .leadership-band.animate-in .lstat:nth-child(2) { animation-delay: 0.3s; }
+        .leadership-band.animate-in .lstat:nth-child(3) { animation-delay: 0.4s; }
+        .leadership-band.animate-in .lstat:nth-child(4) { animation-delay: 0.5s; }
       `}</style>
     </section>
   );

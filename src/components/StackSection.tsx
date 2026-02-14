@@ -1,4 +1,8 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function StackSection() {
+  const { ref, isVisible } = useScrollReveal();
   const partners = [
     { name: 'Microsoft', category: 'Cloud & Productivity' },
     { name: 'Azure', category: 'Cloud Platform' },
@@ -9,7 +13,7 @@ export default function StackSection() {
   ];
 
   return (
-    <section className="stack-section">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`stack-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="stack-grid">
           <div className="stack-content">
@@ -151,6 +155,33 @@ export default function StackSection() {
             grid-template-columns: 1fr;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes revealLeft {
+          from { opacity: 0; transform: translateX(-32px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        .stack-section:not(.animate-in) .stack-content {
+          opacity: 0; transform: translateX(-32px);
+        }
+        .stack-section:not(.animate-in) .partner-card {
+          opacity: 0; transform: translateY(24px);
+        }
+        .stack-section.animate-in .stack-content {
+          animation: revealLeft 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .stack-section.animate-in .partner-card {
+          animation: revealUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .stack-section.animate-in .partner-card:nth-child(1) { animation-delay: 0.1s; }
+        .stack-section.animate-in .partner-card:nth-child(2) { animation-delay: 0.18s; }
+        .stack-section.animate-in .partner-card:nth-child(3) { animation-delay: 0.26s; }
+        .stack-section.animate-in .partner-card:nth-child(4) { animation-delay: 0.34s; }
+        .stack-section.animate-in .partner-card:nth-child(5) { animation-delay: 0.42s; }
+        .stack-section.animate-in .partner-card:nth-child(6) { animation-delay: 0.50s; }
       `}</style>
     </section>
   );

@@ -1,6 +1,10 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function CTASection() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section className="cta-section">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`cta-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="cta-bg-pattern"></div>
       <div className="container">
         <div className="cta-content">
@@ -117,6 +121,17 @@ export default function CTASection() {
             align-items: center;
             gap: 12px;
           }
+        }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .cta-section:not(.animate-in) .cta-content {
+          opacity: 0; transform: translateY(32px);
+        }
+        .cta-section.animate-in .cta-content {
+          animation: revealUp 0.8s cubic-bezier(0.23,1,0.32,1) forwards;
         }
       `}</style>
     </section>

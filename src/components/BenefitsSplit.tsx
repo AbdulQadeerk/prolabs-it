@@ -1,6 +1,10 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function BenefitsSplit() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section id="about" className="benefits-section">
+    <section id="about" ref={ref as React.RefObject<HTMLElement>} className={`benefits-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Trusted by IT teams and MSPs worldwide</p>
@@ -183,6 +187,27 @@ export default function BenefitsSplit() {
             grid-template-columns: 1fr;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .benefits-section:not(.animate-in) .section-header,
+        .benefits-section:not(.animate-in) .about-text,
+        .benefits-section:not(.animate-in) .benefit-card {
+          opacity: 0; transform: translateY(32px);
+        }
+        .benefits-section.animate-in .section-header {
+          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .benefits-section.animate-in .about-text {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) 0.1s forwards;
+        }
+        .benefits-section.animate-in .benefit-card {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .benefits-section.animate-in .benefit-card:nth-child(1) { animation-delay: 0.2s; }
+        .benefits-section.animate-in .benefit-card:nth-child(2) { animation-delay: 0.32s; }
       `}</style>
     </section>
   );

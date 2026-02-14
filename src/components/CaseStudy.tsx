@@ -1,4 +1,8 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function CaseStudy() {
+  const { ref, isVisible } = useScrollReveal();
   const testimonials = [
     {
       quote: "Professional Labs help manage our Email and Domain Environment; they haven't failed us once. Professional Labs helped us by making full use of Microsoft Technologies ensuring secure access from anywhere to our environment in the time of COVID.",
@@ -9,7 +13,7 @@ export default function CaseStudy() {
   ];
 
   return (
-    <section className="case-study">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`case-study ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Client Testimonials</p>
@@ -204,6 +208,39 @@ export default function CaseStudy() {
             padding: 28px;
           }
         }
+      `}</style>
+
+      <style jsx>{`
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes revealLeft {
+          from { opacity: 0; transform: translateX(-32px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes revealRight {
+          from { opacity: 0; transform: translateX(32px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        .case-study:not(.animate-in) .section-header,
+        .case-study:not(.animate-in) .case-text,
+        .case-study:not(.animate-in) .stat-card {
+          opacity: 0;
+        }
+        .case-study.animate-in .section-header {
+          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .case-study.animate-in .case-text {
+          animation: revealLeft 0.7s cubic-bezier(0.23,1,0.32,1) 0.15s forwards;
+        }
+        .case-study.animate-in .stat-card {
+          animation: revealRight 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .case-study.animate-in .stat-card:nth-child(1) { animation-delay: 0.2s; }
+        .case-study.animate-in .stat-card:nth-child(2) { animation-delay: 0.3s; }
+        .case-study.animate-in .stat-card:nth-child(3) { animation-delay: 0.4s; }
+        .case-study.animate-in .stat-card:nth-child(4) { animation-delay: 0.5s; }
       `}</style>
     </section>
   );

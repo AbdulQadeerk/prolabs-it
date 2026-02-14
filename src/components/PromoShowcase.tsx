@@ -1,7 +1,7 @@
 export default function PromoShowcase() {
   const carImage =
     "https://mlfk3cv5yvnx.i.optimole.com/cb:HA53.300ea/w:1536/h:458/q:mauto/f:best/https://www.ninjaone.com/wp-content/uploads/2026/01/audi-f1-car-1.png";
-  const brandLogo = "/brand/prolabs-mark.svg";
+  const brandLogo = "/brand/prolabs-logo-dark.png";
 
   return (
     <section className="promo-showcase">

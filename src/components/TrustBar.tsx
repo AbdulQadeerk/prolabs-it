@@ -1,4 +1,8 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function TrustBar() {
+  const { ref, isVisible } = useScrollReveal();
   const stats = [
     { number: "50", suffix: "+", label: "Engineers & Developers" },
     { number: "100", suffix: "+", label: "Global Customers" },
@@ -7,7 +11,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="trust-bar">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`trust-bar ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="trust-inner">
           <div className="trust-label">
@@ -127,6 +131,29 @@ export default function TrustBar() {
             gap: 20px;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes revealLeft {
+          from { opacity: 0; transform: translateX(-24px); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        .trust-bar:not(.animate-in) .trust-label,
+        .trust-bar:not(.animate-in) .stat-item {
+          opacity: 0;
+        }
+        .trust-bar.animate-in .trust-label {
+          animation: revealLeft 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .trust-bar.animate-in .stat-item {
+          animation: revealUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .trust-bar.animate-in .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .trust-bar.animate-in .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .trust-bar.animate-in .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .trust-bar.animate-in .stat-item:nth-child(4) { animation-delay: 0.4s; }
       `}</style>
     </section>
   );

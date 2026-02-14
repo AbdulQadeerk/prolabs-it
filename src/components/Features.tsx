@@ -1,6 +1,9 @@
+"use client";
+import { useScrollReveal } from "./animations";
 import { FileSearch, ShieldCheck, Settings, Lock, Wrench, ArrowRight } from 'lucide-react';
 
 export default function Features() {
+  const { ref, isVisible } = useScrollReveal();
   const features = [
     {
       title: "Prolabs Identity Audit",
@@ -30,7 +33,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="tools" className="features-section">
+    <section id="tools" ref={ref as React.RefObject<HTMLElement>} className={`features-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Our Proprietary Tools</p>
@@ -175,6 +178,28 @@ export default function Features() {
             grid-template-columns: 1fr;
           }
         }
+
+        /* Scroll-reveal animations */
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .features-section:not(.animate-in) .section-header,
+        .features-section:not(.animate-in) .feature-card {
+          opacity: 0;
+          transform: translateY(32px);
+        }
+        .features-section.animate-in .section-header {
+          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .features-section.animate-in .feature-card {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .features-section.animate-in .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .features-section.animate-in .feature-card:nth-child(2) { animation-delay: 0.18s; }
+        .features-section.animate-in .feature-card:nth-child(3) { animation-delay: 0.26s; }
+        .features-section.animate-in .feature-card:nth-child(4) { animation-delay: 0.34s; }
+        .features-section.animate-in .feature-card:nth-child(5) { animation-delay: 0.42s; }
       `}</style>
     </section>
   );

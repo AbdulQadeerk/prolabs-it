@@ -1,86 +1,291 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import Image from "next/image";
+
+const serviceColumns = [
+  {
+    title: "Security",
+    items: [
+      { href: "#managed-soc", label: "Managed SOC Services" },
+      { href: "#azure-security", label: "Azure Security" },
+      { href: "#defender-endpoint", label: "Defender for Endpoint" },
+      { href: "#email-security", label: "Email Security" },
+      { href: "#cloud-app-security", label: "Microsoft Cloud App Security" },
+      { href: "#defender-identity", label: "Defender for Identity" },
+      { href: "#vapt", label: "VAPT" },
+      { href: "#network-security", label: "Network and Security Services" },
+      { href: "#identity-access", label: "Identity and Access Management" },
+    ],
+  },
+  {
+    title: "Consulting Services",
+    items: [
+      { href: "#azure-consulting", label: "Azure Consulting Services" },
+      { href: "#azure-virtual-desktop", label: "Azure Virtual Desktop" },
+      { href: "#citrix-consulting", label: "Citrix Consulting" },
+      { href: "#pki-consulting", label: "PKI Consulting" },
+      { href: "#active-directory", label: "Active Directory Consulting" },
+      { href: "#modern-workplace", label: "Modern WorkPlace" },
+      { href: "#ai-solutions", label: "Professional Labs - AI Solutions" },
+      {
+        href: "#data-driven",
+        label: "Professional Labs - Data Driven Solutions",
+      },
+      {
+        href: "#software-development",
+        label: "Software Development Services",
+      },
+    ],
+  },
+  {
+    title: "Support and Market Research",
+    items: [
+      { href: "#cloud-managed", label: "Cloud Managed Service" },
+      { href: "#it-training", label: "IT Training" },
+      { href: "#market-research", label: "Market Research" },
+      { href: "#web-app-dev", label: "Website & App Development" },
+      { href: "#it-helpdesk", label: "IT Help Desk" },
+      {
+        href: "#crm-services",
+        label: "CRM (Customer Relationship Management) Services",
+      },
+      { href: "#erp-services", label: "ERP Services" },
+      { href: "#ticketing", label: "Ticketing System Services" },
+    ],
+  },
+];
+
+// Flatten all service items for mobile menu
+const allServiceItems = serviceColumns.flatMap((col) =>
+  col.items.map((item) => ({ ...item, category: col.title }))
+);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const navLinks = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#services", label: "Services", hasDropdown: true },
+    { href: "#partnership", label: "Partnership" },
+    { href: "#blog", label: "Blog" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
-    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
-      {/* Top Hat / Announcement Bar */}
+    <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+      {/* Top announcement bar */}
       <div className="top-hat">
-        <div className="top-hat-inner">
-          <div className="top-hat-content">
-            <span className="announcement-text">
-              Professional Labs — Trusted by 100+ Global Companies since 1997
-            </span>
-            <a href="#contact" className="announcement-link">
-              Get in Touch <span>→</span>
-            </a>
-          </div>
-          <div className="top-hat-actions">
-            <a href="tel:+97142866807" className="hat-link">+971 4 286 6807</a>
-            <a href="mailto:info@professionallabs.com" className="hat-link">info@professionallabs.com</a>
-          </div>
+        <div className="container top-hat-inner">
+          <span>
+            🚀 Professional Labs — Trusted IT Solutions across 35+ countries
+          </span>
+          <a href="#contact" className="top-hat-link">
+            Contact Us →
+          </a>
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Main Nav */}
       <nav className="main-nav">
-        <div className="nav-inner">
+        <div className="container nav-inner">
           <Link href="/" className="logo-link">
             <Image
               src="/brand/prolabs-logo-dark.png"
               alt="Professional Labs"
-              width={130}
-              height={28}
+              width={160}
+              height={40}
+              style={{ objectFit: "contain" }}
               priority
-              style={{ objectFit: 'contain' }}
             />
           </Link>
 
           <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services <span className="dropdown-arrow">▾</span></a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#tools">Our Tools</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#contact">Contact</a></li>
+            {navLinks.map((link) =>
+              link.hasDropdown ? (
+                <li
+                  key={link.href}
+                  className="nav-dropdown-wrapper"
+                  ref={dropdownRef}
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  <button
+                    className="nav-link nav-link-dropdown"
+                    onClick={() => setServicesOpen(!servicesOpen)}
+                    aria-expanded={servicesOpen}
+                    aria-haspopup="true"
+                  >
+                    {link.label}
+                    <svg
+                      className={`dropdown-arrow ${servicesOpen ? "open" : ""}`}
+                      width="10"
+                      height="6"
+                      viewBox="0 0 10 6"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1L5 5L9 1"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+
+                  {/* Mega Dropdown */}
+                  {servicesOpen && (
+                    <div className="mega-dropdown">
+                      <div className="mega-dropdown-inner">
+                        {serviceColumns.map((column) => (
+                          <div key={column.title} className="mega-column">
+                            <h4 className="mega-column-title">
+                              {column.title}
+                              <span className="mega-title-underline" />
+                            </h4>
+                            <ul className="mega-column-list">
+                              {column.items.map((item) => (
+                                <li key={item.href}>
+                                  <a
+                                    href={item.href}
+                                    className="mega-item"
+                                    onClick={() => setServicesOpen(false)}
+                                  >
+                                    {item.label}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <a href={link.href} className="nav-link">
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
 
           <div className="nav-cta">
-            <a href="#contact" className="cta-button">Get a Free Consultation</a>
+            <a href="#contact" className="cta-btn">
+              Get a Free Consultation
+            </a>
             <button
-              className="mobile-menu-btn"
-              aria-label="Menu"
+              className="mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Mobile menu"
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              {mobileOpen ? "✕" : "☰"}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       {mobileOpen && (
         <div className="mobile-menu">
-          <a href="#home" onClick={() => setMobileOpen(false)}>Home</a>
-          <a href="#services" onClick={() => setMobileOpen(false)}>Services</a>
-          <a href="#about" onClick={() => setMobileOpen(false)}>About Us</a>
-          <a href="#tools" onClick={() => setMobileOpen(false)}>Our Tools</a>
-          <a href="#resources" onClick={() => setMobileOpen(false)}>Resources</a>
-          <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
-          <a href="#contact" className="mobile-cta" onClick={() => setMobileOpen(false)}>Get a Free Consultation</a>
+          <div className="container">
+            {navLinks.map((link) =>
+              link.hasDropdown ? (
+                <div key={link.href} className="mobile-dropdown-wrapper">
+                  <button
+                    className="mobile-link mobile-link-dropdown"
+                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  >
+                    {link.label}
+                    <svg
+                      className={`dropdown-arrow ${mobileServicesOpen ? "open" : ""}`}
+                      width="10"
+                      height="6"
+                      viewBox="0 0 10 6"
+                      fill="none"
+                    >
+                      <path
+                        d="M1 1L5 5L9 1"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="mobile-sub-menu">
+                      {serviceColumns.map((col) => (
+                        <div key={col.title} className="mobile-sub-category">
+                          <h5 className="mobile-sub-category-title">
+                            {col.title}
+                          </h5>
+                          {col.items.map((item) => (
+                            <a
+                              key={item.href}
+                              href={item.href}
+                              className="mobile-sub-link"
+                              onClick={() => {
+                                setMobileOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
+                            >
+                              {item.label}
+                            </a>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              )
+            )}
+            <a
+              href="#contact"
+              className="mobile-cta"
+              onClick={() => setMobileOpen(false)}
+            >
+              Get a Free Consultation
+            </a>
+          </div>
         </div>
       )}
 
@@ -90,266 +295,360 @@ export default function Header() {
           top: 0;
           left: 0;
           right: 0;
-          width: 100%;
-          z-index: 9999;
-          background: linear-gradient(180deg, rgba(5, 56, 86, 0.97) 0%, rgba(5, 56, 86, 0.92) 100%);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
+          z-index: 1000;
           transition: all 0.3s ease;
         }
 
-        .site-header.scrolled {
-          background: rgba(5, 56, 86, 0.98);
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        /* Top bar */
+        .top-hat {
+          background: #082638;
+          border-bottom: 1px solid rgba(34, 167, 224, 0.1);
+          padding: 8px 0;
+          font-size: 0.75rem;
+          color: rgba(255, 255, 255, 0.7);
+          transition: all 0.3s ease;
         }
 
-        .top-hat {
-          background: transparent;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-          padding: 5px 0;
+        .scrolled .top-hat {
+          padding: 0;
+          height: 0;
+          overflow: hidden;
+          border: none;
         }
 
         .top-hat-inner {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 24px;
           display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
+          gap: 16px;
         }
 
-        .top-hat-content {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .announcement-text {
-          color: rgba(255, 255, 255, 0.85);
-          font-size: 14px;
-          font-weight: 400;
-          line-height: 1.2;
-        }
-
-        .announcement-link {
+        .top-hat-link {
           color: #22a7e0;
-          font-size: 14px;
+          text-decoration: none;
           font-weight: 600;
-          text-decoration: none;
+          font-size: 0.75rem;
           transition: color 0.2s;
-          line-height: 1.2;
         }
 
-        .announcement-link:hover {
-          color: #4dc4f5;
+        .top-hat-link:hover {
+          color: #5dc4f0;
         }
 
-        .top-hat-actions {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-        }
-
-        .hat-link {
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 14px;
-          text-decoration: none;
-          transition: color 0.2s;
-          line-height: 1.2;
-        }
-
-        .hat-link:hover {
-          color: #22a7e0;
-        }
-
+        /* Main nav */
         .main-nav {
-          background: transparent;
-          padding: 6px 0;
+          position: relative;
+          background: rgba(8, 38, 56, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(34, 167, 224, 0.08);
+          padding: 0;
+          transition: all 0.3s ease;
+        }
+
+        .scrolled .main-nav {
+          background: rgba(8, 38, 56, 0.95);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
 
         .nav-inner {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 24px;
           display: flex;
           align-items: center;
           justify-content: space-between;
+          height: 66px;
         }
 
         .logo-link {
           display: flex;
           align-items: center;
+          gap: 10px;
+          text-decoration: none;
           flex-shrink: 0;
         }
 
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 36px;
+          gap: 4px;
           list-style: none;
-          margin: 0;
           padding: 0;
-          flex: 1;
-          margin-left: 48px;
+          margin: 0;
         }
 
-        .nav-links li a {
-          color: #ffffff;
-          font-size: 16.8px;
-          font-weight: 500;
+        .nav-link {
+          color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
+          font-size: 0.92rem;
+          font-weight: 500;
+          padding: 8px 16px;
+          border-radius: 8px;
+          transition: all 0.2s ease;
+          cursor: pointer;
+        }
+
+        .nav-link:hover {
+          color: #ffffff;
+          background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Dropdown trigger */
+        .nav-link-dropdown {
           display: inline-flex;
           align-items: center;
-          gap: 4px;
-          padding: 6px 0;
-          transition: color 0.2s;
-          position: relative;
+          gap: 5px;
+          background: none;
+          border: none;
+          font-family: inherit;
         }
 
-        .nav-links li a:hover {
-          color: #22a7e0;
-        }
-
-        .nav-links li a::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: #22a7e0;
-          transition: width 0.3s ease;
-        }
-
-        .nav-links li a:hover::after {
-          width: 100%;
+        .nav-dropdown-wrapper {
+          position: static;
         }
 
         .dropdown-arrow {
-          font-size: 10px;
-          opacity: 0.7;
+          transition: transform 0.2s ease;
         }
 
+        .dropdown-arrow.open {
+          transform: rotate(180deg);
+        }
+
+        /* ===== Mega Dropdown ===== */
+        .mega-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          background: #ffffff;
+          border-top: 3px solid #2563eb;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18),
+            0 4px 20px rgba(0, 0, 0, 0.08);
+          animation: megaFadeIn 0.25s ease;
+          z-index: 1001;
+        }
+
+        @keyframes megaFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-4px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .mega-dropdown-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 0;
+          padding: 36px 40px 40px;
+        }
+
+        .mega-column {
+          padding: 0 24px;
+        }
+
+        .mega-column:first-child {
+          padding-left: 0;
+        }
+
+        .mega-column:last-child {
+          padding-right: 0;
+        }
+
+        .mega-column:not(:last-child) {
+          border-right: 1px solid #e5e7eb;
+        }
+
+        .mega-column-title {
+          font-size: 1.05rem;
+          font-weight: 700;
+          color: #0f172a;
+          margin: 0 0 12px 0;
+          padding-bottom: 10px;
+          position: relative;
+          letter-spacing: -0.01em;
+        }
+
+        .mega-title-underline {
+          display: block;
+          width: 40px;
+          height: 3px;
+          background: #2563eb;
+          border-radius: 2px;
+          margin-top: 8px;
+        }
+
+        .mega-column-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .mega-item {
+          display: block;
+          padding: 8px 0;
+          color: #2563eb;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.2s ease;
+          letter-spacing: -0.005em;
+        }
+
+        .mega-item:hover {
+          color: #1d4ed8;
+          padding-left: 6px;
+        }
+
+        /* CTA button */
         .nav-cta {
           display: flex;
           align-items: center;
           gap: 16px;
-          flex-shrink: 0;
         }
 
-        .cta-button {
+        .cta-btn {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          padding: 15px 21px;
-          background-color: #22a7e0;
+          padding: 10px 24px;
+          background: #22a7e0;
           color: #ffffff;
-          font-size: 16.8px;
+          border-radius: 50px;
+          font-size: 0.88rem;
           font-weight: 600;
-          line-height: 1.2;
           text-decoration: none;
-          border-radius: 60px;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(34, 167, 224, 0.3);
+          box-shadow: 0 2px 12px rgba(34, 167, 224, 0.3);
+          white-space: nowrap;
         }
 
-        .cta-button:hover {
-          background-color: #178dc8;
+        .cta-btn:hover {
+          background: #178dc8;
           transform: translateY(-1px);
-          box-shadow: 0 8px 30px rgba(34, 167, 224, 0.5);
+          box-shadow: 0 6px 20px rgba(34, 167, 224, 0.4);
         }
 
-        .mobile-menu-btn {
+        .mobile-toggle {
           display: none;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 4px;
-          width: 40px;
-          height: 40px;
-          background: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          border-radius: 50%;
+          font-size: 1.4rem;
+          color: white;
+          background: none;
+          border: none;
           cursor: pointer;
+          padding: 4px 8px;
         }
 
-        .mobile-menu-btn span {
-          width: 18px;
-          height: 2px;
-          background-color: #ffffff;
-          border-radius: 2px;
-          transition: all 0.3s;
-        }
-
+        /* ===== Mobile Menu ===== */
         .mobile-menu {
-          display: none;
-          flex-direction: column;
-          background: rgba(5, 56, 86, 0.98);
-          padding: 16px 24px 24px;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          position: fixed;
+          top: 66px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(8, 38, 56, 0.98);
+          backdrop-filter: blur(20px);
+          z-index: 999;
+          padding: 32px 0;
+          overflow-y: auto;
         }
 
-        .mobile-menu a {
-          color: rgba(255, 255, 255, 0.9);
+        .mobile-link {
+          display: block;
+          color: rgba(255, 255, 255, 0.8);
           text-decoration: none;
-          padding: 12px 0;
-          font-size: 15px;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 14px 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.06);
           transition: color 0.2s;
         }
 
-        .mobile-menu a:hover {
+        .mobile-link:hover {
+          color: #22a7e0;
+        }
+
+        .mobile-link-dropdown {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background: none;
+          border: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          font-family: inherit;
+          cursor: pointer;
+        }
+
+        .mobile-dropdown-wrapper {
+          /* wrapper */
+        }
+
+        .mobile-sub-menu {
+          padding: 8px 0 8px 8px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .mobile-sub-category {
+          margin-bottom: 12px;
+        }
+
+        .mobile-sub-category-title {
+          font-size: 0.82rem;
+          font-weight: 700;
+          color: #22a7e0;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          margin: 0 0 4px 0;
+          padding: 6px 0 4px;
+        }
+
+        .mobile-sub-link {
+          display: block;
+          color: rgba(255, 255, 255, 0.65);
+          text-decoration: none;
+          font-size: 0.95rem;
+          font-weight: 400;
+          padding: 8px 0 8px 8px;
+          transition: color 0.2s;
+        }
+
+        .mobile-sub-link:hover {
           color: #22a7e0;
         }
 
         .mobile-cta {
-          margin-top: 12px;
-          background: #22a7e0 !important;
-          color: white !important;
+          display: block;
           text-align: center;
-          padding: 12px !important;
-          border-radius: 60px;
-          font-weight: 600;
-          border: none !important;
+          background: #22a7e0;
+          color: white;
+          padding: 14px 28px;
+          border-radius: 50px;
+          font-weight: 700;
+          font-size: 0.95rem;
+          text-decoration: none;
+          margin-top: 24px;
+          box-shadow: 0 4px 16px rgba(34, 167, 224, 0.3);
+          transition: background 0.3s;
         }
 
-        @media (max-width: 1200px) {
+        .mobile-cta:hover {
+          background: #178dc8;
+        }
+
+        @media (max-width: 900px) {
           .nav-links {
-            gap: 20px;
-            margin-left: 24px;
-          }
-          .nav-links li a {
-            font-size: 15px;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          .nav-links {
             display: none;
           }
-          .mobile-menu-btn {
-            display: flex;
-          }
-          .mobile-menu {
-            display: flex;
-          }
-          .top-hat-actions {
+          .cta-btn {
             display: none;
           }
-          .cta-button {
-            display: none;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .top-hat {
-            display: none;
-          }
-          .main-nav {
-            padding: 10px 0;
-          }
-          .nav-inner {
-            padding: 0 16px;
+          .mobile-toggle {
+            display: block;
           }
         }
       `}</style>

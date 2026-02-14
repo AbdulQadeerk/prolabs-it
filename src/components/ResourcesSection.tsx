@@ -1,3 +1,6 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 const resources = [
   {
     tag: "Cybersecurity",
@@ -26,8 +29,9 @@ const resources = [
 ];
 
 export default function ResourcesSection() {
+  const { ref, isVisible } = useScrollReveal();
   return (
-    <section id="resources" className="resources-section">
+    <section id="resources" ref={ref as React.RefObject<HTMLElement>} className={`resources-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="section-header">
           <p className="eyebrow">Latest Insights</p>
@@ -178,6 +182,25 @@ export default function ResourcesSection() {
             grid-template-columns: 1fr;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .resources-section:not(.animate-in) .section-header,
+        .resources-section:not(.animate-in) .resource-card {
+          opacity: 0; transform: translateY(32px);
+        }
+        .resources-section.animate-in .section-header {
+          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .resources-section.animate-in .resource-card {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .resources-section.animate-in .resource-card:nth-child(1) { animation-delay: 0.1s; }
+        .resources-section.animate-in .resource-card:nth-child(2) { animation-delay: 0.2s; }
+        .resources-section.animate-in .resource-card:nth-child(3) { animation-delay: 0.3s; }
+        .resources-section.animate-in .resource-card:nth-child(4) { animation-delay: 0.4s; }
       `}</style>
     </section>
   );

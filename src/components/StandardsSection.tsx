@@ -1,4 +1,8 @@
+"use client";
+import { useScrollReveal } from "./animations";
+
 export default function StandardsSection() {
+  const { ref, isVisible } = useScrollReveal();
   const certifications = [
     { name: "ISO 27001", desc: "Information Security" },
     { name: "SOC 2", desc: "Type II Compliance" },
@@ -7,7 +11,7 @@ export default function StandardsSection() {
   ];
 
   return (
-    <section className="standards-section">
+    <section ref={ref as React.RefObject<HTMLElement>} className={`standards-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <p className="eyebrow">Compliance & Security</p>
         <h2>Built for IT. Backed by the world&apos;s strictest standards.</h2>
@@ -118,9 +122,36 @@ export default function StandardsSection() {
           }
           .badge-card {
             min-width: 140px;
-            padding: 22px 18px;
+            padding: 24px 20px;
           }
         }
+
+        @keyframes revealUp {
+          from { opacity: 0; transform: translateY(32px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .standards-section:not(.animate-in) .eyebrow,
+        .standards-section:not(.animate-in) h2,
+        .standards-section:not(.animate-in) .standards-desc,
+        .standards-section:not(.animate-in) .badge-card {
+          opacity: 0; transform: translateY(32px);
+        }
+        .standards-section.animate-in .eyebrow {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .standards-section.animate-in h2 {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) 0.08s forwards;
+        }
+        .standards-section.animate-in .standards-desc {
+          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) 0.16s forwards;
+        }
+        .standards-section.animate-in .badge-card {
+          animation: revealUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+        .standards-section.animate-in .badge-card:nth-child(1) { animation-delay: 0.25s; }
+        .standards-section.animate-in .badge-card:nth-child(2) { animation-delay: 0.33s; }
+        .standards-section.animate-in .badge-card:nth-child(3) { animation-delay: 0.41s; }
+        .standards-section.animate-in .badge-card:nth-child(4) { animation-delay: 0.49s; }
       `}</style>
     </section>
   );
