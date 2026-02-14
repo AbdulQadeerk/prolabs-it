@@ -420,10 +420,10 @@ export default function Header() {
           left: 0;
           right: 0;
           width: 100vw;
-          background: #ffffff;
-          border-top: 3px solid #2563eb;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18),
-            0 4px 20px rgba(0, 0, 0, 0.08);
+          background: #082638;
+          border-top: 3px solid #22a7e0;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+            0 4px 20px rgba(0, 0, 0, 0.2);
           animation: megaFadeIn 0.25s ease;
           z-index: 1001;
         }
@@ -461,13 +461,13 @@ export default function Header() {
         }
 
         .mega-column:not(:last-child) {
-          border-right: 1px solid #e5e7eb;
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .mega-column-title {
           font-size: 1.05rem;
           font-weight: 700;
-          color: #0f172a;
+          color: #ffffff;
           margin: 0 0 12px 0;
           padding-bottom: 10px;
           position: relative;
@@ -478,7 +478,7 @@ export default function Header() {
           display: block;
           width: 40px;
           height: 3px;
-          background: #2563eb;
+          background: #22a7e0;
           border-radius: 2px;
           margin-top: 8px;
         }
@@ -492,7 +492,7 @@ export default function Header() {
         .mega-item {
           display: block;
           padding: 8px 0;
-          color: #2563eb;
+          color: rgba(255, 255, 255, 0.7);
           text-decoration: none;
           font-size: 0.9rem;
           font-weight: 500;
@@ -501,7 +501,7 @@ export default function Header() {
         }
 
         .mega-item:hover {
-          color: #1d4ed8;
+          color: #22a7e0;
           padding-left: 6px;
         }
 
