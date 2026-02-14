@@ -3,6 +3,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
+import BrandCarousel from "@/components/BrandCarousel";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import LeadershipBand from "@/components/LeadershipBand";
 import BenefitsSplit from "@/components/BenefitsSplit";
@@ -20,13 +21,15 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <TrustBar />
+
+        <BrandCarousel />
         <ServicesShowcase />
         <LeadershipBand />
         <BenefitsSplit />
         <CaseStudy />
         <StackSection />
         <Features />
+        <TrustBar />
         <ResourcesSection />
         <StandardsSection />
         <CTASection />
