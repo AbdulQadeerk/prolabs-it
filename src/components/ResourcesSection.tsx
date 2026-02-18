@@ -34,21 +34,19 @@ export default function ResourcesSection() {
     <section id="resources" ref={ref as React.RefObject<HTMLElement>} className={`resources-section ${isVisible ? 'animate-in' : ''}`}>
       <div className="container">
         <div className="section-header">
-          <p className="eyebrow">Latest Insights</p>
-          <h2>Events, Updates, and Resources</h2>
+          <h2 className="section-title">Events, Updates, and Resources</h2>
           <p className="section-desc">From digital transformation to data security — read what&apos;s shaping the future of modern IT services</p>
         </div>
         <div className="resources-grid">
           {resources.map((item, index) => (
             <article key={index} className="resource-card">
-              <div className="card-header" style={{ background: `linear-gradient(135deg, ${item.color} 0%, ${item.color}dd 100%)` }}>
-                <span className="card-tag">{item.tag}</span>
-              </div>
+              <div className="card-accent" style={{ backgroundColor: item.color }}></div>
               <div className="card-body">
+                <span className="card-tag" style={{ color: item.color }}>{item.tag}</span>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
                 <a href="#" className="card-link">
-                  Read more →
+                  Read more <span className="arrow">→</span>
                 </a>
               </div>
             </article>
@@ -58,145 +56,141 @@ export default function ResourcesSection() {
 
       <style jsx>{`
         .resources-section {
-          background: var(--bg-primary);
-          padding: 80px 0;
+          background: #f8fafc;
+          padding: 120px 0;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 48px;
+          margin-bottom: 80px;
         }
 
-        .eyebrow {
-          color: #22a7e0;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          font-size: 0.72rem;
-          font-weight: 700;
-          margin-bottom: 12px;
-        }
-
-        h2 {
-          color: var(--primary-blue);
-          font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-          margin-bottom: 12px;
+        .section-title {
+          color: #082638;
+          font-size: clamp(2rem, 4vw, 3rem);
+          margin-bottom: 24px;
+          font-weight: 800;
+          letter-spacing: -0.02em;
         }
 
         .section-desc {
-          color: var(--text-secondary);
-          font-size: 0.95rem;
-          max-width: 600px;
+          color: #475569;
+          font-size: 1.1rem;
+          max-width: 700px;
           margin: 0 auto;
+          line-height: 1.6;
         }
 
         .resources-grid {
           display: grid;
           grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 24px;
+          gap: 32px;
+          max-width: 1400px;
+          margin: 0 auto;
         }
 
         .resource-card {
-          border: 1px solid #e2e8f0;
-          border-radius: 16px;
+          border-radius: 20px;
           background: white;
-          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+          box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
           overflow: hidden;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+          border: 1px solid #f1f5f9;
+          display: flex;
+          flex-direction: column;
         }
 
         .resource-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 18px 40px rgba(34, 167, 224, 0.1);
-          border-color: rgba(34, 167, 224, 0.3);
+          transform: translateY(-8px);
+          box-shadow: 0 30px 60px rgba(5, 56, 86, 0.12);
         }
 
-        .card-header {
-          height: 140px;
-          display: flex;
-          align-items: flex-end;
-          padding: 16px;
-          position: relative;
-          overflow: hidden;
-        }
-
-        .card-header::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.15) 100%);
-        }
-
-        .card-tag {
-          position: relative;
-          z-index: 1;
-          font-size: 0.65rem;
-          text-transform: uppercase;
-          letter-spacing: 1.5px;
-          color: white;
-          background: rgba(255, 255, 255, 0.2);
-          backdrop-filter: blur(8px);
-          padding: 4px 12px;
-          border-radius: 20px;
-          font-weight: 600;
+        .card-accent {
+          height: 6px;
+          width: 100%;
         }
 
         .card-body {
-          padding: 20px;
+          padding: 32px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card-tag {
+          font-size: 0.75rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-weight: 800;
+          margin-bottom: 16px;
+          display: block;
         }
 
         h3 {
-          font-size: 0.95rem;
-          margin-bottom: 10px;
-          color: var(--primary-blue);
-          line-height: 1.35;
+          font-size: 1.15rem;
+          margin-bottom: 16px;
+          color: #082638;
+          line-height: 1.4;
           font-weight: 700;
         }
 
         p {
-          color: var(--text-secondary);
-          font-size: 0.85rem;
-          margin-bottom: 16px;
-          line-height: 1.5;
+          color: #475569;
+          font-size: 0.95rem;
+          margin-bottom: 24px;
+          line-height: 1.6;
+          flex-grow: 1;
         }
 
         .card-link {
-          color: #22a7e0;
-          font-weight: 600;
-          font-size: 0.8rem;
+          color: #082638;
+          font-weight: 800;
+          font-size: 0.9rem;
           text-decoration: none;
-          transition: color 0.2s;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: all 0.2s;
         }
 
-        .card-link:hover {
-          color: #178dc8;
+        .arrow {
+          transition: transform 0.2s;
+          color: #22a7e0;
         }
 
-        @media (max-width: 1024px) {
+        .card-link:hover .arrow {
+          transform: translateX(5px);
+        }
+
+        @media (max-width: 1200px) {
           .resources-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
-        @media (max-width: 720px) {
+        @media (max-width: 640px) {
           .resources-grid {
             grid-template-columns: 1fr;
+          }
+          .resources-section {
+            padding: 80px 0;
           }
         }
 
         @keyframes revealUp {
-          from { opacity: 0; transform: translateY(32px); }
+          from { opacity: 0; transform: translateY(40px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        .resources-section:not(.animate-in) .section-header,
+
         .resources-section:not(.animate-in) .resource-card {
-          opacity: 0; transform: translateY(32px);
+          opacity: 0;
+          transform: translateY(40px);
         }
-        .resources-section.animate-in .section-header {
-          animation: revealUp 0.7s cubic-bezier(0.23,1,0.32,1) forwards;
-        }
+
         .resources-section.animate-in .resource-card {
-          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
+          animation: revealUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
+
         .resources-section.animate-in .resource-card:nth-child(1) { animation-delay: 0.1s; }
         .resources-section.animate-in .resource-card:nth-child(2) { animation-delay: 0.2s; }
         .resources-section.animate-in .resource-card:nth-child(3) { animation-delay: 0.3s; }

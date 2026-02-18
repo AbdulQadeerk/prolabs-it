@@ -90,8 +90,8 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
     { href: "#services", label: "Services", hasDropdown: true },
     { href: "#partnership", label: "Partnership" },
     { href: "#blog", label: "Blog" },
@@ -127,18 +127,14 @@ export default function Header() {
           </Link>
 
           <ul className="nav-links">
-            {navLinks.map((link) =>
-              link.hasDropdown ? (
-                <li
-                  key={link.href}
-                  className="nav-dropdown-wrapper"
-                  ref={dropdownRef}
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                >
+            {navLinks.map((link) => (
+              <li key={link.href} className={link.hasDropdown ? "nav-dropdown-wrapper" : ""}>
+                {link.hasDropdown ? (
                   <button
                     className="nav-link nav-link-dropdown"
                     onClick={() => setServicesOpen(!servicesOpen)}
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
                     aria-expanded={servicesOpen}
                     aria-haspopup="true"
                   >
@@ -159,44 +155,44 @@ export default function Header() {
                       />
                     </svg>
                   </button>
-
-                  {/* Mega Dropdown */}
-                  {servicesOpen && (
-                    <div className="mega-dropdown">
-                      <div className="mega-dropdown-inner">
-                        {serviceColumns.map((column) => (
-                          <div key={column.title} className="mega-column">
-                            <h4 className="mega-column-title">
-                              {column.title}
-                              <span className="mega-title-underline" />
-                            </h4>
-                            <ul className="mega-column-list">
-                              {column.items.map((item) => (
-                                <li key={item.href}>
-                                  <a
-                                    href={item.href}
-                                    className="mega-item"
-                                    onClick={() => setServicesOpen(false)}
-                                  >
-                                    {item.label}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </li>
-              ) : (
-                <li key={link.href}>
+                ) : (
                   <a href={link.href} className="nav-link">
                     {link.label}
                   </a>
-                </li>
-              )
-            )}
+                )}
+
+                {link.hasDropdown && servicesOpen && (
+                  <div className="mega-dropdown"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <div className="mega-dropdown-inner">
+                      {serviceColumns.map((column) => (
+                        <div key={column.title} className="mega-column">
+                          <h4 className="mega-column-title">
+                            {column.title}
+                            <span className="mega-title-underline" />
+                          </h4>
+                          <ul className="mega-column-list">
+                            {column.items.map((item) => (
+                              <li key={item.href}>
+                                <a
+                                  href={item.href}
+                                  className="mega-item"
+                                  onClick={() => setServicesOpen(false)}
+                                >
+                                  {item.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </li>
+            ))}
           </ul>
 
           <div className="nav-cta">
@@ -268,14 +264,25 @@ export default function Header() {
                   )}
                 </div>
               ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="mobile-link"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith("/") ? (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="mobile-link"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="mobile-link"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                )
               )
             )}
             <a

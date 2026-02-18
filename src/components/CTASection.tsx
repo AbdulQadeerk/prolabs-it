@@ -22,7 +22,7 @@ export default function CTASection() {
 
       <style jsx>{`
         .cta-section {
-          background: linear-gradient(135deg, #0b2f45 0%, #053856 50%, #082638 100%);
+          background: linear-gradient(135deg, #0b2f45 0%, #082638 50%, #082638 100%);
           padding: 90px 0;
           position: relative;
           overflow: hidden;
@@ -92,13 +92,14 @@ export default function CTASection() {
           background: #22a7e0;
           color: white;
           border: none;
-          box-shadow: 0 4px 25px rgba(34, 167, 224, 0.35);
+          font-weight: 700;
+          box-shadow: 0 10px 30px rgba(34, 167, 224, 0.25);
         }
 
         .cta-section :global(.btn-primary:hover) {
           background: #178dc8;
           transform: translateY(-2px);
-          box-shadow: 0 8px 35px rgba(34, 167, 224, 0.5);
+          box-shadow: 0 15px 35px rgba(34, 167, 224, 0.4);
         }
 
         .cta-section :global(.btn-outline) {
