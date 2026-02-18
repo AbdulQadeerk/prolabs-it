@@ -142,7 +142,7 @@ export default function Footer() {
             </div>
           </details>
           <div className="footer-mobile-actions">
-            <a href="#contact" className="btn btn-primary btn-small">Get a Free Consultation</a>
+            <a href="/contact" className="btn btn-primary btn-small">Get a Free Consultation</a>
           </div>
           <p className="copyright-mobile">&copy; {new Date().getFullYear()} Professional Labs. All rights reserved.</p>
         </div>

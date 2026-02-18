@@ -14,7 +14,7 @@ export default function CTASection() {
             Join 100+ businesses across 35+ countries who trust Professional Labs for their IT operations, security, and cloud services.
           </p>
           <div className="cta-buttons">
-            <a href="#contact" className="btn btn-primary btn-large">Get a Free Consultation</a>
+            <a href="/contact" className="btn btn-primary btn-large">Get a Free Consultation</a>
             <a href="#services" className="btn btn-outline btn-large">Explore Services</a>
           </div>
         </div>

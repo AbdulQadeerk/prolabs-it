@@ -95,7 +95,7 @@ export default function Header() {
     { href: "#services", label: "Services", hasDropdown: true },
     { href: "#partnership", label: "Partnership" },
     { href: "#blog", label: "Blog" },
-    { href: "#contact", label: "Contact" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -106,7 +106,7 @@ export default function Header() {
           <span>
             🚀 Professional Labs — Trusted IT Solutions across 35+ countries
           </span>
-          <a href="#contact" className="top-hat-link">
+          <a href="/contact" className="top-hat-link">
             Contact Us →
           </a>
         </div>
@@ -196,9 +196,9 @@ export default function Header() {
           </ul>
 
           <div className="nav-cta">
-            <a href="#contact" className="cta-btn">
+            <Link href="/contact" className="cta-btn">
               Get a Free Consultation
-            </a>
+            </Link>
             <button
               className="mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -285,13 +285,13 @@ export default function Header() {
                 )
               )
             )}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="mobile-cta"
               onClick={() => setMobileOpen(false)}
             >
               Get a Free Consultation
-            </a>
+            </Link>
           </div>
         </div>
       )}
