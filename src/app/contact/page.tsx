@@ -148,7 +148,7 @@ export default function ContactPage() {
         .contact-page {
           background: #ffffff;
           color: #082638;
-          padding-top: 100px;
+          padding-top: 140px;
         }
 
         .container {

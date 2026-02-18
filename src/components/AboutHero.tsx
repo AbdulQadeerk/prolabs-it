@@ -3,66 +3,66 @@
 import { useScrollReveal } from "./animations";
 
 export default function AboutHero() {
-    const { ref, isVisible } = useScrollReveal();
+  const { ref, isVisible } = useScrollReveal();
 
-    return (
-        <section ref={ref as React.RefObject<HTMLElement>} className={`about-hero-section ${isVisible ? 'animate-in' : ''}`}>
-            <div className="container banner-outer">
-                <div className="about-hero-banner">
-                    {/* Background Video */}
-                    <div className="video-background">
-                        <video
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="video-content"
-                        >
-                            <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-city-at-night-with-bright-lights-and-traffic-lights-42991-large.mp4" type="video/mp4" />
-                        </video>
-                    </div>
+  return (
+    <section ref={ref as React.RefObject<HTMLElement>} className={`about-hero-section ${isVisible ? 'animate-in' : ''}`}>
+      <div className="container banner-outer">
+        <div className="about-hero-banner">
+          {/* Background Video */}
+          <div className="video-background">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="video-content"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-modern-city-at-night-with-bright-lights-and-traffic-lights-42991-large.mp4" type="video/mp4" />
+            </video>
+          </div>
 
-                    {/* Dynamic Mesh Overlay */}
-                    <div className="hero-overlay"></div>
-                    <div className="mesh-gradient"></div>
+          {/* Dynamic Mesh Overlay */}
+          <div className="hero-overlay"></div>
+          <div className="mesh-gradient"></div>
 
-                    <div className="hero-content relative z-10">
-                        <div className="content-inner">
-                            <div className="hero-badge">
-                                <span>ESTABLISHED 2012</span>
-                            </div>
-                            <h1 className="hero-title">
-                                <span className="word-reveal">Who</span>
-                                <span className="word-reveal">We</span>
-                                <span className="word-reveal">Are</span>
-                            </h1>
-                            <div className="title-underline"></div>
-                            <p className="hero-subtitle">
-                                Professional Labs was founded with one goal: to put the customer first and <strong>simplify complex technology</strong> for everyone.
-                            </p>
+          <div className="hero-content relative z-10">
+            <div className="content-inner">
+              <div className="hero-badge">
+                <span>ESTABLISHED 2012</span>
+              </div>
+              <h1 className="hero-title">
+                <span className="word-reveal">Who</span>
+                <span className="word-reveal">We</span>
+                <span className="word-reveal">Are</span>
+              </h1>
+              <div className="title-underline"></div>
+              <p className="hero-subtitle">
+                Professional Labs was founded with one goal: to put the customer first and <strong>simplify complex technology</strong> for everyone.
+              </p>
 
-                            <div className="scroll-hint">
-                                <div className="mouse">
-                                    <div className="wheel"></div>
-                                </div>
-                                <span>Discover Our Story</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Premium Side Decorative Elements */}
-                    <div className="premium-glow left-glow"></div>
-                    <div className="premium-glow right-glow"></div>
-
-                    {/* Floating Data Nodes */}
-                    <div className="floating-node node-1"></div>
-                    <div className="floating-node node-2"></div>
+              <div className="scroll-hint">
+                <div className="mouse">
+                  <div className="wheel"></div>
                 </div>
+                <span>Discover Our Story</span>
+              </div>
             </div>
+          </div>
 
-            <style jsx>{`
+          {/* Premium Side Decorative Elements */}
+          <div className="premium-glow left-glow"></div>
+          <div className="premium-glow right-glow"></div>
+
+          {/* Floating Data Nodes */}
+          <div className="floating-node node-1"></div>
+          <div className="floating-node node-2"></div>
+        </div>
+      </div>
+
+      <style jsx>{`
         .about-hero-section {
-          padding: 80px 0 40px;
+          padding: 140px 0 40px;
           background: #f8fafc;
         }
 
@@ -291,6 +291,7 @@ export default function AboutHero() {
         }
 
         @media (max-width: 768px) {
+          .about-hero-section { padding: 100px 0 20px; }
           .banner-outer { padding: 0 16px; }
           .about-hero-banner { min-height: 580px; border-radius: 32px; }
           .hero-content { padding: 40px 20px; }
@@ -300,6 +301,6 @@ export default function AboutHero() {
           .scroll-hint { display: none; }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 }
