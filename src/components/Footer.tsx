@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Our Services</h4>
             <ul>
-              <li><a href="#">Managed SOC Service</a></li>
+              <li><a href="/services/managed-soc">Managed SOC Service</a></li>
               <li><a href="#">Cloud Managed Services</a></li>
               <li><a href="#">Email Security</a></li>
               <li><a href="#">Azure Security</a></li>
@@ -116,7 +116,7 @@ export default function Footer() {
           <details>
             <summary>Our Services</summary>
             <div className="footer-mobile-links">
-              <a href="#">Managed SOC Service</a>
+              <a href="/services/managed-soc">Managed SOC Service</a>
               <a href="#">Cloud Managed Services</a>
               <a href="#">Email Security</a>
               <a href="#">Azure Security</a>

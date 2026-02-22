@@ -13,6 +13,7 @@ import {
   Briefcase,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Service {
   id: string;
@@ -21,6 +22,7 @@ interface Service {
   title: string;
   description: string;
   features: string[];
+  href: string;
 }
 
 const services: Service[] = [
@@ -36,6 +38,7 @@ const services: Service[] = [
       "Automated incident response workflows",
       "Advanced threat intelligence integration",
     ],
+    href: "/services/managed-soc",
   },
   {
     id: "cloud",
@@ -49,6 +52,7 @@ const services: Service[] = [
       "Multi-cloud environment management",
       "Cost monitoring and optimization",
     ],
+    href: "#cloud",
   },
   {
     id: "email",
@@ -62,6 +66,7 @@ const services: Service[] = [
       "Email encryption and DLP",
       "Real-time threat intelligence",
     ],
+    href: "#email",
   },
   {
     id: "cloudapp",
@@ -75,6 +80,7 @@ const services: Service[] = [
       "User behavior analytics",
       "Data loss prevention policies",
     ],
+    href: "#cloudapp",
   },
   {
     id: "azure",
@@ -88,6 +94,7 @@ const services: Service[] = [
       "Network security group configuration",
       "Compliance and governance automation",
     ],
+    href: "#azure",
   },
   {
     id: "avd",
@@ -101,6 +108,7 @@ const services: Service[] = [
       "Secure remote access from any device",
       "Cost-effective virtual desktop infrastructure",
     ],
+    href: "#avd",
   },
   {
     id: "helpdesk",
@@ -114,6 +122,7 @@ const services: Service[] = [
       "SLA-driven resolution tracking",
       "Proactive system monitoring",
     ],
+    href: "#helpdesk",
   },
   {
     id: "network",
@@ -127,6 +136,7 @@ const services: Service[] = [
       "Firewall and intrusion prevention",
       "Network performance monitoring",
     ],
+    href: "#network",
   },
   {
     id: "workplace",
@@ -140,6 +150,7 @@ const services: Service[] = [
       "Collaboration and productivity tools",
       "Employee experience optimization",
     ],
+    href: "#workplace",
   },
 ];
 
@@ -206,9 +217,9 @@ export default function ServicesShowcase() {
                 ))}
               </div>
 
-              <a href="#" className="learn-more-link">
+              <Link href={activeService.href} className="learn-more-link">
                 More about {activeService.name} <ArrowRight size={16} />
-              </a>
+              </Link>
             </div>
 
             <div className="content-right">
