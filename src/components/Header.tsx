@@ -9,7 +9,7 @@ const serviceColumns = [
     title: "Security",
     items: [
       { href: "/services/managed-soc", label: "Managed SOC Services" },
-      { href: "#azure-security", label: "Azure Security" },
+      { href: "/services/azure-security", label: "Azure Security" },
       { href: "#defender-endpoint", label: "Defender for Endpoint" },
       { href: "#email-security", label: "Email Security" },
       { href: "#cloud-app-security", label: "Microsoft Cloud App Security" },

@@ -94,7 +94,7 @@ const services: Service[] = [
       "Network security group configuration",
       "Compliance and governance automation",
     ],
-    href: "#azure",
+    href: "/services/azure-security",
   },
   {
     id: "avd",

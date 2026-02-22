@@ -38,7 +38,7 @@ export default function Footer() {
               <li><a href="/services/managed-soc">Managed SOC Service</a></li>
               <li><a href="#">Cloud Managed Services</a></li>
               <li><a href="#">Email Security</a></li>
-              <li><a href="#">Azure Security</a></li>
+              <li><a href="/services/azure-security">Azure Security</a></li>
               <li><a href="#">IT Help Desk</a></li>
               <li><a href="#">Network & Security</a></li>
             </ul>
@@ -119,7 +119,7 @@ export default function Footer() {
               <a href="/services/managed-soc">Managed SOC Service</a>
               <a href="#">Cloud Managed Services</a>
               <a href="#">Email Security</a>
-              <a href="#">Azure Security</a>
+              <a href="/services/azure-security">Azure Security</a>
               <a href="#">IT Help Desk</a>
             </div>
           </details>
