@@ -50,7 +50,7 @@ export default function Footer() {
             <ul>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Our Tools</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a href="#">Careers</a></li>
               <li><a href="#">Partners</a></li>
             </ul>
@@ -128,7 +128,7 @@ export default function Footer() {
             <div className="footer-mobile-links">
               <a href="#">About Us</a>
               <a href="#">Our Tools</a>
-              <a href="#">Blog</a>
+              <a href="/blog">Blog</a>
               <a href="#">Careers</a>
             </div>
           </details>
