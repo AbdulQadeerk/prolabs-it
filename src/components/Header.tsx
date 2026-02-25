@@ -10,8 +10,8 @@ const serviceColumns = [
     items: [
       { href: "/services/managed-soc", label: "Managed SOC Services" },
       { href: "/services/azure-security", label: "Azure Security" },
-      { href: "#defender-endpoint", label: "Defender for Endpoint" },
-      { href: "#email-security", label: "Email Security" },
+      { href: "/services/defender-endpoint", label: "Defender for Endpoint" },
+      { href: "/services/email-security", label: "Email Security" },
       { href: "#cloud-app-security", label: "Microsoft Cloud App Security" },
       { href: "#defender-identity", label: "Defender for Identity" },
       { href: "#vapt", label: "VAPT" },
@@ -59,7 +59,7 @@ const serviceColumns = [
 
 // Flatten all service items for mobile menu
 const allServiceItems = serviceColumns.flatMap((col) =>
-  col.items.map((item) => ({ ...item, category: col.title }))
+  col.items.map((item) => ({ ...item, category: col.title })),
 );
 
 export default function Header() {
@@ -128,7 +128,10 @@ export default function Header() {
 
           <ul className="nav-links">
             {navLinks.map((link) => (
-              <li key={link.href} className={link.hasDropdown ? "nav-dropdown-wrapper" : ""}>
+              <li
+                key={link.href}
+                className={link.hasDropdown ? "nav-dropdown-wrapper" : ""}
+              >
                 {link.hasDropdown ? (
                   <button
                     className="nav-link nav-link-dropdown"
@@ -162,7 +165,8 @@ export default function Header() {
                 )}
 
                 {link.hasDropdown && servicesOpen && (
-                  <div className="mega-dropdown"
+                  <div
+                    className="mega-dropdown"
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                   >
@@ -263,27 +267,25 @@ export default function Header() {
                     </div>
                   )}
                 </div>
+              ) : link.href.startsWith("/") ? (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
               ) : (
-                link.href.startsWith("/") ? (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="mobile-link"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="mobile-link"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                )
-              )
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="mobile-link"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ),
             )}
             <Link
               href="/contact"
@@ -429,7 +431,8 @@ export default function Header() {
           width: 100vw;
           background: #082638;
           border-top: 3px solid #22a7e0;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+          box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.3),
             0 4px 20px rgba(0, 0, 0, 0.2);
           animation: megaFadeIn 0.25s ease;
           z-index: 1001;
