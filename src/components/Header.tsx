@@ -12,11 +12,20 @@ const serviceColumns = [
       { href: "/services/azure-security", label: "Azure Security" },
       { href: "/services/defender-endpoint", label: "Defender for Endpoint" },
       { href: "/services/email-security", label: "Email Security" },
-      { href: "#cloud-app-security", label: "Microsoft Cloud App Security" },
-      { href: "#defender-identity", label: "Defender for Identity" },
-      { href: "#vapt", label: "VAPT" },
-      { href: "#network-security", label: "Network and Security Services" },
-      { href: "#identity-access", label: "Identity and Access Management" },
+      {
+        href: "/services/cloud-app-security",
+        label: "Microsoft Cloud App Security",
+      },
+      { href: "/services/defender-identity", label: "Defender for Identity" },
+      { href: "/services/vapt", label: "VAPT" },
+      {
+        href: "/services/network-security",
+        label: "Network and Security Services",
+      },
+      {
+        href: "/services/identity-access",
+        label: "Identity and Access Management",
+      },
     ],
   },
   {

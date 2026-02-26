@@ -74,7 +74,13 @@ export default function Footer() {
                 <a href="/services/defender-endpoint">Defender for Endpoint</a>
               </li>
               <li>
-                <a href="#">IT Help Desk</a>
+                <a href="/services/cloud-app-security">Cloud App Security</a>
+              </li>
+              <li>
+                <a href="/services/defender-identity">Defender for Identity</a>
+              </li>
+              <li>
+                <a href="/services/vapt">VAPT</a>
               </li>
               <li>
                 <a href="#">Network & Security</a>
@@ -191,6 +197,9 @@ export default function Footer() {
               <a href="/services/email-security">Email Security</a>
               <a href="/services/azure-security">Azure Security</a>
               <a href="/services/defender-endpoint">Defender for Endpoint</a>
+              <a href="/services/cloud-app-security">Cloud App Security</a>
+              <a href="/services/defender-identity">Defender for Identity</a>
+              <a href="/services/vapt">VAPT</a>
               <a href="#">IT Help Desk</a>
             </div>
           </details>

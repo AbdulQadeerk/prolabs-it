@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --c-blue-0: #22a7e0;
   /* ProLabs sky */
@@ -80,8 +82,9 @@
   --bg-primary: var(--c-white-0);
   --bg-secondary: #f3faff;
   --bg-dark: var(--c-blue-5);
-  --font-main: var(--font-geologica), "Geologica", "Montserrat", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  --font-main:
+    var(--font-geologica), "Geologica", "Montserrat", "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
   --container-width: var(--site-width);
   --border-radius: 10px;
   --shadow-sm: 0 18px 30px rgba(13, 45, 68, 0.08);
@@ -147,7 +150,11 @@ button {
   border-radius: 60px;
   font-weight: 600;
   font-size: var(--step-0);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
     border-color 0.2s ease;
   border: 1px solid transparent;
 }

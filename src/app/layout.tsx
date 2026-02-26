@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geologica } from "next/font/google";
 import "./globals.css";
+import "./services.css";
 
 const geologica = Geologica({
   subsets: ["latin"],
