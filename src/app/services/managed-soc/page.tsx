@@ -113,9 +113,11 @@ export default function ManagedSOCPage() {
                 immediate managed detection, and rapid reaction to security
                 problems of varying complexity since the year 1997.
               </motion.p>
-              <motion.div variants={fadeInUp} className="sv-hero-cta">
+              <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
-                  Get a free consultation <ArrowRight size={18} />
+                  Get a free 30-minute consultation with a Professional Labs
+                  expert.
+                  <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </motion.div>

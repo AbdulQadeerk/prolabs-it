@@ -447,6 +447,16 @@ export default function Header() {
           z-index: 1001;
         }
 
+        .mega-dropdown::before {
+          content: "";
+          position: absolute;
+          top: -20px;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: transparent;
+        }
+
         @keyframes megaFadeIn {
           from {
             opacity: 0;

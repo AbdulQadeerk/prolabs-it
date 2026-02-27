@@ -39,27 +39,27 @@ const emailBenefits = [
   {
     title: "Reduce complexity",
     desc: "Stop the requirement for extra email security solutions. Outsource needs for tactical email security and gain actionable information.",
-    icon: <Layers size={24} />,
+    icon: <Layers size={28} />,
   },
   {
     title: "Monitoring and management",
     desc: "Security analysts and responders are available 24 hours a day, seven days a week, to prevent malicious incoming and outgoing emails from causing data loss.",
-    icon: <Activity size={24} />,
+    icon: <Activity size={28} />,
   },
   {
     title: "Email security best practices",
     desc: "Frequent evaluations of email security settings, policies, attack kinds, and frequency, along with proactive recommendations for email security.",
-    icon: <ShieldCheck size={24} />,
+    icon: <ShieldCheck size={28} />,
   },
   {
     title: "Support email compliance",
     desc: "Implementing usage policies for email as part of a compliance program.",
-    icon: <Briefcase size={24} />,
+    icon: <Briefcase size={28} />,
   },
   {
     title: "Extended help in email investigations",
     desc: "Advanced email attacks need careful, ongoing protection and responses to threats.",
-    icon: <SearchCode size={24} />,
+    icon: <SearchCode size={28} />,
   },
 ];
 
@@ -77,12 +77,12 @@ const faqs = [
   {
     question: "How much does email security cost?",
     answer:
-      "Contact us for a tailored quote based on your specific requirements and deployment options.",
+      "The average email security configuration costs for companies less than 500 employee size up to $100 – $500, and for large companies, they are up to $2,000",
   },
   {
     question: "Does Office 365 have email security?",
     answer:
-      "Yes, Office 365 includes built-in security features, but Professional Labs Email Security adds an extra layer of advanced threat protection to safeguard your sensitive data further.",
+      "EOP automatically protects email messages in Microsoft 365 enterprises with Exchange Online mailboxes or Exchange Online Protection (EOP) organizations without Exchange Online mailboxes from spam (junk email).",
   },
 ];
 
@@ -134,21 +134,9 @@ export default function EmailSecurityPage() {
               </motion.h2>
               <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
-                  Book a free 30 min Email Security Meeting NOW{" "}
-                  <ArrowRight size={18} />
+                  Get a free 30-minute consultation with a Professional Labs
+                  expert. <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="sv-meta-tags">
-                <span className="sv-tag">
-                  Professional Labs Email Security Protection for Delaware
-                  Businesses
-                </span>
-                <span className="sv-tag">
-                  Delaware Anti-Phishing and Malware Email Security Services
-                </span>
-                <span className="sv-tag">
-                  Advanced Email Protection Solutions in Delaware
-                </span>
               </motion.div>
             </motion.div>
 
@@ -215,18 +203,22 @@ export default function EmailSecurityPage() {
         <div className="container">
           <div className="sv-security-flex">
             <div className="sv-security-text">
-              <h2 className="sv-h2">Get Peace of Mind from Data Security:</h2>
-              <p className="sv-p mt-6 mb-12">
-                safeguard confidential information and simplify compliance.
-                Professional Labs Email scans messages and attachments
-                automatically for sensitive material, including seamlessly
-                integrated encryption.
-              </p>
+              <div className="flex justify-center">
+                <h2 className="sv-h2">Get Peace of Mind from Data Security:</h2>
+              </div>
+              <div className="flex justify-center text-center">
+                <p className="sv-p mt-6 mb-12 max-w-4xl mx-auto">
+                  safeguard confidential information and simplify compliance.
+                  Professional Labs Email scans messages and attachments
+                  automatically for sensitive material, including seamlessly
+                  integrated encryption.
+                </p>
+              </div>
 
               <div className="sv-security-grid">
                 <div className="sv-scard">
                   <div className="sv-scard-icon">
-                    <ShieldPlus size={24} />
+                    <ShieldPlus size={28} />
                   </div>
                   <div className="sv-scard-body">
                     <h5>Prevent Data Loss</h5>
@@ -241,7 +233,7 @@ export default function EmailSecurityPage() {
                 </div>
                 <div className="sv-scard">
                   <div className="sv-scard-icon">
-                    <LockKeyhole size={24} />
+                    <LockKeyhole size={28} />
                   </div>
                   <div className="sv-scard-body">
                     <h5>Encrypt and Authentication</h5>
@@ -377,15 +369,20 @@ export default function EmailSecurityPage() {
               </motion.div>
             ))}
           </div>
-          <motion.div
-            variants={fadeInUp}
-            className="sv-hero-btn-wrap sv-center mt-16"
-          >
-            <Link href="/contact" className="sv-btn-primary">
-              Book a free 30 min Email Security Meeting NOW{" "}
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+          <div className="pt-20 flex justify-start">
+            <motion.div
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="sv-bottom-cta-wrap"
+            >
+              <Link href="/contact" className="sv-btn-primary">
+                Get a free 30-minute consultation with a Professional Labs
+                expert. <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 

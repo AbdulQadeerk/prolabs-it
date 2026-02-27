@@ -5,7 +5,7 @@
 
 /* ---------- Color Themes (set per-page via root class) ---------- */
 .sv-email {
-  --sv-accent: #0078d4;
+  --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
   --sv-gray: #605e5c;
@@ -19,35 +19,35 @@
   --sv-bg: #f8fafc;
 }
 .sv-azure {
-  --sv-accent: #0078d4;
+  --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
   --sv-gray: #605e5c;
   --sv-bg: #f3f2f1;
 }
 .sv-def {
-  --sv-accent: #0078d4;
+  --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
   --sv-gray: #605e5c;
   --sv-bg: #f3f2f1;
 }
 .sv-mcas {
-  --sv-accent: #0078d4;
+  --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
   --sv-gray: #605e5c;
   --sv-bg: #f3f2f1;
 }
 .sv-identity {
-  --sv-accent: #0078d4;
+  --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
   --sv-gray: #605e5c;
   --sv-bg: #f3f2f1;
 }
 .sv-vapt {
-  --sv-accent: #e81123;
+  --sv-accent: #22a7e0;
   --sv-ink: #1a1a1a;
   --sv-text: #323130;
   --sv-gray: #605e5c;
@@ -207,29 +207,21 @@
   gap: 12px;
   background: var(--sv-accent);
   color: white;
-  padding: 20px 45px;
-  border-radius: 12px;
+  padding: 18px 45px;
+  border-radius: 100px;
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
-  box-shadow: 0 10px 30px rgba(0, 120, 212, 0.25);
-  transition: all 0.3s;
+  box-shadow: 0 12px 24px rgba(34, 167, 224, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sv-btn-primary:hover {
   transform: translateY(-4px);
-  background: #005a9e;
-  box-shadow: 0 15px 40px rgba(0, 120, 212, 0.35);
-}
-.sv-soc .sv-btn-primary {
-  padding: 18px 40px;
-  border-radius: 100px;
-  box-shadow: 0 12px 24px rgba(34, 167, 224, 0.25);
-}
-.sv-soc .sv-btn-primary:hover {
-  transform: translateY(-3px);
   background: #178dc8;
   box-shadow: 0 16px 32px rgba(34, 167, 224, 0.35);
 }
+/* Removed individual SOC button override to make it global */
+/* .sv-soc .sv-btn-primary { ... } */
 .sv-btn-large {
   font-size: 1.2rem;
   padding: 22px 60px;
@@ -484,13 +476,14 @@
   padding: 35px;
   border-radius: 24px;
   background: var(--sv-bg);
-  transition: all 0.3s;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sv-scard:hover {
   background: #fff;
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e1dfdd;
+  border-color: #e1dfdd;
 }
 .sv-scard-icon {
   width: 50px;
@@ -669,17 +662,22 @@
 .sv-hero-btn-wrap.sv-center {
   justify-content: center;
 }
+.sv-bottom-cta-wrap {
+  margin-top: 70px;
+  display: flex;
+}
 .sv-grid-card {
   background: #fff;
   padding: 40px;
   border-radius: 24px;
   text-align: center;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid #e1dfdd;
 }
 .sv-grid-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--sv-accent);
 }
 .sv-grid-icon {
   width: 60px;

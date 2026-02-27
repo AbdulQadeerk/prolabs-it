@@ -33,17 +33,17 @@ const technologies = [
   {
     title: "Endpoint behavioral sensors",
     desc: "capture and process behavioral signals straight from the Windows 10 OS. These sensors transmit this information to an isolated and private cloud instance of Microsoft Defender for Endpoint.",
-    icon: <Activity size={24} />,
+    icon: <Activity size={28} />,
   },
   {
     title: "Cloud security analytics",
     desc: "Microsoft uses big data analytics and device learning technologies to convert behavioral signals into threat detections, insights, and suggested countermeasures.",
-    icon: <Cpu size={24} />,
+    icon: <Cpu size={28} />,
   },
   {
     title: "Threat intelligence",
     desc: "Microsoft's threat hunters and security teams deliver insights from threat intelligence gathered from partners and across the ecosystem. Defender for Endpoint uses threat intelligence to identify attacker tactics, methods, and procedures (TTPs) and produce alerts.",
-    icon: <Target size={24} />,
+    icon: <Target size={28} />,
   },
 ];
 
@@ -62,27 +62,27 @@ const proLabsFeatures = [
   {
     title: "Zero-day protection",
     desc: "using User and Entity Behavior Analytics (UEBA) to detect and prevent unknown threats.",
-    icon: <Zap size={24} />,
+    icon: <Zap size={28} />,
   },
   {
     title: "Monitoring and control",
     desc: "asset management, endpoint vulnerability assessments, application control, auditing, logging, and activity monitoring.",
-    icon: <Eye size={24} />,
+    icon: <Eye size={28} />,
   },
   {
     title: "Reaction orchestration",
     desc: "consists of automated playbooks and remote manual action for remediating compromised endpoints, networks, and user accounts.",
-    icon: <RefreshCcw size={24} />,
+    icon: <RefreshCcw size={28} />,
   },
   {
     title: "Deception technology",
     desc: "lures attackers to an ostensibly weak honeypot, limiting harm and obtaining valuable intelligence regarding attack strategies.",
-    icon: <Search size={24} />,
+    icon: <Search size={28} />,
   },
   {
     title: "Using network analytics",
     desc: "to detect lateral movement, suspect connections, and irregular login",
-    icon: <Activity size={24} />,
+    icon: <Activity size={28} />,
   },
 ];
 
@@ -156,15 +156,10 @@ export default function DefenderEndpointPage() {
                 Fix problems with installing Defender on endpoints.
               </motion.h2>
 
-              <motion.div variants={fadeInUp} className="sv-hero-lead">
-                <strong></strong>
-                <br />
-                Get a free 30-minute consultation with a Professional Labs
-                expert.
-              </motion.div>
               <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
-                  Get Endpoint Protection Now <ArrowRight size={18} />
+                  Get a free 30-minute consultation with a Professional Labs
+                  expert. <ArrowRight size={18} />
                 </Link>
               </motion.div>
             </motion.div>
@@ -299,7 +294,7 @@ export default function DefenderEndpointPage() {
             <h3 className="sv-h3 text-center mb-10 w-full">
               Microsoft Defender of Endpoint
             </h3>
-            <h2 className="sv-h2 mt-4">
+            <h2 className="sv-h3 mt-4">
               Professional Labs Endpoint Protection: Preventing, Detecting, and
               Protecting
             </h2>
@@ -336,7 +331,8 @@ export default function DefenderEndpointPage() {
 
       <motion.div variants={fadeInUp} className="sv-btn-center-wrap">
         <Link href="/contact" className="sv-btn-primary">
-          Get Endpoint Protection Now <ArrowRight size={18} />
+          Get a free 30-minute consultation with a Professional Labs expert.{" "}
+          <ArrowRight size={18} />
         </Link>
       </motion.div>
 

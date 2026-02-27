@@ -78,6 +78,7 @@ export default function CloudAppSecurityPage() {
                 with popular services such as Amazon Web Services, G Suite,
                 Google Cloud, and Dropbox.
               </motion.p>
+
               <motion.div
                 variants={fadeInUp}
                 className="sv-hero-btn-wrap sv-center"
@@ -86,19 +87,6 @@ export default function CloudAppSecurityPage() {
                   Get a free 30-minute consultation with a Professional Labs
                   expert. <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="sv-meta-tags mt-10">
-                <span className="sv-tag">
-                  Professional Labs Microsoft Cloud App Security for Delaware
-                  Businesses.
-                </span>
-                <span className="sv-tag">
-                  Delaware CASB Solutions with Microsoft Defender for Cloud
-                  Apps.
-                </span>
-                <span className="sv-tag">
-                  Cloud App Security Services in Delaware by Professional Labs.
-                </span>
               </motion.div>
             </motion.div>
 
@@ -129,10 +117,13 @@ export default function CloudAppSecurityPage() {
         <div className="container">
           <div className="sv-info-header text-center mb-16">
             <h2 className="sv-h2">Microsoft Cloud App Security</h2>
-            <p className="sv-lead mt-6 max-w-4xl mx-auto">
-              You will need the best partners to handle new difficulties, such
-              as establishing a secure access service edge (SASE) architecture.
-            </p>
+            <div className="flex justify-center">
+              <p className="sv-lead mt-6 max-w-4xl mx-auto">
+                You will need the best partners to handle new difficulties, such
+                as establishing a secure access service edge (SASE)
+                architecture.
+              </p>
+            </div>
           </div>
           <div className="sv-info-grid">
             <div className="sv-info-card">
@@ -152,14 +143,6 @@ export default function CloudAppSecurityPage() {
                 facilitating access and securing sensitive data.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CASB Explanation Section */}
-      <section className="sv-section-focus">
-        <div className="container">
-          <div className="sv-info-grid mb-12">
             <div className="sv-info-card">
               <p className="sv-p">
                 Here is where a Cloud App Security Broker comes into play to
@@ -181,6 +164,13 @@ export default function CloudAppSecurityPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CASB Explanation Section */}
+      <section className="sv-section-focus">
+        <div className="container">
+          <div className="sv-info-grid mb-12"></div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -218,7 +208,7 @@ export default function CloudAppSecurityPage() {
       {/* SASE Objectives Section */}
       <section className="sv-section-grid">
         <div className="container">
-          <h2 className="sv-h2 text-center mb-16">
+          <h2 className="sv-h3 text-center mb-16">
             Discover how to select a cloud security provider based on essential
             criteria, such as technical skills and business requirements, to
             accomplish the four objectives of a SASE architecture:
@@ -232,7 +222,7 @@ export default function CloudAppSecurityPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Zap size={24} />
+                <Zap size={28} />
               </div>
               <h5>Streamlining</h5>
               <p>enhance productivity and integrate existing tools</p>
@@ -245,7 +235,7 @@ export default function CloudAppSecurityPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <ShieldCheck size={24} />
+                <ShieldCheck size={28} />
               </div>
               <h5>Security</h5>
               <p>identify and thwart the most dangerous threats of 2021</p>
@@ -258,7 +248,7 @@ export default function CloudAppSecurityPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Target size={24} />
+                <Target size={28} />
               </div>
               <h5>Scalability</h5>
               <p>
@@ -274,7 +264,7 @@ export default function CloudAppSecurityPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Activity size={24} />
+                <Activity size={28} />
               </div>
               <h5>Support</h5>
               <p>Back up your long-term investments.</p>
@@ -333,13 +323,24 @@ export default function CloudAppSecurityPage() {
               insight into their activity.
             </p>
           </div>
+          <div className="flex justify-center">
+            <p className="sv-subtitle text-center max-w-4xl">
+              Future-proof yourself. Discover security measures today.
+            </p>
+          </div>
         </div>
+        <motion.div variants={fadeInUp} className="sv-hero-btn-wrap sv-center">
+          <Link href="/contact" className="sv-btn-primary">
+            Get a free 30-minute consultation with a Professional Labs expert.{" "}
+            <ArrowRight size={18} />
+          </Link>
+        </motion.div>
       </section>
 
       {/* FAQ Section */}
       <section className="sv-section-faq">
         <div className="container">
-          <h2 className="sv-h2 text-center mb-20">FAQ’s</h2>
+          <h2 className="sv-h2 text-center mb-[20px]">FAQ’s</h2>
           <div className="sv-faq-wrap">
             <div className={`sv-faq-item ${openFaq === 0 ? "sv-active" : ""}`}>
               <button className="sv-faq-q" onClick={() => setOpenFaq(0)}>
@@ -439,21 +440,6 @@ export default function CloudAppSecurityPage() {
                 </span>
               </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="sv-section-cta">
-        <div className="container">
-          <div className="sv-cta-banner">
-            <h2 className="sv-h2 text-white">Future-proof yourself.</h2>
-            <p className="text-white opacity-80 mt-4 mb-10 text-lg">
-              Discover security measures today.
-            </p>
-            <Link href="/contact" className="sv-btn-white">
-              Contact Sales <ArrowRight size={20} />
-            </Link>
           </div>
         </div>
       </section>

@@ -34,22 +34,22 @@ const azureServices = [
       {
         title: "Security Center",
         desc: "A workload protection solution that provides security management and advanced threat protection across the hybrid cloud.",
-        icon: <Shield size={24} />,
+        icon: <Shield size={28} />,
       },
       {
         title: "Key Vault",
         desc: "A service that secures sensitive details such as passwords, connection strings, and other information needed to keep apps working.",
-        icon: <Key size={24} />,
+        icon: <Key size={28} />,
       },
       {
         title: "Monitor logs",
         desc: "A service that collects telemetry and other data and provides a query language and analytics engine to deliver operational insights.",
-        icon: <Activity size={24} />,
+        icon: <Activity size={28} />,
       },
       {
         title: "Dev/Test Labs",
         desc: "A service that helps testers and developers instantly create Azure environments while minimizing waste and controlling.",
-        icon: <Layout size={24} />,
+        icon: <Layout size={28} />,
       },
     ],
   },
@@ -59,12 +59,12 @@ const azureServices = [
       {
         title: "Security and Audit solution",
         desc: "A service that provides a complete view of an organization's IT security posture.",
-        icon: <Search size={24} />,
+        icon: <Search size={28} />,
       },
       {
         title: "Resource Manager",
         desc: "A service that enables working with resources in the organization's solution as a group. Deploy, update, or delete all resources together.",
-        icon: <Server size={24} />,
+        icon: <Server size={28} />,
       },
     ],
   },
@@ -74,17 +74,17 @@ const azureServices = [
       {
         title: "Web Application vulnerability scanning",
         desc: "A service that provides one-click vulnerability scanning for your web applications.",
-        icon: <ShieldCheck size={24} />,
+        icon: <ShieldCheck size={28} />,
       },
       {
         title: "Web Application Firewall",
         desc: "The WAF in Azure Application Gateway aims to secure web apps from rising web-based threats such as SQL injection.",
-        icon: <Lock size={24} />,
+        icon: <Lock size={28} />,
       },
       {
         title: "Application Insights",
         desc: "An extendable Application Performance Management (APM) program for web developers.",
-        icon: <Activity size={24} />,
+        icon: <Activity size={28} />,
       },
     ],
   },
@@ -94,12 +94,12 @@ const azureServices = [
       {
         title: "Role-Based Access Control (RBAC)",
         desc: "Mechanism for restricting access based on the need-to-know and least-privilege principles.",
-        icon: <UserCheck size={24} />,
+        icon: <UserCheck size={28} />,
       },
       {
         title: "Encryption",
         desc: "A mechanism for protecting data transmitted across networks and at rest in storage.",
-        icon: <Lock size={24} />,
+        icon: <Lock size={28} />,
       },
     ],
   },
@@ -109,17 +109,17 @@ const azureServices = [
       {
         title: "Virtual Network",
         desc: "Representing a client's cloud network. It is a logical isolation of its network fabric dedicated to your subscription.",
-        icon: <Globe size={24} />,
+        icon: <Globe size={28} />,
       },
       {
         title: "VPN Gateway",
         desc: "A virtual network gateway sending encrypted traffic to a public connection.",
-        icon: <Shield size={24} />,
+        icon: <Shield size={28} />,
       },
       {
         title: "Network Layer Controls",
         desc: "The act of controlling connectivity to and from individual devices or subnetworks.",
-        icon: <Layout size={24} />,
+        icon: <Layout size={28} />,
       },
     ],
   },
@@ -129,12 +129,12 @@ const azureServices = [
       {
         title: "Site Recovery",
         desc: "A service that helps to orchestrate Backup, failover, and recovery of workloads and applications.",
-        icon: <RefreshCcw size={24} />,
+        icon: <RefreshCcw size={28} />,
       },
       {
         title: "Virtual machine backup",
         desc: "A service that protects application data with minimal operating costs and zero capital investment.",
-        icon: <Database size={24} />,
+        icon: <Database size={28} />,
       },
     ],
   },
@@ -144,12 +144,12 @@ const azureServices = [
       {
         title: "Active Directory",
         desc: "An authentication repository that supports multi-tenant, cloud-based directory and multi-identity management services.",
-        icon: <UserCheck size={24} />,
+        icon: <UserCheck size={28} />,
       },
       {
         title: "Multi-Factor Authentication",
         desc: "A security provision that utilizes several authentications and verification methods before accessing protected information.",
-        icon: <ShieldCheck size={24} />,
+        icon: <ShieldCheck size={28} />,
       },
     ],
   },
@@ -239,13 +239,10 @@ export default function AzureSecurityPage() {
               </motion.p>
               <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
-                  Get a free 30-minute consultation <ArrowRight size={18} />
+                  Get a free 30-minute consultation with a Professional Labs
+                  expert.
+                  <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="sv-meta-tags">
-                <span className="sv-tag">Delaware Azure Managed Security</span>
-                <span className="sv-tag">Compliance Services</span>
-                <span className="sv-tag">Professional Labs Solutions</span>
               </motion.div>
             </motion.div>
 
@@ -398,6 +395,20 @@ export default function AzureSecurityPage() {
               </motion.div>
             ))}
           </div>
+          <div className="pt-20 flex justify-start">
+            <motion.div
+              variants={fadeInUp}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="sv-bottom-cta-wrap"
+            >
+              <Link href="/contact" className="sv-btn-primary">
+                Get a free 30-minute consultation with a Professional Labs
+                expert. <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -440,24 +451,6 @@ export default function AzureSecurityPage() {
                 </AnimatePresence>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="sv-section-cta">
-        <div className="container">
-          <div className="sv-cta-banner">
-            <h2 className="sv-h2 text-white">
-              Ready to secure your Azure infrastructure?
-            </h2>
-            <p className="text-white opacity-80 mt-4 mb-10 text-lg">
-              Get a free 30-minute consultation with a Professional Labs
-              security expert today.
-            </p>
-            <Link href="/contact" className="sv-btn-white">
-              Claim Your Free Consultation <ArrowRight size={20} />
-            </Link>
           </div>
         </div>
       </section>

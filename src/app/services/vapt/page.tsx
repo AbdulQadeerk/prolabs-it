@@ -53,7 +53,9 @@ export default function VaptPage() {
               Vulnerability Assessment and Penetration Testing
             </span>
           </nav>
-          <h1 className="sv-hero-h1">Vulnerability Assessment and PT</h1>
+          <h1 className="sv-hero-h1">
+            Vulnerability Assessment and <br /> Penetration Testing
+          </h1>{" "}
         </div>
       </section>
 
@@ -69,34 +71,15 @@ export default function VaptPage() {
               className="sv-hero-content"
             >
               <motion.h2 variants={fadeInUp} className="sv-display-h2">
-                Vulnerability Assessment and Penetration Testing
+                Vulnerability Assessment and Penetration Testing (VAPT) Services
+                at Professional Labs{" "}
               </motion.h2>
-              <motion.p variants={fadeInUp} className="sv-hero-lead">
-                At Professional Labs, we specialize in offering comprehensive
-                Vulnerability Assessment and Penetration Testing (VAPT)
-                services. Our mission is to identify, analyze, and fortify
-                against potential security vulnerabilities in your IT
-                infrastructure, ensuring robust and resilient digital defenses.
-              </motion.p>
-              <motion.div
-                variants={fadeInUp}
-                className="sv-hero-btn-wrap sv-center"
-              >
+
+              <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
                   Get a free 30-minute consultation with a Professional Labs
                   expert. <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="sv-meta-tags mt-10">
-                <span className="sv-tag">
-                  Professional Labs VAPT Services Delaware.
-                </span>
-                <span className="sv-tag">
-                  Vulnerability Assessment and Penetration Testing in Delaware.
-                </span>
-                <span className="sv-tag">
-                  Secure Your IT Environment with VAPT Delaware.
-                </span>
               </motion.div>
             </motion.div>
 
@@ -127,13 +110,15 @@ export default function VaptPage() {
         <div className="container">
           <div className="sv-info-header text-center mb-16">
             <h2 className="sv-h2">Introduction</h2>
-            <p className="sv-lead mt-6 max-w-4xl mx-auto">
-              At Professional Labs, we specialize in offering comprehensive
-              Vulnerability Assessment and Penetration Testing (VAPT) services.
-              Our mission is to identify, analyze, and fortify against potential
-              security vulnerabilities in your IT infrastructure, ensuring
-              robust and resilient digital defenses.
-            </p>
+            <div className="flex justify-center">
+              <p className="sv-lead mt-6 max-w-4xl mx-auto">
+                At Professional Labs, we specialize in offering comprehensive
+                Vulnerability Assessment and Penetration Testing (VAPT)
+                services. Our mission is to identify, analyze, and fortify
+                against potential security vulnerabilities in your IT
+                infrastructure, ensuring robust and resilient digital defenses.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -152,7 +137,7 @@ export default function VaptPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Search size={24} />
+                <Search size={28} />
               </div>
               <h5>Vulnerability Assessment</h5>
               <p>
@@ -177,7 +162,7 @@ export default function VaptPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <ShieldAlert size={24} />
+                <ShieldAlert size={28} />
               </div>
               <h5>Penetration Testing</h5>
               <p>
@@ -201,7 +186,7 @@ export default function VaptPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Globe size={24} />
+                <Globe size={28} />
               </div>
               <h5>Web Application Security Testing</h5>
               <p>
@@ -224,7 +209,7 @@ export default function VaptPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Cloud size={24} />
+                <Cloud size={28} />
               </div>
               <h5>Cloud Security Assessment</h5>
               <p>
@@ -247,7 +232,7 @@ export default function VaptPage() {
               className="sv-grid-card"
             >
               <div className="sv-grid-icon">
-                <Database size={24} />
+                <Database size={28} />
               </div>
               <h5>Active Directory VAPT</h5>
               <p>
@@ -303,84 +288,63 @@ export default function VaptPage() {
               </p>
             </div>
           </div>
-          <div className="pt-24 pb-12 flex justify-center">
-            <motion.div
-              variants={fadeInUp}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="sv-hero-btn-wrap"
-            >
-              <Link href="/contact" className="sv-btn-primary">
-                Get a free 30-minute consultation with a Professional Labs
-                expert. <ArrowRight size={18} />
-              </Link>
-            </motion.div>
-          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="sv-section-faq">
         <div className="container">
-          <div className="mb-28 text-center">
+          <div className="mb-16 text-center">
             <h2 className="sv-h2">FAQ’s</h2>
           </div>
           <div className="sv-faq-wrap">
-            <div className={`sv-faq-item ${openFaq === 0 ? "sv-active" : ""}`}>
-              <button className="sv-faq-q" onClick={() => setOpenFaq(0)}>
-                <span className="sv-faq-qtext">
-                  What is the difference between Vulnerability Assessment and
-                  Penetration Testing?
-                </span>
-                <span className="sv-faq-ico">
-                  {openFaq === 0 ? <ChevronUp /> : <ChevronDown />}
-                </span>
-              </button>
-            </div>
-
-            <div className={`sv-faq-item ${openFaq === 1 ? "sv-active" : ""}`}>
-              <button
-                className="sv-faq-q"
-                onClick={() => setOpenFaq(openFaq === 1 ? null : 1)}
+            {[
+              {
+                q: "What is the difference between Vulnerability Assessment and Penetration Testing?",
+                a: "Vulnerability Assessment involves scanning and identifying potential vulnerabilities in systems or applications. Penetration Testing goes a step further by actively exploiting these vulnerabilities to understand their impact.",
+              },
+              {
+                q: "How often should VAPT be conducted?",
+                a: "We recommend conducting VAPT annually, or following significant changes in your IT infrastructure. However, frequent scans can be more regular based on your organizational needs and the evolving threat landscape.",
+              },
+              {
+                q: "Is data security maintained during the VAPT process?",
+                a: "Yes, we ensure the highest standards of data security and integrity. Our procedures are designed to protect your data throughout the testing process.",
+              },
+              {
+                q: "Can VAPT be customized for different environments like cloud or web applications?",
+                a: "Absolutely, our VAPT services are highly customizable. We provide specialized testing for various environments, including cloud, web applications, and Active Directory.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className={`sv-faq-item ${openFaq === index ? "sv-active" : ""}`}
               >
-                <span className="sv-faq-qtext">
-                  How often should VAPT be conducted?
-                </span>
-                <span className="sv-faq-ico">
-                  {openFaq === 1 ? <ChevronUp /> : <ChevronDown />}
-                </span>
-              </button>
-            </div>
-
-            <div className={`sv-faq-item ${openFaq === 2 ? "sv-active" : ""}`}>
-              <button
-                className="sv-faq-q"
-                onClick={() => setOpenFaq(openFaq === 2 ? null : 2)}
-              >
-                <span className="sv-faq-qtext">
-                  Is data security maintained during the VAPT process?
-                </span>
-                <span className="sv-faq-ico">
-                  {openFaq === 2 ? <ChevronUp /> : <ChevronDown />}
-                </span>
-              </button>
-            </div>
-
-            <div className={`sv-faq-item ${openFaq === 3 ? "sv-active" : ""}`}>
-              <button
-                className="sv-faq-q"
-                onClick={() => setOpenFaq(openFaq === 3 ? null : 3)}
-              >
-                <span className="sv-faq-qtext">
-                  Can VAPT be customized for different environments like cloud
-                  or web applications?
-                </span>
-                <span className="sv-faq-ico">
-                  {openFaq === 3 ? <ChevronUp /> : <ChevronDown />}
-                </span>
-              </button>
-            </div>
+                <button
+                  className="sv-faq-q"
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                >
+                  <span className="sv-faq-qtext">{faq.q}</span>
+                  <span className="sv-faq-ico">
+                    {openFaq === index ? <ChevronUp /> : <ChevronDown />}
+                  </span>
+                </button>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="sv-faq-a"
+                    >
+                      <div className="sv-faq-ainner">
+                        <p>{faq.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
           </div>
         </div>
       </section>

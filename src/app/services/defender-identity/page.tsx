@@ -76,27 +76,11 @@ export default function DefenderIdentityPage() {
                 on-premises Active Directory to detect and investigate advanced
                 threats, compromised identities, and harmful insider acts.
               </motion.p>
-              <motion.div
-                variants={fadeInUp}
-                className="sv-hero-btn-wrap sv-center"
-              >
+              <motion.div variants={fadeInUp} className="sv-hero-btn-wrap">
                 <Link href="/contact" className="sv-btn-primary">
                   Get a free 30-minute consultation with a Professional Labs
                   expert. <ArrowRight size={18} />
                 </Link>
-              </motion.div>
-              <motion.div variants={fadeInUp} className="sv-meta-tags mt-10">
-                <span className="sv-tag">
-                  Professional Labs Microsoft Defender for Identity Services
-                  Delaware.
-                </span>
-                <span className="sv-tag">
-                  Identity Security Solutions for Delaware Businesses.
-                </span>
-                <span className="sv-tag">
-                  Protect Your Hybrid Environment with Microsoft Defender for
-                  Identity Delaware.
-                </span>
               </motion.div>
             </motion.div>
 
@@ -258,7 +242,7 @@ export default function DefenderIdentityPage() {
                 plaguing your business.
               </p>
             </div>
-            <div className="sv-info-card">
+            <div className="sv-info-card sv-dark-card">
               <p className="sv-p">
                 Defender for Identity’s patented sensors keeps tabs on
                 enterprise domain controllers, revealing every action taken by
@@ -335,13 +319,13 @@ export default function DefenderIdentityPage() {
               </p>
             </div>
           </div>
-          <div className="pt-24 pb-12 flex justify-center">
+          <div className="pt-20 flex justify-start">
             <motion.div
               variants={fadeInUp}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="sv-hero-btn-wrap"
+              className="sv-bottom-cta-wrap"
             >
               <Link href="/contact" className="sv-btn-primary">
                 Get a free 30-minute consultation with a Professional Labs
