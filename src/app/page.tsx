@@ -1,8 +1,6 @@
 "use client";
 
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import BrandCarousel from "@/components/BrandCarousel";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import LeadershipBand from "@/components/LeadershipBand";
 import BenefitsSplit from "@/components/BenefitsSplit";
@@ -13,13 +11,10 @@ import TrustBar from "@/components/TrustBar";
 import ResourcesSection from "@/components/ResourcesSection";
 import StandardsSection from "@/components/StandardsSection";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
+    <main>
         {/* 1. Hero with brand logos at bottom — matches NinjaOne hero */}
         <Hero />
 
@@ -53,8 +48,6 @@ export default function Home() {
 
         {/* 11. Final CTA */}
         <CTASection />
-      </main>
-      <Footer />
-    </>
+    </main>
   );
 }

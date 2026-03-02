@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   Server,
@@ -199,7 +197,6 @@ export default function AzureSecurityPage() {
 
   return (
     <main className="sv-page sv-azure">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -455,7 +452,6 @@ export default function AzureSecurityPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

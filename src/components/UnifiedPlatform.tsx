@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { UNIFIED_PLATFORM_SERVICES } from '@/data/unifiedPlatformServices';
+import Link from 'next/link';
 
 const SERVICES = UNIFIED_PLATFORM_SERVICES;
 
@@ -33,9 +34,9 @@ export default function UnifiedPlatform() {
             <div className="showcase-content">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href={service.ctaLink} className="cta-link">
+              <Link href={service.ctaLink} className="cta-link">
                 {service.ctaText} <span>→</span>
-              </a>
+              </Link>
             </div>
             <div className="showcase-image">
               <img
@@ -62,9 +63,9 @@ export default function UnifiedPlatform() {
         </div>
 
         <div className="section-cta">
-          <a href="/products" className="btn btn-primary">
+          <Link href="/products" className="btn btn-primary">
             See the product
-          </a>
+          </Link>
         </div>
       </div>
 

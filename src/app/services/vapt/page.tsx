@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   Activity,
@@ -39,7 +37,6 @@ export default function VaptPage() {
 
   return (
     <main className="sv-page sv-vapt">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -349,7 +346,6 @@ export default function VaptPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

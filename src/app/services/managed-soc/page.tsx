@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   ShieldCheck,
   Target,
@@ -68,8 +66,6 @@ export default function ManagedSOCPage() {
 
   return (
     <main className="sv-page sv-soc">
-      <Header />
-
       {/* Hero Header Band */}
       <section className="sv-hero-band">
         <div className="container">
@@ -453,8 +449,6 @@ export default function ManagedSOCPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

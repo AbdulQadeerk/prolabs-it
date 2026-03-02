@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   ShieldCheck,
@@ -125,7 +123,6 @@ export default function DefenderEndpointPage() {
 
   return (
     <main className="sv-page sv-def">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -385,7 +382,6 @@ export default function DefenderEndpointPage() {
 
       {/* Final CTA */}
 
-      <Footer />
     </main>
   );
 }

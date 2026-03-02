@@ -1,8 +1,6 @@
 "use client";
 
 import { useScrollReveal } from "@/components/animations";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const offices = [
     {
@@ -41,7 +39,6 @@ export default function ContactPage() {
 
     return (
         <>
-            <Header />
             <main className="contact-page">
                 {/* Page Title Section */}
                 <section
@@ -142,7 +139,6 @@ export default function ContactPage() {
                     </div>
                 </section>
             </main>
-            <Footer />
 
             <style jsx>{`
         .contact-page {

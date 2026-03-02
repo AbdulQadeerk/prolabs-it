@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -59,28 +62,32 @@ export default function Footer() {
             <h4>Our Services</h4>
             <ul>
               <li>
-                <a href="/services/managed-soc">Managed SOC Service</a>
+                <Link href="/services/managed-soc">Managed SOC Service</Link>
               </li>
               <li>
                 <a href="#">Cloud Managed Services</a>
               </li>
               <li>
-                <a href="/services/email-security">Email Security</a>
+                <Link href="/services/email-security">Email Security</Link>
               </li>
               <li>
-                <a href="/services/azure-security">Azure Security</a>
+                <Link href="/services/azure-security">Azure Security</Link>
               </li>
               <li>
-                <a href="/services/defender-endpoint">Defender for Endpoint</a>
+                <Link href="/services/defender-endpoint">
+                  Defender for Endpoint
+                </Link>
               </li>
               <li>
-                <a href="/services/cloud-app-security">Cloud App Security</a>
+                <Link href="/services/cloud-app-security">Cloud App Security</Link>
               </li>
               <li>
-                <a href="/services/defender-identity">Defender for Identity</a>
+                <Link href="/services/defender-identity">
+                  Defender for Identity
+                </Link>
               </li>
               <li>
-                <a href="/services/vapt">VAPT</a>
+                <Link href="/services/vapt">VAPT</Link>
               </li>
               <li>
                 <a href="#">Network & Security</a>
@@ -99,7 +106,7 @@ export default function Footer() {
                 <a href="#">Our Tools</a>
               </li>
               <li>
-                <a href="/blog">Blog</a>
+                <Link href="/blog">Blog</Link>
               </li>
               <li>
                 <a href="#">Careers</a>
@@ -192,14 +199,18 @@ export default function Footer() {
           <details>
             <summary>Our Services</summary>
             <div className="footer-mobile-links">
-              <a href="/services/managed-soc">Managed SOC Service</a>
+              <Link href="/services/managed-soc">Managed SOC Service</Link>
               <a href="#">Cloud Managed Services</a>
-              <a href="/services/email-security">Email Security</a>
-              <a href="/services/azure-security">Azure Security</a>
-              <a href="/services/defender-endpoint">Defender for Endpoint</a>
-              <a href="/services/cloud-app-security">Cloud App Security</a>
-              <a href="/services/defender-identity">Defender for Identity</a>
-              <a href="/services/vapt">VAPT</a>
+              <Link href="/services/email-security">Email Security</Link>
+              <Link href="/services/azure-security">Azure Security</Link>
+              <Link href="/services/defender-endpoint">
+                Defender for Endpoint
+              </Link>
+              <Link href="/services/cloud-app-security">Cloud App Security</Link>
+              <Link href="/services/defender-identity">
+                Defender for Identity
+              </Link>
+              <Link href="/services/vapt">VAPT</Link>
               <a href="#">IT Help Desk</a>
             </div>
           </details>
@@ -208,7 +219,7 @@ export default function Footer() {
             <div className="footer-mobile-links">
               <a href="#">About Us</a>
               <a href="#">Our Tools</a>
-              <a href="/blog">Blog</a>
+              <Link href="/blog">Blog</Link>
               <a href="#">Careers</a>
             </div>
           </details>
@@ -224,9 +235,9 @@ export default function Footer() {
             </div>
           </details>
           <div className="footer-mobile-actions">
-            <a href="/contact" className="btn btn-primary btn-small">
+            <Link href="/contact" className="btn btn-primary btn-small">
               Get a Free Consultation
-            </a>
+            </Link>
           </div>
           <p className="copyright-mobile">
             &copy; {new Date().getFullYear()} Professional Labs. All rights
@@ -252,7 +263,12 @@ export default function Footer() {
           left: 0;
           right: 0;
           height: 1px;
-          background: linear-gradient(90deg, transparent, #22a7e0, transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            var(--brand-accent),
+            transparent
+          );
           opacity: 0.5;
         }
 
@@ -288,8 +304,8 @@ export default function Footer() {
         }
 
         .social-icon:hover {
-          background: #22a7e0;
-          border-color: #22a7e0;
+          background: var(--brand-accent);
+          border-color: var(--brand-accent);
           color: white;
           transform: translateY(-2px);
         }
@@ -319,7 +335,7 @@ export default function Footer() {
         }
 
         .footer-col a:hover {
-          color: #22a7e0;
+          color: var(--brand-accent);
         }
 
         .contact-items {
@@ -338,7 +354,7 @@ export default function Footer() {
           font-size: 0.7rem;
           text-transform: uppercase;
           letter-spacing: 1px;
-          color: #22a7e0;
+          color: var(--brand-accent);
           font-weight: 700;
           margin-bottom: 2px;
         }
@@ -356,7 +372,7 @@ export default function Footer() {
         }
 
         .contact-phone:hover {
-          color: #22a7e0 !important;
+          color: var(--brand-accent) !important;
         }
 
         /* Newsletter */
@@ -400,7 +416,7 @@ export default function Footer() {
         }
 
         .newsletter-form input:focus {
-          border-color: #22a7e0;
+          border-color: var(--brand-accent);
           background: rgba(255, 255, 255, 0.1);
         }
 
@@ -409,7 +425,7 @@ export default function Footer() {
         }
 
         .newsletter-form button {
-          background: #22a7e0;
+          background: var(--brand-accent);
           color: white;
           border: none;
           padding: 12px 24px;
@@ -421,7 +437,7 @@ export default function Footer() {
         }
 
         .newsletter-form button:hover {
-          background: #178dc8;
+          background: var(--brand-accent-hover);
         }
 
         /* Bottom */
@@ -450,7 +466,7 @@ export default function Footer() {
         }
 
         .legal-links a:hover {
-          color: #22a7e0;
+          color: var(--brand-accent);
         }
 
         /* Mobile */

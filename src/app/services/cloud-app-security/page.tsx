@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   Cloud,
@@ -40,7 +38,6 @@ export default function CloudAppSecurityPage() {
 
   return (
     <main className="sv-page sv-mcas">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -444,7 +441,6 @@ export default function CloudAppSecurityPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

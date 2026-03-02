@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   Activity,
@@ -40,7 +38,6 @@ export default function DefenderIdentityPage() {
 
   return (
     <main className="sv-page sv-identity">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -477,7 +474,6 @@ export default function DefenderIdentityPage() {
         </div>
       </section>
 
-      <Footer />
     </main>
   );
 }

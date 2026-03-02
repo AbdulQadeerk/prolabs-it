@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
   Shield,
   Mail,
@@ -101,7 +99,6 @@ export default function EmailSecurityPage() {
 
   return (
     <main className="sv-page sv-email">
-      <Header />
 
       {/* Hero Header Band */}
       <section className="sv-hero-band">
@@ -437,7 +434,6 @@ export default function EmailSecurityPage() {
 
       {/* Final CTA */}
 
-      <Footer />
     </main>
   );
 }

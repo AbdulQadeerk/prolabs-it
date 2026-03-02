@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import {
     ChevronRight, Search, Clock, User, ArrowRight,
     Filter, Grid, List as ListIcon, Calendar,
@@ -135,7 +133,6 @@ export default function BlogPage() {
 
     return (
         <main className="pg-blog-wrapper">
-            <Header />
 
             {/* Hero Header */}
             <section className="pg-blog-hero">
@@ -286,7 +283,6 @@ export default function BlogPage() {
                 </div>
             </section>
 
-            <Footer />
 
             <style jsx global>{`
         .pg-blog-wrapper {
