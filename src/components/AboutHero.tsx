@@ -10,7 +10,7 @@ export default function AboutHero() {
       ref={ref as React.RefObject<HTMLElement>}
       className={`${s["about-hero-section"]} ${isVisible ? s["animate-in"] : ""}`}
     >
-      <div className={`container ${s["banner-outer"]}`}>
+      <div className={s["banner-outer"]}>
         <div className={s["about-hero-banner"]}>
           <div className={s["video-background"]}>
             <video
@@ -44,7 +44,7 @@ export default function AboutHero() {
                 first and <strong>simplify complex technology</strong> for
                 everyone.
               </p>
-              <div className={s["scroll-hint"]}>
+              <div className={`${s["scroll-hint"]} hidden md:flex`}>
                 <div className={s.mouse}>
                   <div className={s.wheel}></div>
                 </div>
