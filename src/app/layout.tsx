@@ -4,7 +4,6 @@ import "./globals.css";
 import "./services.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import StyledJsxRegistry from "./registry";
 
 const geologica = Geologica({
   subsets: ["latin"],
@@ -27,11 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={geologica.variable}>
       <body>
-        <StyledJsxRegistry>
-          <Header />
-          {children}
-          <Footer />
-        </StyledJsxRegistry>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

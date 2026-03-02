@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import s from "./BrandCarousel.module.css";
 
 interface BrandLogo {
   src: string;
@@ -98,124 +99,19 @@ export default function BrandCarousel() {
   }, []);
 
   return (
-    <section className="brand-section" id="brand-carousel">
-      <div className="brand-strip">
-        <div className="brand-fade brand-fade--left" />
-        <div className="brand-fade brand-fade--right" />
+    <section className={s["brand-section"]} id="brand-carousel">
+      <div className={s["brand-strip"]}>
+        <div className={`${s["brand-fade"]} ${s["brand-fade--left"]}`} />
+        <div className={`${s["brand-fade"]} ${s["brand-fade--right"]}`} />
 
-        <div className="brand-track" ref={trackRef}>
+        <div className={s["brand-track"]} ref={trackRef}>
           {[...brands, ...brands].map((b, i) => (
-            <div className="brand-item" key={i}>
+            <div className={s["brand-item"]} key={i}>
               <img src={b.src} alt={b.alt} loading="lazy" draggable={false} />
             </div>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .brand-section {
-          background: #ffffff;
-          padding: 24px 0;
-          border-top: 1px solid rgba(34, 167, 224, 0.1);
-          border-bottom: 1px solid rgba(34, 167, 224, 0.1);
-        }
-
-        .brand-strip {
-          position: relative;
-          width: 100%;
-          overflow: hidden;
-        }
-
-        .brand-fade {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 120px;
-          z-index: 2;
-          pointer-events: none;
-        }
-
-        .brand-fade--left {
-          left: 0;
-          background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
-        }
-
-        .brand-fade--right {
-          right: 0;
-          background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
-        }
-
-        .brand-track {
-          display: flex;
-          align-items: center;
-          gap: 72px;
-          width: max-content;
-          animation: marquee 38s linear infinite;
-          will-change: transform;
-        }
-
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .brand-item {
-          flex-shrink: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 44px;
-        }
-
-        .brand-item img {
-          max-height: 40px;
-          max-width: 160px;
-          width: auto;
-          height: auto;
-          object-fit: contain;
-          opacity: 0.6;
-          transition: opacity 0.3s ease;
-        }
-
-        .brand-item:hover img {
-          opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-          .brand-section {
-            padding: 18px 0;
-          }
-          .brand-track {
-            gap: 48px;
-            animation-duration: 28s;
-          }
-          .brand-item img {
-            max-height: 32px;
-            max-width: 120px;
-          }
-          .brand-fade {
-            width: 60px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .brand-track {
-            gap: 36px;
-            animation-duration: 22s;
-          }
-          .brand-item img {
-            max-height: 26px;
-            max-width: 100px;
-          }
-          .brand-fade {
-            width: 40px;
-          }
-        }
-      `}</style>
     </section>
   );
 }

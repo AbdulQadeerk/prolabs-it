@@ -1,5 +1,6 @@
 "use client";
 import { useScrollReveal } from "./animations";
+import s from "./StandardsSection.module.css";
 
 export default function StandardsSection() {
   const { ref, isVisible } = useScrollReveal();
@@ -11,148 +12,43 @@ export default function StandardsSection() {
   ];
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} className={`standards-section ${isVisible ? 'animate-in' : ''}`}>
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`${s["standards-section"]} ${isVisible ? s["animate-in"] : ""}`}
+    >
       <div className="container">
-        <p className="eyebrow">Compliance & Security</p>
-        <h2>Built for IT. Backed by the world&apos;s strictest standards.</h2>
-        <p className="standards-desc">
-          We adhere to the highest industry standards to ensure your data and systems are protected.
+        <p className={s.eyebrow}>Compliance &amp; Security</p>
+        <h2 className={s["section-heading"]}>
+          Built for IT. Backed by the world&apos;s strictest standards.
+        </h2>
+        <p className={s["standards-desc"]}>
+          We adhere to the highest industry standards to ensure your data and
+          systems are protected.
         </p>
-        <div className="badge-row">
+        <div className={s["badge-row"]}>
           {certifications.map((cert, index) => (
-            <div key={index} className="badge-card">
-              <div className="badge-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <div key={index} className={s["badge-card"]}>
+              <div className={s["badge-icon"]}>
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   <path d="M9 12l2 2 4-4" />
                 </svg>
               </div>
-              <span className="badge-name">{cert.name}</span>
-              <span className="badge-desc">{cert.desc}</span>
+              <span className={s["badge-name"]}>{cert.name}</span>
+              <span className={s["badge-desc"]}>{cert.desc}</span>
             </div>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .standards-section {
-          background: var(--bg-primary);
-          padding: 80px 0 90px;
-          text-align: center;
-        }
-
-        .eyebrow {
-          color: #22a7e0;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          font-size: 0.72rem;
-          font-weight: 700;
-          margin-bottom: 12px;
-        }
-
-        h2 {
-          color: var(--primary-blue);
-          font-size: clamp(1.6rem, 2.5vw, 2rem);
-          margin-bottom: 12px;
-        }
-
-        .standards-desc {
-          color: var(--text-secondary);
-          font-size: 0.95rem;
-          margin-bottom: 40px;
-          max-width: 500px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        .badge-row {
-          display: flex;
-          justify-content: center;
-          gap: 24px;
-          flex-wrap: wrap;
-        }
-
-        .badge-card {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-          padding: 28px 24px;
-          min-width: 160px;
-          border: 1px solid #e2e8f0;
-          border-radius: 16px;
-          background: white;
-          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-          transition: all 0.3s ease;
-        }
-
-        .badge-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 16px 40px rgba(34, 167, 224, 0.1);
-          border-color: rgba(34, 167, 224, 0.3);
-        }
-
-        .badge-icon {
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: rgba(34, 167, 224, 0.08);
-          border: 1px solid rgba(34, 167, 224, 0.15);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #22a7e0;
-          margin-bottom: 4px;
-        }
-
-        .badge-name {
-          font-size: 1rem;
-          font-weight: 700;
-          color: var(--primary-blue);
-        }
-
-        .badge-desc {
-          font-size: 0.8rem;
-          color: var(--text-secondary);
-        }
-
-        @media (max-width: 768px) {
-          .badge-row {
-            gap: 16px;
-          }
-          .badge-card {
-            min-width: 140px;
-            padding: 24px 20px;
-          }
-        }
-
-        @keyframes revealUp {
-          from { opacity: 0; transform: translateY(32px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .standards-section:not(.animate-in) .eyebrow,
-        .standards-section:not(.animate-in) h2,
-        .standards-section:not(.animate-in) .standards-desc,
-        .standards-section:not(.animate-in) .badge-card {
-          opacity: 0; transform: translateY(32px);
-        }
-        .standards-section.animate-in .eyebrow {
-          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) forwards;
-        }
-        .standards-section.animate-in h2 {
-          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) 0.08s forwards;
-        }
-        .standards-section.animate-in .standards-desc {
-          animation: revealUp 0.6s cubic-bezier(0.23,1,0.32,1) 0.16s forwards;
-        }
-        .standards-section.animate-in .badge-card {
-          animation: revealUp 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
-        }
-        .standards-section.animate-in .badge-card:nth-child(1) { animation-delay: 0.25s; }
-        .standards-section.animate-in .badge-card:nth-child(2) { animation-delay: 0.33s; }
-        .standards-section.animate-in .badge-card:nth-child(3) { animation-delay: 0.41s; }
-        .standards-section.animate-in .badge-card:nth-child(4) { animation-delay: 0.49s; }
-      `}</style>
     </section>
   );
 }
