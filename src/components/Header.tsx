@@ -37,7 +37,7 @@ const serviceColumns = [
       { href: "/services/pki-consulting", label: "PKI Consulting" },
       { href: "/services/active-directory", label: "Active Directory Consulting" },
       { href: "/services/modern-workplace", label: "Modern WorkPlace" },
-      { href: "#ai-solutions", label: "Professional Labs - AI Solutions" },
+      { href: "/services/ai-solutions", label: "Professional Labs - AI Solutions" },
       {
         href: "#data-driven",
         label: "Professional Labs - Data Driven Solutions",

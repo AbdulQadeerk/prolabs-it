@@ -12,6 +12,7 @@ import {
   Network,
   Briefcase,
   ArrowRight,
+  Brain,
 } from "lucide-react";
 import Link from "next/link";
 import s from "./ServicesShowcase.module.css";
@@ -67,7 +68,21 @@ const services: Service[] = [
       "Email encryption and DLP",
       "Real-time threat intelligence",
     ],
-    href: "#email",
+    href: "/services/email-security",
+  },
+  {
+    id: "ai",
+    name: "AI Solutions",
+    icon: <Brain size={28} strokeWidth={1.5} />,
+    title: "Advanced AI Solutions",
+    description:
+      "Transforming Business with Advanced AI Solutions. Harness the power of Artificial Intelligence to unlock new potentials for your business with tailored strategies and custom development.",
+    features: [
+      "AI Strategy & Roadmap",
+      "Custom AI Tool Development",
+      "Machine & Deep Learning models",
+    ],
+    href: "/services/ai-solutions",
   },
   {
     id: "cloudapp",
