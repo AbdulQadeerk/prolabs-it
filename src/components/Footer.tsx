@@ -66,7 +66,9 @@ export default function Footer() {
                 <Link href="/services/managed-soc">Managed SOC Service</Link>
               </li>
               <li>
-                <a href="#">Cloud Managed Services</a>
+                <a href="/services/cloud-managed-services">
+                  Cloud Managed Services
+                </a>
               </li>
               <li>
                 <Link href="/services/email-security">Email Security</Link>
@@ -93,7 +95,9 @@ export default function Footer() {
                 <Link href="/services/vapt">VAPT</Link>
               </li>
               <li>
-                <a href="#">Network &amp; Security</a>
+                <Link href="/services/network-security">
+                  Network &amp; Security
+                </Link>
               </li>
             </ul>
           </div>
@@ -203,7 +207,7 @@ export default function Footer() {
             <summary>Our Services</summary>
             <div className={s["footer-mobile-links"]}>
               <Link href="/services/managed-soc">Managed SOC Service</Link>
-              <a href="#">Cloud Managed Services</a>
+              <a href="/cloud-managed-services">Cloud Managed Service</a>
               <Link href="/services/email-security">Email Security</Link>
               <Link href="/services/azure-security">Azure Security</Link>
               <Link href="/services/defender-endpoint">

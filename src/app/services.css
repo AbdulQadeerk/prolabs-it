@@ -68,6 +68,20 @@
   --sv-bg: #f3f2f1;
 }
 
+.sv-cms {
+  --sv-accent: #22a7e0;
+  --sv-ink: #002b4d;
+  --sv-text: #323130;
+  --sv-gray: #605e5c;
+  --sv-bg: #f3f2f1;
+}
+.sv-training {
+  --sv-accent: #22a7e0;
+  --sv-ink: #002b4d;
+  --sv-text: #323130;
+  --sv-gray: #605e5c;
+  --sv-bg: #f3f2f1;
+}
 .sv-page {
   background: #fff;
   color: var(--sv-text);
@@ -85,16 +99,27 @@
   padding: 130px 0 60px;
 }
 .sv-azure .sv-hero-band {
-  background: radial-gradient(circle at 20% 30%, rgba(34, 167, 224, 0.15) 0%, transparent 50%),
-              linear-gradient(135deg, #001a33 0%, #004d99 100%);
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(34, 167, 224, 0.15) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, #001a33 0%, #004d99 100%);
   position: relative;
   overflow: hidden;
 }
 .sv-azure .sv-hero-band::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
   background-size: 30px 30px;
   pointer-events: none;
 }
@@ -1590,40 +1615,284 @@
   font-size: 0.9rem;
 }
 
+/* ==================== FAQ/SECTION BG — CMS & TRAINING ==================== */
+.sv-cms .sv-faq-item,
+.sv-training .sv-faq-item,
+.sv-netsec .sv-faq-item,
+.sv-iam .sv-faq-item {
+  background: #fff;
+  border: 1px solid #f1f5f9;
+}
+.sv-cms .sv-section-faq,
+.sv-training .sv-section-faq,
+.sv-netsec .sv-section-faq,
+.sv-iam .sv-section-faq {
+  background: var(--sv-bg);
+}
+
 /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+/* ---------- Tablet (max 1024px) ---------- */
+@media (max-width: 1024px) {
+  .sv-section-info,
+  .sv-section-security,
+  .sv-section-prolabs,
+  .sv-section-analysis,
+  .sv-section-focus,
+  .sv-section-benefits,
+  .sv-section-faq,
+  .sv-section-cta,
+  .sv-section-why-defender {
+    padding: 70px 0;
+  }
+  .sv-section-mid-cta {
+    padding: 50px 0;
+  }
+  .sv-section-outcomes {
+    padding: 70px 0;
+  }
+}
+
+/* ---------- Mobile (max 768px) ---------- */
 @media (max-width: 768px) {
+  /* Hero Band */
+  .sv-hero-band {
+    padding: 160px 0 40px;
+  }
   .sv-hero-h1 {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
   .sv-soc .sv-hero-h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
+  }
+
+  /* Hero Main */
+  .sv-hero-main {
+    padding: 50px 0;
   }
   .sv-display-h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+  .sv-hero-p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+  }
+
+  /* Breadcrumb — hidden on mobile */
+  .sv-breadcrumb {
+    display: none;
+  }
+
+  /* Buttons */
+  .sv-btn-primary {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .sv-btn-outline {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    width: 100%;
+    justify-content: center;
+  }
+  .sv-hero-btn-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sv-btn-white {
+    padding: 16px 35px;
+    font-size: 1rem;
+  }
+  .sv-btn-cta-outline {
+    padding: 16px 35px;
+    font-size: 0.95rem;
+  }
+
+  /* Trust Bar */
+  .sv-trust-bar {
+    gap: 8px;
+    flex-direction: column;
+  }
+  .sv-trust-item {
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    text-align: center;
+  }
+
+  /* Section headings */
+  .sv-h2 {
+    font-size: 1.5rem;
+  }
+  .sv-h3 {
+    font-size: 1.4rem;
   }
   .sv-h4 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
   }
   .sv-email .sv-h4 {
+    font-size: 1.15rem;
+  }
+  .sv-subtitle {
+    font-size: 1rem;
+  }
+  .sv-lead {
+    font-size: 1.1rem;
+  }
+
+  /* Section paddings */
+  .sv-section-info,
+  .sv-section-security,
+  .sv-section-prolabs,
+  .sv-section-analysis,
+  .sv-section-focus,
+  .sv-section-benefits,
+  .sv-section-why-defender {
+    padding: 50px 0;
+  }
+  .sv-section-faq {
+    padding: 60px 0;
+  }
+  .sv-section-cta {
+    padding: 60px 0;
+  }
+  .sv-section-mid-cta {
+    padding: 40px 0;
+  }
+  .sv-section-outcomes {
+    padding: 60px 0;
+  }
+  .sv-section-header {
+    margin-bottom: 40px;
+  }
+
+  /* Service cards */
+  .sv-scard {
+    padding: 22px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sv-scard-body h5 {
+    font-size: 1.1rem;
+  }
+
+  /* Tech grid */
+  .sv-tech-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sv-tech-card {
+    padding: 28px;
+  }
+
+  /* Security grid */
+  .sv-security-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Info grid */
+  .sv-info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sv-info-card {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  /* Focus box */
+  .sv-focus-box {
+    padding: 30px;
+    border-radius: 22px;
+  }
+
+  /* Pro features list */
+  .sv-pro-f-card {
+    padding: 18px;
+    gap: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .sv-pro-f-body {
+    font-size: 0.95rem;
+  }
+
+  /* Pros grid (dark checklist) */
+  .sv-pros-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .sv-pro-item {
+    padding: 16px 18px;
+    font-size: 0.95rem;
+  }
+
+  /* Outcomes grid */
+  .sv-outcomes-h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  .sv-outcomes-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .sv-outcome-card {
+    padding: 22px 20px;
+  }
+
+  /* Analysis section */
+  .sv-analysis-header {
+    margin-bottom: 35px;
+  }
+
+  /* Mid CTA */
+  .sv-mid-cta-box {
+    padding: 40px 22px;
+    border-radius: 22px;
+  }
+  .sv-mid-cta-h2 {
     font-size: 1.4rem;
   }
-  .sv-scard {
-    padding: 25px;
+  .sv-mid-cta-p {
+    font-size: 1rem;
+    margin-bottom: 25px;
   }
+  .sv-mid-cta-btns {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Final CTA */
+  .sv-cta-banner {
+    padding: 50px 22px;
+    border-radius: 22px;
+  }
+
+  /* FAQ */
   .sv-faq-q {
-    padding: 25px;
+    padding: 20px;
   }
   .sv-faq-qtext {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .sv-faq-a {
     padding: 0 20px 20px;
+    font-size: 1rem;
   }
+
+  /* Benefits */
   .sv-benefit-card {
     padding: 30px;
   }
+  .sv-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* SOC dark */
   .sv-soc .sv-dark-h2 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   .sv-mssp-box {
     padding: 30px;
@@ -1635,7 +1904,131 @@
   .sv-azure .sv-cat-name {
     font-size: 1.5rem;
   }
-  .sv-pros-grid {
+
+  /* Limitations dark grid */
+  .sv-limitations-dark-h2 {
+    font-size: 1.4rem;
+  }
+  .sv-limitations-dark-sub {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  /* Versus table */
+  .sv-versus-h2 {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  }
+
+  /* Grid layout */
+  .sv-grid-layout {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sv-grid-card {
+    padding: 28px;
+  }
+
+  /* Grid services */
+  .sv-grid-services {
+    grid-template-columns: 1fr;
+  }
+
+  /* Features grid */
+  .sv-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Values grid */
+  .sv-values-grid {
+    grid-template-columns: 1fr;
+  }
+  .sv-value-card {
+    padding: 35px 25px;
+  }
+
+  /* Prolabs section */
+  .sv-section-prolabs {
+    padding: 60px 0;
+  }
+}
+
+/* ---------- Small Mobile (max 480px) ---------- */
+@media (max-width: 480px) {
+  .sv-hero-band {
+    padding: 160px 0 40px;
+  }
+  .sv-hero-h1 {
+    font-size: 1.7rem;
+  }
+  .sv-display-h2 {
+    font-size: 1.35rem;
+  }
+  .sv-h2 {
+    font-size: 1.3rem;
+  }
+  .sv-h3 {
+    font-size: 1.2rem;
+  }
+  .sv-hero-p {
+    font-size: 0.95rem;
+  }
+  .sv-btn-primary,
+  .sv-btn-outline {
+    font-size: 0.88rem;
+    padding: 12px 20px;
+  }
+  .sv-btn-white {
+    padding: 14px 25px;
+    font-size: 0.9rem;
+  }
+  .sv-btn-cta-outline {
+    padding: 14px 25px;
+    font-size: 0.88rem;
+  }
+  .sv-scard {
+    padding: 18px;
+  }
+  .sv-tech-card {
+    padding: 22px;
+  }
+  .sv-info-card {
+    padding: 22px;
+  }
+  .sv-focus-box {
+    padding: 22px;
+    border-radius: 18px;
+  }
+  .sv-mid-cta-box {
+    padding: 30px 18px;
+    border-radius: 18px;
+  }
+  .sv-cta-banner {
+    padding: 35px 18px;
+    border-radius: 18px;
+  }
+  .sv-faq-q {
+    padding: 18px;
+  }
+  .sv-faq-qtext {
+    font-size: 0.92rem;
+  }
+  .sv-faq-a {
+    padding: 0 18px 18px;
+    font-size: 0.92rem;
+  }
+  .sv-pro-f-card {
+    padding: 14px;
+  }
+  .sv-outcome-card {
+    padding: 18px 16px;
+  }
+  .sv-pro-item {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+  .sv-breadcrumb {
+    font-size: 0.75rem;
+    gap: 6px;
   }
 }

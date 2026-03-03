@@ -31,7 +31,10 @@ const serviceColumns = [
   {
     title: "Consulting Services",
     items: [
-      { href: "/services/azure-consulting", label: "Azure Consulting Services" },
+      {
+        href: "/services/azure-consulting",
+        label: "Azure Consulting Services",
+      },
       { href: "#azure-virtual-desktop", label: "Azure Virtual Desktop" },
       { href: "#citrix-consulting", label: "Citrix Consulting" },
       { href: "#pki-consulting", label: "PKI Consulting" },
@@ -51,17 +54,20 @@ const serviceColumns = [
   {
     title: "Support and Market Research",
     items: [
-      { href: "#cloud-managed", label: "Cloud Managed Service" },
-      { href: "#it-training", label: "IT Training" },
-      { href: "#market-research", label: "Market Research" },
-      { href: "#web-app-dev", label: "Website & App Development" },
-      { href: "#it-helpdesk", label: "IT Help Desk" },
       {
-        href: "#crm-services",
+        href: "/services/cloud-managed-services",
+        label: "Cloud Managed Service",
+      },
+      { href: "/services/it-training", label: "IT Training" },
+      { href: "/services/market-research", label: "Market Research" },
+      { href: "/services/web-app-dev", label: "Website & App Development" },
+      { href: "/services/it-helpdesk", label: "IT Help Desk" },
+      {
+        href: "/services/crm-services",
         label: "CRM (Customer Relationship Management) Services",
       },
-      { href: "#erp-services", label: "ERP Services" },
-      { href: "#ticketing", label: "Ticketing System Services" },
+      { href: "/services/erp-services", label: "ERP Services" },
+      { href: "/services/ticketing", label: "Ticketing System Services" },
     ],
   },
 ];
@@ -103,7 +109,9 @@ export default function Header() {
   ];
 
   return (
-    <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
+    <header
+      className={`site-header ${scrolled ? "scrolled" : ""}${mobileOpen ? " mobile-open" : ""}`}
+    >
       {/* Top announcement bar */}
       <div className="top-hat">
         <div className="container top-hat-inner">
@@ -236,6 +244,28 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="mobile-menu">
+          <div className="mobile-menu-header">
+            <Link
+              href="/"
+              className="logo-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              <Image
+                src="/brand/prolabs-logo-dark.png"
+                alt="Professional Labs"
+                width={140}
+                height={36}
+                style={{ objectFit: "contain" }}
+              />
+            </Link>
+            <button
+              className="mobile-close-btn"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              ✕
+            </button>
+          </div>
           <div className="container">
             {navLinks.map((link) =>
               link.hasDropdown ? (
