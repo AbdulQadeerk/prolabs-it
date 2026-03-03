@@ -109,7 +109,7 @@ const services: Service[] = [
       "Secure remote access from any device",
       "Cost-effective virtual desktop infrastructure",
     ],
-    href: "#avd",
+    href: "/services/azure-virtual-desktop",
   },
   {
     id: "helpdesk",

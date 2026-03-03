@@ -66,7 +66,13 @@ export default function Footer() {
                 <Link href="/services/managed-soc">Managed SOC Service</Link>
               </li>
               <li>
-                <a href="#">Cloud Managed Services</a>
+                <Link href="/services/azure-virtual-desktop">Azure Virtual Desktop</Link>
+              </li>
+              <li>
+                <Link href="/services/citrix-consulting">Citrix Consulting</Link>
+              </li>
+              <li>
+                <Link href="/services/pki-consulting">PKI Consulting</Link>
               </li>
               <li>
                 <Link href="/services/email-security">Email Security</Link>
@@ -91,11 +97,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services/vapt">VAPT</Link>
-              </li>
-              <li>
-                <Link href="/services/network-security">
-                  Network &amp; Security
-                </Link>
               </li>
             </ul>
           </div>
