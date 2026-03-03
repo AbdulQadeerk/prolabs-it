@@ -6,7 +6,8 @@
 /* ---------- Color Themes (set per-page via root class) ---------- */
 .sv-email,
 .sv-citrix,
-.sv-pki {
+.sv-pki,
+.sv-ad {
   --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
@@ -339,7 +340,8 @@
 
 .sv-azure .sv-meta-tags,
 .sv-citrix .sv-meta-tags,
-.sv-pki .sv-meta-tags {
+.sv-pki .sv-meta-tags,
+.sv-ad .sv-meta-tags {
   flex-wrap: wrap;
   flex-direction: row;
 }
