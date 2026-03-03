@@ -151,7 +151,7 @@ const services: Service[] = [
       "Collaboration and productivity tools",
       "Employee experience optimization",
     ],
-    href: "#workplace",
+    href: "/services/modern-workplace",
   },
 ];
 

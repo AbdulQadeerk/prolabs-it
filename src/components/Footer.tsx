@@ -78,6 +78,9 @@ export default function Footer() {
                 <Link href="/services/active-directory">Active Directory Consulting</Link>
               </li>
               <li>
+                <Link href="/services/modern-workplace">Modern Workplace</Link>
+              </li>
+              <li>
                 <Link href="/services/email-security">Email Security</Link>
               </li>
               <li>
