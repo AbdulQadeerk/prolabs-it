@@ -39,7 +39,7 @@ const serviceColumns = [
       { href: "/services/modern-workplace", label: "Modern WorkPlace" },
       { href: "/services/ai-solutions", label: "Professional Labs - AI Solutions" },
       {
-        href: "#data-driven",
+        href: "/services/data-driven-solutions",
         label: "Professional Labs - Data Driven Solutions",
       },
       {

@@ -13,6 +13,7 @@ import {
   Briefcase,
   ArrowRight,
   Brain,
+  LineChart,
 } from "lucide-react";
 import Link from "next/link";
 import s from "./ServicesShowcase.module.css";
@@ -83,6 +84,20 @@ const services: Service[] = [
       "Machine & Deep Learning models",
     ],
     href: "/services/ai-solutions",
+  },
+  {
+    id: "data-driven",
+    name: "Data Driven Solutions",
+    icon: <LineChart size={28} strokeWidth={1.5} />,
+    title: "Data Driven Solutions",
+    description:
+      "Transforming Business with Advanced Data Driven Solutions. Leverage the power of your data with our expert engineering and predictive analytics services.",
+    features: [
+      "BI Analytics & Dashboards",
+      "Scalable Data Pipelines",
+      "Predictive Modeling & Insights",
+    ],
+    href: "/services/data-driven-solutions",
   },
   {
     id: "cloudapp",

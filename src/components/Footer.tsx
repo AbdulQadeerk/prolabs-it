@@ -84,6 +84,9 @@ export default function Footer() {
                 <Link href="/services/ai-solutions">AI Solutions</Link>
               </li>
               <li>
+                <Link href="/services/data-driven-solutions">Data Driven Solutions</Link>
+              </li>
+              <li>
                 <Link href="/services/email-security">Email Security</Link>
               </li>
               <li>

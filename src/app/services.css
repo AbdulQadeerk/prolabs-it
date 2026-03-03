@@ -9,7 +9,8 @@
 .sv-pki,
 .sv-ad,
 .sv-modern-workplace,
-.sv-ai {
+.sv-ai,
+.sv-data-driven {
   --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
@@ -345,7 +346,8 @@
 .sv-pki .sv-meta-tags,
 .sv-ad .sv-meta-tags,
 .sv-modern-workplace .sv-meta-tags,
-.sv-ai .sv-meta-tags {
+.sv-ai .sv-meta-tags,
+.sv-data-driven .sv-meta-tags {
   flex-wrap: wrap;
   flex-direction: row;
 }
