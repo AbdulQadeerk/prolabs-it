@@ -84,6 +84,20 @@
   background: linear-gradient(135deg, var(--sv-ink) 0%, #0d4f6c 100%);
   padding: 130px 0 60px;
 }
+.sv-azure .sv-hero-band {
+  background: radial-gradient(circle at 20% 30%, rgba(34, 167, 224, 0.15) 0%, transparent 50%),
+              linear-gradient(135deg, #001a33 0%, #004d99 100%);
+  position: relative;
+  overflow: hidden;
+}
+.sv-azure .sv-hero-band::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
 
 /* ==================== BREADCRUMB ==================== */
 .sv-breadcrumb {

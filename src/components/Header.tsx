@@ -31,7 +31,7 @@ const serviceColumns = [
   {
     title: "Consulting Services",
     items: [
-      { href: "#azure-consulting", label: "Azure Consulting Services" },
+      { href: "/services/azure-consulting", label: "Azure Consulting Services" },
       { href: "#azure-virtual-desktop", label: "Azure Virtual Desktop" },
       { href: "#citrix-consulting", label: "Citrix Consulting" },
       { href: "#pki-consulting", label: "PKI Consulting" },
