@@ -53,6 +53,20 @@
   --sv-gray: #605e5c;
   --sv-bg: #f3f2f1;
 }
+.sv-netsec {
+  --sv-accent: #22a7e0;
+  --sv-ink: #002b4d;
+  --sv-text: #323130;
+  --sv-gray: #605e5c;
+  --sv-bg: #f3f2f1;
+}
+.sv-iam {
+  --sv-accent: #22a7e0;
+  --sv-ink: #002b4d;
+  --sv-text: #323130;
+  --sv-gray: #605e5c;
+  --sv-bg: #f3f2f1;
+}
 
 .sv-page {
   background: #fff;
