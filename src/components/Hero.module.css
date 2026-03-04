@@ -399,10 +399,57 @@
     width: 100%;
     justify-content: center;
   }
-  .overlay-card {
-    display: none;
-  }
   .hero-person {
     max-width: 100%;
+  }
+  .overlay-card {
+    min-width: unset;
+    padding: 12px 14px;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    font-size: 11px;
+  }
+  .overlay-left {
+    left: 0;
+    top: auto;
+    bottom: 48%;
+    max-width: 220px;
+    transform: translateX(-80px);
+  }
+  .slide-in-left {
+    transform: translateX(0);
+  }
+  .overlay-right {
+    right: 0;
+    bottom: 2%;
+    max-width: 240px;
+    transform: translateX(80px);
+  }
+  .slide-in-right {
+    transform: translateX(0);
+  }
+  .oc-stat-value {
+    font-size: 1.3rem;
+  }
+  .oc-stat-label {
+    font-size: 10px;
+  }
+  .oc-header {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+  .donut-wrap {
+    width: 60px;
+    height: 60px;
+  }
+  .donut-label {
+    font-size: 0.85rem;
+  }
+  .legend-item {
+    font-size: 10px;
+    gap: 4px;
+  }
+  .legend-val {
+    padding-left: 8px;
   }
 }
