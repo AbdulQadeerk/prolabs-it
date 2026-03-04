@@ -153,11 +153,11 @@
   transform: translateY(-2px);
 }
 
-/* Visual / Dashboard */
+/* ─── Visual — Person Image + Overlays ─── */
 .hero-visual {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -173,193 +173,184 @@
   z-index: 0;
 }
 
-.dashboard-card {
+.hero-person {
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  overflow: hidden;
-  width: 100%;
   max-width: 520px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  width: 100%;
 }
 
-.dashboard-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
-  background: rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.dashboard-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.dashboard-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.dashboard-dots span:nth-child(1) {
-  background: #ff5f57;
-}
-.dashboard-dots span:nth-child(2) {
-  background: #febc2e;
-}
-.dashboard-dots span:nth-child(3) {
-  background: #28c840;
-}
-
-.dashboard-title {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.dashboard-body {
-  padding: 24px 20px;
-}
-
-.dash-stat-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.dash-stat {
-  text-align: center;
-  padding: 14px 8px;
-  background: rgba(34, 167, 224, 0.08);
-  border-radius: 10px;
-  border: 1px solid rgba(34, 167, 224, 0.12);
-}
-
-.dash-stat-value {
+.person-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   display: block;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #22a7e0;
-  margin-bottom: 4px;
 }
 
-.dash-stat-label {
-  display: block;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* ─── Floating Overlay Cards (NinjaOne style) ─── */
+.overlay-card {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 18px 22px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  color: #1e293b;
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.7s ease;
 }
 
-.dash-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  height: 100px;
-  margin-bottom: 20px;
-  padding: 0 8px;
+.overlay-left {
+  left: -40px;
+  top: 12%;
+  min-width: 280px;
+  transform: translateX(-120px);
 }
 
-.chart-bar {
-  flex: 1;
-  background: rgba(34, 167, 224, 0.25);
-  border-radius: 4px 4px 0 0;
-  transition: all 0.3s ease;
+.overlay-right {
+  right: -30px;
+  bottom: 8%;
+  min-width: 290px;
+  transform: translateX(120px);
 }
 
-.chart-bar-active {
-  background: #22a7e0;
-  box-shadow: 0 0 12px rgba(34, 167, 224, 0.4);
+.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.dash-services {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.dash-service-item {
+/* ─── Card internals ─── */
+.oc-header {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 12px;
 }
 
-.service-dot {
+.oc-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-}
-
-.service-dot-green {
   background: #22a7e0;
-  box-shadow: 0 0 8px rgba(34, 167, 224, 0.5);
+  box-shadow: 0 0 6px rgba(34, 167, 224, 0.5);
 }
 
-/* Floating cards */
-.float-card {
-  position: absolute;
-  z-index: 3;
+/* ── Patching compliance card ── */
+.oc-stat-row {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: float 6s ease-in-out infinite;
+  margin-bottom: 10px;
 }
 
-.float-card-left {
-  left: -20px;
-  top: 20%;
-  animation-delay: 0s;
+.oc-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
 }
 
-.float-card-right {
-  right: -20px;
-  bottom: 15%;
-  animation-delay: 3s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-.fc-icon {
-  font-size: 1.4rem;
-}
-
-.fc-title {
-  display: block;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+.oc-stat-label {
+  font-size: 12px;
+  color: #94a3b8;
   font-weight: 500;
 }
 
-.fc-value {
-  display: block;
-  font-size: 13px;
+.oc-progress-track {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.oc-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22a7e0, #0ea5e9);
+  border-radius: 10px;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+}
+
+/* ── Patches installed donut card ── */
+.oc-donut-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.donut-wrap {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.donut-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.donut-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: #22a7e0;
-  font-weight: 600;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-green {
+  background: #22c55e;
+}
+.legend-blue {
+  background: #22a7e0;
+}
+.legend-red {
+  background: #ef4444;
+}
+.legend-yellow {
+  background: #eab308;
+}
+
+.legend-val {
+  margin-left: auto;
+  font-weight: 700;
+  color: #0f172a;
+  padding-left: 12px;
 }
 
 /* ───── Responsive ───── */
@@ -383,11 +374,13 @@
   .hero-visual {
     margin-top: 40px;
   }
-  .float-card-left {
+  .overlay-left {
     left: 0;
+    top: 5%;
   }
-  .float-card-right {
+  .overlay-right {
     right: 0;
+    bottom: 5%;
   }
 }
 
@@ -406,10 +399,10 @@
     width: 100%;
     justify-content: center;
   }
-  .float-card {
+  .overlay-card {
     display: none;
   }
-  .dashboard-card {
+  .hero-person {
     max-width: 100%;
   }
 }
