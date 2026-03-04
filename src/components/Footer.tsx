@@ -66,49 +66,25 @@ export default function Footer() {
                 <Link href="/services/managed-soc">Managed SOC Service</Link>
               </li>
               <li>
-                <Link href="/services/azure-virtual-desktop">Azure Virtual Desktop</Link>
+                <Link href="/services/azure-virtual-desktop">
+                  Azure Virtual Desktop
+                </Link>
               </li>
               <li>
-                <Link href="/services/citrix-consulting">Citrix Consulting</Link>
+                <Link href="/services/citrix-consulting">
+                  Citrix Consulting
+                </Link>
               </li>
               <li>
                 <Link href="/services/pki-consulting">PKI Consulting</Link>
               </li>
               <li>
-                <Link href="/services/active-directory">Active Directory Consulting</Link>
+                <Link href="/services/active-directory">
+                  Active Directory Consulting
+                </Link>
               </li>
               <li>
                 <Link href="/services/modern-workplace">Modern Workplace</Link>
-              </li>
-              <li>
-                <Link href="/services/ai-solutions">AI Solutions</Link>
-              </li>
-              <li>
-                <Link href="/services/data-driven-solutions">Data Driven Solutions</Link>
-              </li>
-              <li>
-                <Link href="/services/email-security">Email Security</Link>
-              </li>
-              <li>
-                <Link href="/services/azure-security">Azure Security</Link>
-              </li>
-              <li>
-                <Link href="/services/defender-endpoint">
-                  Defender for Endpoint
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/cloud-app-security">
-                  Cloud App Security
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/defender-identity">
-                  Defender for Identity
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/vapt">VAPT</Link>
               </li>
             </ul>
           </div>

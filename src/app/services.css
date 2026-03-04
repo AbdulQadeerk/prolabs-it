@@ -10,7 +10,11 @@
 .sv-ad,
 .sv-modern-workplace,
 .sv-ai,
-.sv-data-driven {
+.sv-data-driven,
+.sv-web,
+.sv-helpdesk,
+.sv-crm,
+.sv-ticketing {
   --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
   --sv-text: #323130;
@@ -90,6 +94,14 @@
   --sv-bg: #f3f2f1;
 }
 
+.sv-mktres {
+  --sv-accent: #22a7e0;
+  --sv-ink: #002b4d;
+  --sv-text: #323130;
+  --sv-gray: #605e5c;
+  --sv-bg: #f3f2f1;
+}
+
 .sv-training {
   --sv-accent: #22a7e0;
   --sv-ink: #002b4d;
@@ -118,9 +130,11 @@
 
 .sv-azure .sv-hero-band {
   background:
-    radial-gradient(circle at 20% 30%,
+    radial-gradient(
+      circle at 20% 30%,
       rgba(34, 167, 224, 0.15) 0%,
-      transparent 50%),
+      transparent 50%
+    ),
     linear-gradient(135deg, #001a33 0%, #004d99 100%);
   position: relative;
   overflow: hidden;
@@ -133,8 +147,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
   background-size: 30px 30px;
   pointer-events: none;
 }
@@ -347,7 +363,11 @@
 .sv-ad .sv-meta-tags,
 .sv-modern-workplace .sv-meta-tags,
 .sv-ai .sv-meta-tags,
-.sv-data-driven .sv-meta-tags {
+.sv-data-driven .sv-meta-tags,
+.sv-web .sv-meta-tags,
+.sv-helpdesk .sv-meta-tags,
+.sv-crm .sv-meta-tags,
+.sv-ticketing .sv-meta-tags {
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -381,7 +401,6 @@
 }
 
 @keyframes svFloat {
-
   0%,
   100% {
     transform: translateY(0);
@@ -397,7 +416,6 @@
 }
 
 @keyframes svFloatSOC {
-
   0%,
   100% {
     transform: translateY(0);
@@ -1834,7 +1852,8 @@
 .sv-cms .sv-section-faq,
 .sv-training .sv-section-faq,
 .sv-netsec .sv-section-faq,
-.sv-iam .sv-section-faq {
+.sv-iam .sv-section-faq,
+.sv-mktres .sv-section-faq {
   background: var(--sv-bg);
 }
 
@@ -1842,7 +1861,6 @@
 
 /* ---------- Tablet (max 1024px) ---------- */
 @media (max-width: 1024px) {
-
   .sv-section-info,
   .sv-section-security,
   .sv-section-prolabs,
@@ -1866,7 +1884,6 @@
 
 /* ---------- Mobile (max 768px) ---------- */
 @media (max-width: 768px) {
-
   /* Hero Band */
   .sv-hero-band {
     padding: 160px 0 40px;

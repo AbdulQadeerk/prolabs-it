@@ -31,13 +31,25 @@ const serviceColumns = [
   {
     title: "Consulting Services",
     items: [
-      { href: "/services/azure-consulting", label: "Azure Consulting Services" },
-      { href: "/services/azure-virtual-desktop", label: "Azure Virtual Desktop" },
+      {
+        href: "/services/azure-consulting",
+        label: "Azure Consulting Services",
+      },
+      {
+        href: "/services/azure-virtual-desktop",
+        label: "Azure Virtual Desktop",
+      },
       { href: "/services/citrix-consulting", label: "Citrix Consulting" },
       { href: "/services/pki-consulting", label: "PKI Consulting" },
-      { href: "/services/active-directory", label: "Active Directory Consulting" },
+      {
+        href: "/services/active-directory",
+        label: "Active Directory Consulting",
+      },
       { href: "/services/modern-workplace", label: "Modern WorkPlace" },
-      { href: "/services/ai-solutions", label: "Professional Labs - AI Solutions" },
+      {
+        href: "/services/ai-solutions",
+        label: "Professional Labs - AI Solutions",
+      },
       {
         href: "/services/data-driven-solutions",
         label: "Professional Labs - Data Driven Solutions",
@@ -57,13 +69,16 @@ const serviceColumns = [
       },
       { href: "/services/it-training", label: "IT Training" },
       { href: "/services/market-research", label: "Market Research" },
-      { href: "/services/web-app-dev", label: "Website & App Development" },
+      {
+        href: "/services/web-development",
+        label: "Website & App Development",
+      },
       { href: "/services/it-helpdesk", label: "IT Help Desk" },
       {
         href: "/services/crm-services",
         label: "CRM (Customer Relationship Management) Services",
       },
-      { href: "/services/erp-services", label: "ERP Services" },
+      // { href: "/services/erp-services", label: "ERP Services" },
       { href: "/services/ticketing", label: "Ticketing System Services" },
     ],
   },
