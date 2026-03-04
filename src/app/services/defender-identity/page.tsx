@@ -38,7 +38,6 @@ export default function DefenderIdentityPage() {
 
   return (
     <main className="sv-page sv-identity">
-
       {/* Hero Header Band */}
       <section className="sv-hero-band">
         <div className="container">
@@ -90,8 +89,8 @@ export default function DefenderIdentityPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Identity Security Illustration"
+                  src="/defender_identity_hero.png"
+                  alt="Defender for Identity Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"
@@ -473,7 +472,6 @@ export default function DefenderIdentityPage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

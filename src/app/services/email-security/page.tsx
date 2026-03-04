@@ -99,7 +99,6 @@ export default function EmailSecurityPage() {
 
   return (
     <main className="sv-page sv-email">
-
       {/* Hero Header Band */}
       <section className="sv-hero-band">
         <div className="container">
@@ -146,8 +145,8 @@ export default function EmailSecurityPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Email Security Illustration"
+                  src="/email_security_hero.png"
+                  alt="Email Security Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"
@@ -433,7 +432,6 @@ export default function EmailSecurityPage() {
       </section>
 
       {/* Final CTA */}
-
     </main>
   );
 }

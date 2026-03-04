@@ -281,8 +281,8 @@ export default function VaptPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Vulnerability Assessment and Penetration Testing Services"
+                  src="/vapt_hero.png"
+                  alt="VAPT Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

@@ -197,7 +197,6 @@ export default function AzureSecurityPage() {
 
   return (
     <main className="sv-page sv-azure">
-
       {/* Hero Header Band */}
       <section className="sv-hero-band">
         <div className="container">
@@ -252,8 +251,8 @@ export default function AzureSecurityPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Azure Security Illustration"
+                  src="/azure_security_hero.png"
+                  alt="Azure Security Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"
@@ -451,7 +450,6 @@ export default function AzureSecurityPage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }

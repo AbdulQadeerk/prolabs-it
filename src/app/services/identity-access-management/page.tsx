@@ -248,8 +248,8 @@ export default function IAMPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Identity and Access Management Solutions by Professional Labs Delaware"
+                  src="/iam_hero.png"
+                  alt="Identity and Access Management Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

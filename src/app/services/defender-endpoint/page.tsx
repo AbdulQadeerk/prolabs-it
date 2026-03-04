@@ -299,8 +299,8 @@ export default function DefenderEndpointPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Microsoft Defender for Endpoint Illustration"
+                  src="/defender_endpoint_hero.png"
+                  alt="Defender for Endpoint Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

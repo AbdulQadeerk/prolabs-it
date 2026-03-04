@@ -224,8 +224,8 @@ export default function NetworkSecurityPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Network and Security Services by Professional Labs Delaware"
+                  src="/network_security_hero.png"
+                  alt="Network Security Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

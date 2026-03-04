@@ -193,8 +193,8 @@ export default function CloudManagedServicesPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-automation.svg"
-                  alt="Cloud Managed Services by Professional Labs Delaware"
+                  src="/cloud_app_security_hero.png"
+                  alt="Cloud Infrastructure Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

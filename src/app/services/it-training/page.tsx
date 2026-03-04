@@ -249,8 +249,8 @@ export default function ITTrainingPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-automation.svg"
-                  alt="IT Training Services by Professional Labs Delaware"
+                  src="/modern_workplace_hero_1772545930778.png"
+                  alt="IT Training Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"

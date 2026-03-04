@@ -127,8 +127,8 @@ export default function ManagedSOCPage() {
             >
               <div className="sv-visual-container">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Security Illustration"
+                  src="/managed_soc_hero.png"
+                  alt="SOC Operations Dashboard"
                   width={550}
                   height={450}
                   className="sv-float-img"
@@ -244,8 +244,8 @@ export default function ManagedSOCPage() {
             >
               <div className="sv-monitor-wrapper">
                 <Image
-                  src="/illustrations/dashboard-preview.svg"
-                  alt="Monitoring Dashboard"
+                  src="/managed_soc_hero.png"
+                  alt="Cybersecurity Event Dashboard"
                   width={600}
                   height={400}
                   className="sv-monitor-img"

@@ -38,7 +38,6 @@ export default function CloudAppSecurityPage() {
 
   return (
     <main className="sv-page sv-mcas">
-
       {/* Hero Header Band */}
       <section className="sv-hero-band">
         <div className="container">
@@ -96,8 +95,8 @@ export default function CloudAppSecurityPage() {
             >
               <div className="sv-img-frame">
                 <Image
-                  src="/illustrations/benefit-security.svg"
-                  alt="Cloud App Security Illustration"
+                  src="/cloud_app_security_hero.png"
+                  alt="Cloud App Security Dashboard"
                   width={500}
                   height={400}
                   className="sv-float-img"
@@ -440,7 +439,6 @@ export default function CloudAppSecurityPage() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
