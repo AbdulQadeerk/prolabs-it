@@ -13,9 +13,27 @@ const geologica = Geologica({
 });
 
 export const metadata: Metadata = {
-  title: "Professional Labs - Unified IT Operations",
+  title: {
+    default: "Managed IT Services & Cybersecurity Solutions | Professional Labs",
+    template: "%s | Professional Labs",
+  },
   description:
-    "Unified IT operations, endpoint security, and support — built for modern teams.",
+    "Professional Labs delivers managed IT services, cybersecurity, SOC monitoring, cloud security, and IT support for global businesses. Trusted across 35+ countries since 1997.",
+  metadataBase: new URL("https://prolabsit.com"),
+  verification: {
+    google: "nQFnk8eA7YsFgaZfJkvif8jwYRO1GFlF_FjGs7HWBAU",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
