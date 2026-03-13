@@ -34,6 +34,7 @@ const blogPosts = [
   {
     id: 1,
     category: "Managed IT",
+    slug: "managed-it-services-in-qatar-key-reasons-behind-the-rapid-adoption",
     title:
       "Managed IT Services in Qatar: Key Reasons Behind the Rapid Adoption",
     excerpt:
@@ -46,6 +47,7 @@ const blogPosts = [
   {
     id: 2,
     category: "Security",
+    slug: "managed-soc-services-in-delaware-how-enterprises-detect-stop-cyber-threats-24-7",
     title:
       "Managed SOC Services in Delaware: How Enterprises Detect & Stop Cyber Threats 24/7",
     excerpt:
@@ -59,6 +61,7 @@ const blogPosts = [
   {
     id: 3,
     category: "Cloud",
+    slug: "cloud-managed-services-in-dubai-uae-what-enterprises-should-expect",
     title:
       "Cloud Managed Services in Dubai UAE | What Enterprises Should Expect",
     excerpt:
@@ -71,6 +74,7 @@ const blogPosts = [
   {
     id: 4,
     category: "Azure",
+    slug: "azure-consulting-services-in-dubai-cost-use-cases-benefits",
     title: "Azure Consulting Services in Dubai: Cost, Use Cases & Benefits",
     excerpt:
       "Unpacking the value of Azure for Middle Eastern businesses, from cost optimization to scalable application hosting.",
@@ -82,6 +86,7 @@ const blogPosts = [
   {
     id: 5,
     category: "Managed IT",
+    slug: "best-managed-it-services-for-delaware-businesses-professional-labs",
     title:
       "Best Managed IT Services for Delaware Businesses: Professional Labs",
     excerpt:
@@ -94,6 +99,7 @@ const blogPosts = [
   {
     id: 6,
     category: "Security",
+    slug: "delaware-cybersecurity-services-professional-labs-security-guide",
     title: "Delaware Cybersecurity Services: Professional Labs Security Guide",
     excerpt:
       "Comprehensive guide for mid-market and enterprise businesses on building a resilient security posture in today's threat landscape.",
@@ -105,6 +111,7 @@ const blogPosts = [
   {
     id: 7,
     category: "Security",
+    slug: "professional-labs-managed-soc-services-delaware",
     title:
       "Delaware Managed SOC Services – Professional Labs Cybersecurity Solutions",
     excerpt:
@@ -117,6 +124,7 @@ const blogPosts = [
   {
     id: 8,
     category: "Cloud",
+    slug: "cloud-monitoring-delaware-professional-labs-the-trusted-choice",
     title: "Cloud Monitoring Delaware: Professional Labs – The Trusted Choice",
     excerpt:
       "Real-time visibility into your multi-cloud environment. Why visibility is the first step in performance optimization.",
@@ -128,6 +136,7 @@ const blogPosts = [
   {
     id: 9,
     category: "Citrix",
+    slug: "6-actionable-ways-to-improve-cloud-efficiency",
     title: "6 Actionable Ways To Improve Your Cloud Efficiency",
     excerpt:
       "Cloud costs spiraling? Use these Citrix-proven methods to streamline your virtual desktop infrastructure and save.",
@@ -139,6 +148,7 @@ const blogPosts = [
   {
     id: 10,
     category: "Citrix",
+    slug: "managed-it-vs-cloud-services",
     title: "Managed IT vs Cloud Services: What's right for your business?",
     excerpt:
       "Choosing between traditional managed services and pure cloud models can be tough. We break down the Pros and Cons for you.",
@@ -220,7 +230,7 @@ export default function BlogPage() {
                   <span>{featuredPost.date}</span>
                 </div>
               </div>
-              <Link href={`#post-${featuredPost.id}`} className="pg-fcard-btn">
+              <Link href={`/${featuredPost.slug}`} className="pg-fcard-btn">
                 Continue Reading <ArrowRight size={18} />
               </Link>
             </div>
@@ -292,7 +302,7 @@ export default function BlogPage() {
                       </div>
                       <h3 className="pg-card-title">{post.title}</h3>
                       <p className="pg-card-desc">{post.excerpt}</p>
-                      <Link href={`#post-${post.id}`} className="pg-card-link">
+                      <Link href={`/${post.slug}`} className="pg-card-link">
                         Continue Reading »
                       </Link>
                     </div>

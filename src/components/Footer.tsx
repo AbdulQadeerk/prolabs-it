@@ -63,28 +63,28 @@ export default function Footer() {
             <h4>Our Services</h4>
             <ul>
               <li>
-                <Link href="/services/managed-soc">Managed SOC Service</Link>
+                <Link href="/managed-soc-services">Managed SOC Service</Link>
               </li>
               <li>
-                <Link href="/services/azure-virtual-desktop">
+                <Link href="/azure-virtual-desktop">
                   Azure Virtual Desktop
                 </Link>
               </li>
               <li>
-                <Link href="/services/citrix-consulting">
+                <Link href="/citrix-consulting">
                   Citrix Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/services/pki-consulting">PKI Consulting</Link>
+                <Link href="/pki-consulting">PKI Consulting</Link>
               </li>
               <li>
-                <Link href="/services/active-directory">
+                <Link href="/active-directory-consulting">
                   Active Directory Consulting
                 </Link>
               </li>
               <li>
-                <Link href="/services/modern-workplace">Modern Workplace</Link>
+                <Link href="/modern-workplace">Modern Workplace</Link>
               </li>
             </ul>
           </div>
@@ -193,21 +193,21 @@ export default function Footer() {
           <details>
             <summary>Our Services</summary>
             <div className={s["footer-mobile-links"]}>
-              <Link href="/services/managed-soc">Managed SOC Service</Link>
-              <a href="#">Cloud Managed Services</a>
-              <Link href="/services/email-security">Email Security</Link>
-              <Link href="/services/azure-security">Azure Security</Link>
-              <Link href="/services/defender-endpoint">
+              <Link href="/managed-soc-services">Managed SOC Service</Link>
+              <Link href="/cloud-managed-services">Cloud Managed Services</Link>
+              <Link href="/email-security">Email Security</Link>
+              <Link href="/azure-security-service">Azure Security</Link>
+              <Link href="/defender-for-endpoint">
                 Defender for Endpoint
               </Link>
-              <Link href="/services/cloud-app-security">
+              <Link href="/microsoft-cloud-app-security">
                 Cloud App Security
               </Link>
-              <Link href="/services/defender-identity">
+              <Link href="/microsoft-defender-for-identity">
                 Defender for Identity
               </Link>
-              <Link href="/services/vapt">VAPT</Link>
-              <a href="#">IT Help Desk</a>
+              <Link href="/vapt">VAPT</Link>
+              <Link href="/it-help-desk">IT Help Desk</Link>
             </div>
           </details>
           <details>

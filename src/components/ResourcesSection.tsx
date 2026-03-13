@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useScrollReveal } from "./animations";
 import s from "./ResourcesSection.module.css";
 
@@ -58,9 +59,9 @@ export default function ResourcesSection() {
                 </span>
                 <h3 className={s["card-heading"]}>{item.title}</h3>
                 <p className={s["card-desc"]}>{item.desc}</p>
-                <a href="#" className={s["card-link"]}>
+                <Link href="/blog" className={s["card-link"]}>
                   Read more <span className={s.arrow}>→</span>
-                </a>
+                </Link>
               </div>
             </article>
           ))}

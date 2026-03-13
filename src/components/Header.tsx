@@ -8,22 +8,22 @@ const serviceColumns = [
   {
     title: "Security",
     items: [
-      { href: "/services/managed-soc", label: "Managed SOC Services" },
-      { href: "/services/azure-security", label: "Azure Security" },
-      { href: "/services/defender-endpoint", label: "Defender for Endpoint" },
-      { href: "/services/email-security", label: "Email Security" },
+      { href: "/managed-soc-services", label: "Managed SOC Services" },
+      { href: "/azure-security-service", label: "Azure Security" },
+      { href: "/defender-for-endpoint", label: "Defender for Endpoint" },
+      { href: "/email-security", label: "Email Security" },
       {
-        href: "/services/cloud-app-security",
+        href: "/microsoft-cloud-app-security",
         label: "Microsoft Cloud App Security",
       },
-      { href: "/services/defender-identity", label: "Defender for Identity" },
-      { href: "/services/vapt", label: "VAPT" },
+      { href: "/microsoft-defender-for-identity", label: "Defender for Identity" },
+      { href: "/vapt", label: "VAPT" },
       {
-        href: "/services/network-security",
+        href: "/network-and-security-services",
         label: "Network and Security Services",
       },
       {
-        href: "/services/identity-access-management",
+        href: "/identity-management-isim-igi-solutions",
         label: "Identity and Access Management",
       },
     ],
@@ -32,26 +32,26 @@ const serviceColumns = [
     title: "Consulting Services",
     items: [
       {
-        href: "/services/azure-consulting",
+        href: "/azure-consulting-services",
         label: "Azure Consulting Services",
       },
       {
-        href: "/services/azure-virtual-desktop",
+        href: "/azure-virtual-desktop",
         label: "Azure Virtual Desktop",
       },
-      { href: "/services/citrix-consulting", label: "Citrix Consulting" },
-      { href: "/services/pki-consulting", label: "PKI Consulting" },
+      { href: "/citrix-consulting", label: "Citrix Consulting" },
+      { href: "/pki-consulting", label: "PKI Consulting" },
       {
-        href: "/services/active-directory",
+        href: "/active-directory-consulting",
         label: "Active Directory Consulting",
       },
-      { href: "/services/modern-workplace", label: "Modern WorkPlace" },
+      { href: "/modern-workplace", label: "Modern WorkPlace" },
       {
-        href: "/services/ai-solutions",
+        href: "/ai-solutions-consulting-delaware",
         label: "Professional Labs - AI Solutions",
       },
       {
-        href: "/services/data-driven-solutions",
+        href: "/professional-labs-your-partner-in-data-driven-brilliance",
         label: "Professional Labs - Data Driven Solutions",
       },
       {
@@ -64,22 +64,22 @@ const serviceColumns = [
     title: "Support and Market Research",
     items: [
       {
-        href: "/services/cloud-managed-services",
+        href: "/cloud-managed-services",
         label: "Cloud Managed Service",
       },
-      { href: "/services/it-training", label: "IT Training" },
-      { href: "/services/market-research", label: "Market Research" },
+      { href: "/it-training-services", label: "IT Training" },
+      { href: "/market-research-services", label: "Market Research" },
       {
-        href: "/services/web-development",
+        href: "/web-development-services",
         label: "Website & App Development",
       },
-      { href: "/services/it-helpdesk", label: "IT Help Desk" },
+      { href: "/it-help-desk", label: "IT Help Desk" },
       {
-        href: "/services/crm-services",
+        href: "/crm-customer-relationship-management-services",
         label: "CRM (Customer Relationship Management) Services",
       },
-      // { href: "/services/erp-services", label: "ERP Services" },
-      { href: "/services/ticketing", label: "Ticketing System Services" },
+      // { href: "/erp-services", label: "ERP Services" },
+      { href: "/ticketing-system-service", label: "Ticketing System Services" },
     ],
   },
 ];

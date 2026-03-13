@@ -41,7 +41,7 @@ const services: Service[] = [
       "Automated incident response workflows",
       "Advanced threat intelligence integration",
     ],
-    href: "/services/managed-soc",
+    href: "/managed-soc-services",
   },
   {
     id: "cloud",
@@ -55,7 +55,7 @@ const services: Service[] = [
       "Multi-cloud environment management",
       "Cost monitoring and optimization",
     ],
-    href: "#cloud",
+    href: "/cloud-managed-services",
   },
   {
     id: "email",
@@ -69,7 +69,7 @@ const services: Service[] = [
       "Email encryption and DLP",
       "Real-time threat intelligence",
     ],
-    href: "/services/email-security",
+    href: "/email-security",
   },
   {
     id: "ai",
@@ -83,7 +83,7 @@ const services: Service[] = [
       "Custom AI Tool Development",
       "Machine & Deep Learning models",
     ],
-    href: "/services/ai-solutions",
+    href: "/ai-solutions-consulting-delaware",
   },
   {
     id: "data-driven",
@@ -97,7 +97,7 @@ const services: Service[] = [
       "Scalable Data Pipelines",
       "Predictive Modeling & Insights",
     ],
-    href: "/services/data-driven-solutions",
+    href: "/professional-labs-your-partner-in-data-driven-brilliance",
   },
   {
     id: "cloudapp",
@@ -111,7 +111,7 @@ const services: Service[] = [
       "User behavior analytics",
       "Data loss prevention policies",
     ],
-    href: "#cloudapp",
+    href: "/microsoft-cloud-app-security",
   },
   {
     id: "azure",
@@ -125,7 +125,7 @@ const services: Service[] = [
       "Network security group configuration",
       "Compliance and governance automation",
     ],
-    href: "/services/azure-security",
+    href: "/azure-security-service",
   },
   {
     id: "avd",
@@ -139,7 +139,7 @@ const services: Service[] = [
       "Secure remote access from any device",
       "Cost-effective virtual desktop infrastructure",
     ],
-    href: "/services/azure-virtual-desktop",
+    href: "/azure-virtual-desktop",
   },
   {
     id: "helpdesk",
@@ -153,7 +153,7 @@ const services: Service[] = [
       "SLA-driven resolution tracking",
       "Proactive system monitoring",
     ],
-    href: "#helpdesk",
+    href: "/it-help-desk",
   },
   {
     id: "network",
@@ -167,7 +167,7 @@ const services: Service[] = [
       "Firewall and intrusion prevention",
       "Network performance monitoring",
     ],
-    href: "#network",
+    href: "/network-and-security-services",
   },
   {
     id: "workplace",
@@ -181,7 +181,7 @@ const services: Service[] = [
       "Collaboration and productivity tools",
       "Employee experience optimization",
     ],
-    href: "/services/modern-workplace",
+    href: "/modern-workplace",
   },
 ];
 
