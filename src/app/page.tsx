@@ -1,53 +1,156 @@
-"use client";
-
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import LeadershipBand from "@/components/LeadershipBand";
 import BenefitsSplit from "@/components/BenefitsSplit";
 import CaseStudy from "@/components/CaseStudy";
+import TrustBar from "@/components/TrustBar";
 import StackSection from "@/components/StackSection";
 import Features from "@/components/Features";
-import TrustBar from "@/components/TrustBar";
 import ResourcesSection from "@/components/ResourcesSection";
 import StandardsSection from "@/components/StandardsSection";
 import CTASection from "@/components/CTASection";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title:
+    "Managed IT Services & Cybersecurity Solutions | Professional Labs",
+  description:
+    "Professional Labs delivers managed IT services, cybersecurity, SOC monitoring, cloud security, and IT support for global businesses. Trusted across 35+ countries since 1997.",
+  openGraph: {
+    title: "Managed IT Services & Cybersecurity Solutions | Professional Labs",
+    description:
+      "Professional Labs delivers managed IT services, cybersecurity, SOC monitoring, cloud security, and IT support for global businesses. Trusted across 35+ countries since 1997.",
+    type: "website",
+    url: "https://prolabsit.com/",
+    siteName: "Professional Labs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Managed IT Services & Cybersecurity Solutions | Professional Labs",
+    description:
+      "Professional Labs delivers managed IT services, cybersecurity, SOC monitoring, cloud security, and IT support for global businesses. Trusted across 35+ countries since 1997.",
+  },
+  alternates: {
+    canonical: "https://prolabsit.com/",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are managed IT services?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Managed IT services involve outsourcing IT operations, infrastructure monitoring, cybersecurity, and technical support to a specialized provider that proactively manages and maintains technology systems.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What does a Managed SOC do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A Managed Security Operations Center continuously monitors IT environments for threats, analyzes security events, and responds to potential cyber incidents to protect business systems and sensitive data.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why do businesses need cybersecurity services?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cybersecurity services help organizations prevent data breaches, protect sensitive information, maintain regulatory compliance, and ensure business continuity by monitoring and securing digital systems.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What industries use managed IT services?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Managed IT services are used by many industries including finance, healthcare, legal, manufacturing, technology, and professional services that rely on secure and reliable IT infrastructure.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do managed IT services improve business productivity?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Managed IT services improve productivity by reducing downtime, improving system performance, strengthening cybersecurity, and providing reliable IT support so businesses can focus on core operations.",
+      },
+    },
+  ],
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Professional Labs",
+  url: "https://prolabsit.com",
+  logo: "https://prolabsit.com/prolabs_logo.svg",
+  foundingDate: "1997",
+  description:
+    "Professional Labs delivers managed IT services, cybersecurity, SOC monitoring, cloud security, and IT support for global businesses. Trusted across 35+ countries since 1997.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  sameAs: [],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: "English",
+  },
+};
 
 export default function Home() {
   return (
     <main>
-        {/* 1. Hero with brand logos at bottom — matches NinjaOne hero */}
-        <Hero />
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="org-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
 
-        {/* 2. Unified IT Operations Platform — tabbed services like NinjaOne */}
-        <ServicesShowcase />
+      {/* 1. Hero with brand logos at bottom */}
+      <Hero />
 
-        {/* 3. Leadership/Announcement Band — NinjaOne news ticker area */}
-        <LeadershipBand />
+      {/* 2. Core Services Showcase */}
+      <ServicesShowcase />
 
-        {/* 4. Trusted by IT teams — For IT / For MSPs split cards */}
-        <BenefitsSplit />
+      {/* 3. Industry Recognition Band */}
+      <LeadershipBand />
 
-        {/* 5. Client Testimonial / Case Study */}
-        <CaseStudy />
-        <TrustBar />
+      {/* 4. Company Overview — Global IT & Cybersecurity Experts */}
+      <BenefitsSplit />
 
-        {/* 6. Built for your IT Stack — integrations */}
-        <StackSection />
+      {/* 5. Client Testimonial */}
+      <CaseStudy />
+      <TrustBar />
 
-        {/* 7. Proprietary Tools grid */}
-        <Features />
+      {/* 6. Technology Ecosystem — Strategic Partnerships */}
+      <StackSection />
 
-        {/* 8. Trust stats bar */}
+      {/* 7. Proprietary Tools */}
+      <Features />
 
+      {/* 8. Resources / Insights */}
+      <ResourcesSection />
 
-        {/* 9. Events, Updates & Resources */}
-        <ResourcesSection />
+      {/* 9. Compliance & Security Standards */}
+      <StandardsSection />
 
-        {/* 10. Security Standards */}
-        <StandardsSection />
-
-        {/* 11. Final CTA */}
-        <CTASection />
+      {/* 10. Final CTA */}
+      <CTASection />
     </main>
   );
 }

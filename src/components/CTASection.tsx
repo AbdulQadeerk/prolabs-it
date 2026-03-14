@@ -13,23 +13,22 @@ export default function CTASection() {
       <div className={s["cta-bg-pattern"]}></div>
       <div className={`container ${s["cta-container"]}`}>
         <div className={s["cta-content"]}>
-          <p className={s["cta-eyebrow"]}>Ready to Transform Your IT?</p>
+          <p className={s["cta-eyebrow"]}>FINAL CTA</p>
           <h2 className={s["cta-title"]}>
-            Ready to simplify work with unified IT?
+            Ready to Strengthen Your IT Infrastructure?
           </h2>
           <p className={s["cta-desc"]}>
-            Join 100+ businesses across 35+ countries who trust Professional
-            Labs for their IT operations, security, and cloud services.
+            Join organizations across 35+ countries that trust Professional Labs to manage their IT operations, cybersecurity, and cloud infrastructure.
           </p>
           <div className={s["cta-buttons"]}>
             <Link
               href="/contact"
               className={`btn btn-primary ${s["btn-large"]}`}
             >
-              Get a Free Consultation
+              Get a Free IT Consultation
             </Link>
             <a href="#services" className={`btn btn-outline ${s["btn-large"]}`}>
-              Explore Services
+              Download IT Security Checklist
             </a>
           </div>
         </div>

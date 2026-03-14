@@ -273,9 +273,9 @@
 
 /* ==================== LEAD / BODY TEXT ==================== */
 .sv-lead {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   color: var(--sv-ink);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -2218,6 +2218,78 @@
   .sv-section-prolabs {
     padding: 60px 0;
   }
+
+  /* Hero image */
+  .sv-hero-image {
+    order: -1;
+  }
+
+  .sv-img-frame {
+    max-width: 100%;
+  }
+
+  .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+  }
+
+  /* Hero lead text */
+  .sv-hero-lead {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  /* sv-center wrapper */
+  .sv-hero-btn-wrap.sv-center {
+    justify-content: center;
+  }
+
+  /* Security flex layout */
+  .sv-security-flex {
+    flex-direction: column;
+  }
+
+  /* Check list items */
+  .sv-check-list li {
+    font-size: 0.95rem;
+  }
+
+  /* Versus table */
+  .sv-versus-table-wrap {
+    border-radius: 12px;
+  }
+
+  .sv-versus-header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sv-versus-col-label {
+    padding: 14px 14px;
+    font-size: 0.85rem;
+  }
+
+  .sv-versus-diy,
+  .sv-versus-managed {
+    padding: 14px 14px;
+    font-size: 0.85rem;
+  }
+
+  /* Benefit cards */
+  .sv-benefit-card {
+    padding: 25px;
+  }
+
+  /* Bottom CTA wrap */
+  .sv-bottom-cta-wrap {
+    width: 100%;
+  }
+
+  /* Section grid */
+  .sv-section-grid {
+    padding: 50px 0;
+  }
 }
 
 /* ---------- Small Mobile (max 480px) ---------- */
@@ -2244,6 +2316,11 @@
 
   .sv-hero-p {
     font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .sv-hero-lead {
+    font-size: 0.88rem;
   }
 
   .sv-btn-primary,
@@ -2318,5 +2395,46 @@
   .sv-breadcrumb {
     font-size: 0.75rem;
     gap: 6px;
+  }
+
+  /* Hero image smaller on very small screens */
+  .sv-float-img {
+    max-height: 220px;
+  }
+
+  /* Versus table stacked on tiny screens */
+  .sv-versus-col-label {
+    padding: 12px 12px;
+    font-size: 0.8rem;
+  }
+
+  .sv-versus-diy,
+  .sv-versus-managed {
+    padding: 12px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Limitations dark */
+  .sv-limitation-dark-card {
+    padding: 22px 20px;
+  }
+
+  .sv-limitation-dark-title {
+    font-size: 1rem;
+  }
+
+  .sv-limitation-dark-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Grid card */
+  .sv-grid-card {
+    padding: 22px;
+  }
+
+  /* Check list items */
+  .sv-check-list li {
+    font-size: 0.88rem;
+    gap: 8px;
   }
 }

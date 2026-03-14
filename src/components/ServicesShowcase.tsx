@@ -9,8 +9,6 @@ import {
   Shield,
   Monitor,
   Headphones,
-  Network,
-  Briefcase,
   ArrowRight,
   Brain,
   LineChart,
@@ -35,11 +33,11 @@ const services: Service[] = [
     icon: <ShieldCheck size={28} strokeWidth={1.5} />,
     title: "Managed SOC Service",
     description:
-      "Keep your Security Operations Strong and Scalable. Our 24/7 SOC monitors your environment, detects threats in real-time, and responds to incidents before they impact your business.",
+      "Protect your business with 24/7 Managed Security Operations Center (SOC) services. Our security experts continuously monitor your IT environment, detect cyber threats in real time, and respond quickly to prevent security incidents and business disruption.",
     features: [
-      "Round-the-clock threat monitoring",
-      "Automated incident response workflows",
-      "Advanced threat intelligence integration",
+      "Continuous threat monitoring & detection",
+      "Automated incident response & remediation",
+      "Integrated threat intelligence & analytics",
     ],
     href: "/managed-soc-services",
   },
@@ -49,11 +47,11 @@ const services: Service[] = [
     icon: <Cloud size={28} strokeWidth={1.5} />,
     title: "Cloud Managed Services",
     description:
-      "Streamline cloud operations with managed services. We help you migrate, optimize, and manage your cloud infrastructure for maximum efficiency and cost savings.",
+      "Simplify and secure your cloud infrastructure with our Cloud Managed Services. We help businesses migrate, manage, and optimize cloud environments to improve performance, security, and cost efficiency.",
     features: [
-      "Cloud migration and optimization",
-      "Multi-cloud environment management",
-      "Cost monitoring and optimization",
+      "Secure cloud migration & infrastructure optimization",
+      "Multi-cloud monitoring and management",
+      "Cloud cost control and performance optimization",
     ],
     href: "/cloud-managed-services",
   },
@@ -63,11 +61,11 @@ const services: Service[] = [
     icon: <Mail size={28} strokeWidth={1.5} />,
     title: "Email Security",
     description:
-      "Beware of phishing. Protect Email Data. Professional Labs Email Security protects your inbox from advanced threats, phishing attacks, and data breaches.",
+      "Protect your business communication with advanced email security solutions. Professional Labs safeguards inboxes from phishing attacks, malware, and email-based cyber threats to prevent data breaches and unauthorized access.",
     features: [
-      "Advanced phishing detection",
-      "Email encryption and DLP",
-      "Real-time threat intelligence",
+      "Advanced phishing and malware detection",
+      "Email encryption and data loss protection (DLP)",
+      "Real-time threat intelligence and filtering",
     ],
     href: "/email-security",
   },
@@ -77,25 +75,25 @@ const services: Service[] = [
     icon: <Brain size={28} strokeWidth={1.5} />,
     title: "Advanced AI Solutions",
     description:
-      "Transforming Business with Advanced AI Solutions. Harness the power of Artificial Intelligence to unlock new potentials for your business with tailored strategies and custom development.",
+      "Drive innovation and efficiency with advanced AI solutions. Professional Labs helps businesses implement artificial intelligence strategies and custom AI tools to automate processes, gain insights, and accelerate digital transformation.",
     features: [
-      "AI Strategy & Roadmap",
-      "Custom AI Tool Development",
-      "Machine & Deep Learning models",
+      "AI strategy and implementation roadmap",
+      "Custom AI tools and automation solutions",
+      "Machine learning and deep learning models",
     ],
-    href: "/ai-solutions-consulting-delaware",
+    href: "/professional-labs-transforming-business-with-advanced-ai-solutions",
   },
   {
     id: "data-driven",
     name: "Data Driven Solutions",
     icon: <LineChart size={28} strokeWidth={1.5} />,
-    title: "Data Driven Solutions",
+    title: "Data-Driven Solutions",
     description:
-      "Transforming Business with Advanced Data Driven Solutions. Leverage the power of your data with our expert engineering and predictive analytics services.",
+      "Turn data into actionable insights with data-driven IT solutions. Professional Labs helps businesses leverage analytics, data engineering, and predictive models to improve decision-making and operational performance.",
     features: [
-      "BI Analytics & Dashboards",
-      "Scalable Data Pipelines",
-      "Predictive Modeling & Insights",
+      "Business intelligence analytics and dashboards",
+      "Scalable and secure data pipelines",
+      "Predictive modeling and advanced insights",
     ],
     href: "/professional-labs-your-partner-in-data-driven-brilliance",
   },
@@ -105,11 +103,11 @@ const services: Service[] = [
     icon: <Lock size={28} strokeWidth={1.5} />,
     title: "Microsoft Cloud App Security",
     description:
-      "Securing User Behavior with Microsoft Cloud App Security. Gain visibility into cloud app usage, detect shadow IT, and enforce data protection policies.",
+      "Protect your cloud applications with Microsoft Cloud App Security. Gain visibility into app usage, detect shadow IT risks, and enforce data protection policies to secure users and sensitive business data.",
     features: [
-      "Shadow IT discovery",
-      "User behavior analytics",
-      "Data loss prevention policies",
+      "Shadow IT discovery and risk monitoring",
+      "User behavior analytics and threat detection",
+      "Data loss prevention (DLP) policy enforcement",
     ],
     href: "/microsoft-cloud-app-security",
   },
@@ -117,13 +115,13 @@ const services: Service[] = [
     id: "azure",
     name: "Azure Security",
     icon: <Shield size={28} strokeWidth={1.5} />,
-    title: "Azure Security Service",
+    title: "Azure Security Services",
     description:
-      "Safeguard your data and applications with Azure's reliable security services. Comprehensive protection for your cloud workloads and hybrid environments.",
+      "Protect your cloud infrastructure with Azure security services. Professional Labs secures cloud workloads, applications, and hybrid environments using Microsoft-native security tools and best practices.",
     features: [
-      "Azure Security Center management",
-      "Network security group configuration",
-      "Compliance and governance automation",
+      "Azure Security Center monitoring and management",
+      "Network security group configuration and protection",
+      "Compliance, governance, and policy automation",
     ],
     href: "/azure-security-service",
   },
@@ -133,11 +131,11 @@ const services: Service[] = [
     icon: <Monitor size={28} strokeWidth={1.5} />,
     title: "Azure Virtual Desktop",
     description:
-      "Virtually access a secure remote desktop from anywhere. Deploy and scale Windows desktops and apps on Azure with built-in security.",
+      "Enable secure remote work with Azure Virtual Desktop. Deploy and manage Windows desktops and applications in the cloud with scalable infrastructure and built-in Microsoft security.",
     features: [
-      "Multi-session Windows 11 experience",
+      "Multi-session Windows 11 virtual desktop experience",
       "Secure remote access from any device",
-      "Cost-effective virtual desktop infrastructure",
+      "Cost-efficient and scalable virtual desktop infrastructure",
     ],
     href: "/azure-virtual-desktop",
   },
@@ -145,43 +143,15 @@ const services: Service[] = [
     id: "helpdesk",
     name: "IT Help Desk",
     icon: <Headphones size={28} strokeWidth={1.5} />,
-    title: "IT Help Desk Service",
+    title: "IT Help Desk Services",
     description:
-      "Our IT Help Desk Services will manage your IT infrastructure and software. Get 24/7 support, rapid resolution, and proactive monitoring.",
+      "Ensure smooth business operations with 24/7 IT help desk support. Professional Labs provides fast issue resolution, proactive monitoring, and reliable technical assistance to keep your IT systems running efficiently.",
     features: [
-      "24/7 multi-channel support",
-      "SLA-driven resolution tracking",
-      "Proactive system monitoring",
+      "24/7 multi-channel IT support",
+      "SLA-based issue tracking and resolution",
+      "Proactive system monitoring and maintenance",
     ],
     href: "/it-help-desk",
-  },
-  {
-    id: "network",
-    name: "Network & Security",
-    icon: <Network size={28} strokeWidth={1.5} />,
-    title: "Network and Security Services",
-    description:
-      "Network and Security Services from Professional Labs. Design, deploy, and manage robust network infrastructure with enterprise-grade security.",
-    features: [
-      "Network design and implementation",
-      "Firewall and intrusion prevention",
-      "Network performance monitoring",
-    ],
-    href: "/network-and-security-services",
-  },
-  {
-    id: "workplace",
-    name: "Modern Workplace",
-    icon: <Briefcase size={28} strokeWidth={1.5} />,
-    title: "Modern Workplace",
-    description:
-      "Redefine work with an employee-first approach. Transform your workplace with Microsoft 365, collaboration tools, and productivity solutions.",
-    features: [
-      "Microsoft 365 deployment and management",
-      "Collaboration and productivity tools",
-      "Employee experience optimization",
-    ],
-    href: "/modern-workplace",
   },
 ];
 
@@ -194,11 +164,13 @@ export default function ServicesShowcase() {
     <section id="services" className={s["services-showcase"]}>
       <div className="container">
         <div className={s["section-header"]}>
-          <p className={s.eyebrow}>Our Core Services</p>
-          <h2 className={s["section-title"]}>Unified IT Operations Platform</h2>
+          <p className={s.eyebrow}>OUR CORE SERVICES</p>
+          <h2 className={s["section-title"]}>
+            Managed IT &amp; Cybersecurity Services Built for Growing
+            Organizations
+          </h2>
           <p className={s["section-subtitle"]}>
-            Comprehensive, scalable IT services designed to empower growing
-            businesses
+            We streamline infrastructure, cloud security, and threat monitoring.
           </p>
         </div>
 
@@ -252,7 +224,7 @@ export default function ServicesShowcase() {
               </div>
 
               <Link href={activeService.href} className={s["learn-more-link"]}>
-                More about {activeService.name} <ArrowRight size={16} />
+                Learn More About {activeService.name} <ArrowRight size={16} />
               </Link>
             </div>
 
@@ -279,12 +251,16 @@ export default function ServicesShowcase() {
               <div className={s["testimonial-card"]}>
                 <div className={s["quote-icon"]}>❝</div>
                 <p className={s["testimonial-quote"]}>
-                  Professional Labs help manage our Email and Domain
-                  Environment; they haven&apos;t failed us once.
+                  Professional Labs helps manage our email and domain
+                  environment, and they have consistently delivered reliable
+                  support. Their expertise with Microsoft technologies enabled
+                  our team to work securely from anywhere during the pandemic.
                 </p>
                 <div className={s["testimonial-author"]}>
                   <div className={s["author-name"]}>ADV. HUSSAIN NALWALA</div>
-                  <div className={s["author-position"]}>Founder, CNS Juris</div>
+                  <div className={s["author-position"]}>
+                    Founder, CNS Juris
+                  </div>
                 </div>
               </div>
             </div>
@@ -292,7 +268,7 @@ export default function ServicesShowcase() {
         </div>
 
         <div className={s["cta-section"]}>
-          <a href="#contact" className={s["cta-button"]}>
+          <a href="/contact" className={s["cta-button"]}>
             Explore All Services
           </a>
         </div>

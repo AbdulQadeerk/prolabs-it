@@ -16,7 +16,10 @@ const serviceColumns = [
         href: "/microsoft-cloud-app-security",
         label: "Microsoft Cloud App Security",
       },
-      { href: "/microsoft-defender-for-identity", label: "Defender for Identity" },
+      {
+        href: "/microsoft-defender-for-identity",
+        label: "Defender for Identity",
+      },
       { href: "/vapt", label: "VAPT" },
       {
         href: "/network-and-security-services",
@@ -47,7 +50,7 @@ const serviceColumns = [
       },
       { href: "/modern-workplace", label: "Modern WorkPlace" },
       {
-        href: "/ai-solutions-consulting-delaware",
+        href: "/professional-labs-transforming-business-with-advanced-ai-solutions",
         label: "Professional Labs - AI Solutions",
       },
       {

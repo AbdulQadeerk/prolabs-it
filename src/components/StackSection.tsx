@@ -22,13 +22,16 @@ export default function StackSection() {
         <div className={s["stack-grid"]}>
           <div className={s["stack-content"]}>
             <p className={s.eyebrow}>Technology Ecosystem</p>
-            <h3 className={s["stack-heading"]}>Built for your IT stack</h3>
+            <h2 className={s["stack-heading"]}>
+              Strategic Partnerships with Leading Technology Providers
+            </h2>
             <p className={s["stack-desc"]}>
-              Connect and automate your entire stack with integrations that fit
-              modern IT operations. We partner with industry-leading vendors to
-              deliver best-in-class solutions.
+              Professional Labs partners with industry-leading technology vendors
+              to deliver secure and scalable IT solutions. Our integrations
+              ensure seamless interoperability across cloud infrastructure,
+              cybersecurity platforms, and enterprise productivity tools.
             </p>
-            <a href="#contact" className={s["stack-link"]}>
+            <a href="/partnership" className={s["stack-link"]}>
               Explore integrations →
             </a>
           </div>

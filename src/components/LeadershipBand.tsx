@@ -13,16 +13,16 @@ export default function LeadershipBand() {
         <div className={s["leadership-card"]}>
           <div className={s["leadership-content"]}>
             <p className={s.eyebrow}>Industry Recognition</p>
-            <h3 className={s["leadership-heading"]}>
-              Professional Labs delivers a unified IT experience — trusted
-              across 35+ countries since 1997
-            </h3>
+            <h2 className={s["leadership-heading"]}>
+              Professional Labs delivers unified IT and cybersecurity solutions,
+              trusted by businesses across 35+ countries since 1997.
+            </h2>
             <p className={s["leadership-desc"]}>
-              Our expertise helps organizations in accelerating their time to
-              value and achieve significant business impact with Cyber Security,
-              Cloud Services, and Managed Services.
+              Our experts help organizations accelerate digital transformation
+              and drive measurable results through Cybersecurity, Cloud, and
+              Managed IT Services.
             </p>
-            <a href="#about" className="btn btn-outline btn-small">
+            <a href="/about" className="btn btn-outline btn-small">
               Learn More About Us
             </a>
           </div>

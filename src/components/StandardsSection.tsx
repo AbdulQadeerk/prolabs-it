@@ -17,13 +17,13 @@ export default function StandardsSection() {
       className={`${s["standards-section"]} ${isVisible ? s["animate-in"] : ""}`}
     >
       <div className="container">
-        <p className={s.eyebrow}>Compliance &amp; Security</p>
+        <p className={s.eyebrow}>COMPLIANCE SECTION</p>
         <h2 className={s["section-heading"]}>
-          Built for IT. Backed by the world&apos;s strictest standards.
+          Enterprise-Grade Security and Compliance Standards
         </h2>
         <p className={s["standards-desc"]}>
-          We adhere to the highest industry standards to ensure your data and
-          systems are protected.
+          Professional Labs follows internationally recognized security frameworks to ensure the protection of customer data and IT systems.
+          Our services align with global compliance standards including:
         </p>
         <div className={s["badge-row"]}>
           {certifications.map((cert, index) => (

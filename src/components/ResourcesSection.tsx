@@ -6,26 +6,26 @@ import s from "./ResourcesSection.module.css";
 const resources = [
   {
     tag: "Cybersecurity",
-    title: "Cybersecurity in the Age of Remote Work: Preparing for a New Wave",
-    desc: "Explore how remote work has reshaped cybersecurity and what your organization needs to stay protected.",
+    title: "Top Cybersecurity Threats Businesses Will Face in 2026",
+    desc: "Learn the most common cyber attacks targeting modern organizations and how to strengthen your security posture before attackers exploit vulnerabilities.",
     color: "#22a7e0",
   },
   {
-    tag: "Automation",
-    title: "Unlocking the Power of AI & Automation in IT Service Management",
-    desc: "Discover how AI-driven automation is transforming IT service delivery and operational efficiency.",
+    tag: "IT Automation",
+    title: "How AI Is Transforming IT Operations and Managed Services",
+    desc: "Explore how AI-driven automation helps IT teams reduce manual tasks, detect issues faster, and improve overall service delivery.",
     color: "#178dc8",
   },
   {
     tag: "Data Backup",
-    title: "Why Data Backup & Disaster Recovery Plans Are Essential",
-    desc: "Learn why every business needs a robust backup and disaster recovery strategy to minimize downtime.",
+    title: "Ransomware Recovery Starts with the Right Backup Strategy",
+    desc: "Discover why modern backup and disaster recovery plans are critical to protect data and ensure fast recovery after cyber incidents.",
     color: "#0f6f9d",
   },
   {
     tag: "Network Security",
-    title: "The Role of AI & Machine Learning in Cyber Defense",
-    desc: "How artificial intelligence and machine learning are revolutionizing threat detection and response.",
+    title: "How Modern Network Security Stops Advanced Cyber Attacks",
+    desc: "Understand how next-generation firewalls, threat detection, and AI-powered monitoring protect business networks from evolving threats.",
     color: "#0d4f6c",
   },
 ];
@@ -40,10 +40,12 @@ export default function ResourcesSection() {
     >
       <div className="container">
         <div className={s["section-header"]}>
-          <h2 className={s["section-title"]}>Events, Updates, and Resources</h2>
+          <h2 className={s["section-title"]}>
+            Insights on Cybersecurity, Cloud, and IT Management
+          </h2>
           <p className={s["section-desc"]}>
-            From digital transformation to data security — read what&apos;s
-            shaping the future of modern IT services
+            Stay updated with the latest insights on cybersecurity threats, IT
+            automation, and cloud infrastructure management.
           </p>
         </div>
         <div className={s["resources-grid"]}>

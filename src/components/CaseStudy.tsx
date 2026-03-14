@@ -7,8 +7,8 @@ export default function CaseStudy() {
   const testimonials = [
     {
       quote:
-        "Professional Labs help manage our Email and Domain Environment; they haven't failed us once. Professional Labs helped us by making full use of Microsoft Technologies ensuring secure access from anywhere to our environment in the time of COVID.",
-      author: "ADV. HUSSAIN NALWALA",
+        "Professional Labs helps manage our email and domain environment, and they have consistently delivered reliable support. Their expertise with Microsoft technologies enabled our team to work securely from anywhere during the pandemic.",
+      author: "ADV. Hussain Nalwala",
       position: "Founder",
       company: "CNS Juris",
     },

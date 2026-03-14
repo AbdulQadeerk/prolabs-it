@@ -16,31 +16,31 @@ export default function Features() {
     {
       title: "Prolabs Identity Audit",
       description:
-        "Comprehensive Active Directory & Entra ID health and security assessment in one report. Highlights misconfigurations, risks, and performance gaps with clear, prioritized remediation actions.",
+        "Complete Active Directory & Entra ID security and health assessment in one report. Identifies misconfigurations, risks, and performance gaps with clear, prioritized remediation steps.",
       icon: <FileSearch size={32} strokeWidth={1.5} />,
     },
     {
       title: "Prolabs ACL Guardian",
       description:
-        "Detects and cleans up risky permissions, including Anonymous/unsafe SIDs and broken ACLs across AD objects. Safely normalizes access control to reduce privilege exposure.",
+        "Detects and fixes risky permissions, including anonymous or unsafe SIDs and broken ACLs across AD objects. Normalizes access control to reduce privilege exposure.",
       icon: <ShieldCheck size={32} strokeWidth={1.5} />,
     },
     {
       title: "Prolabs GPO Guardian",
       description:
-        "Finds GPO permission issues, orphaned/broken links, and inconsistent delegation that can weaken security. Repairs common misconfigurations and restores least-privilege control.",
+        "Identifies GPO permission issues, broken or orphaned links, and inconsistent delegation that can weaken security. Fixes common misconfigurations and restores least-privilege access.",
       icon: <Settings size={32} strokeWidth={1.5} />,
     },
     {
       title: "Prolabs TLS Guardian",
       description:
-        "Scans Windows servers for weak SSL/TLS protocols, ciphers, and insecure configuration baselines. Produces a remediation-ready plan to harden TLS settings.",
+        "Scans Windows servers for weak SSL/TLS protocols, ciphers, and insecure configurations. Generates a remediation-ready plan to strengthen TLS security settings.",
       icon: <Lock size={32} strokeWidth={1.5} />,
     },
     {
       title: "Prolabs ServiceDesk Toolkit",
       description:
-        "Streamlines common helpdesk tasks like password resets, MFA resets, unlocks, and account recovery for AD and Entra ID. Standardizes operations with guardrails and logging.",
+        "Simplifies helpdesk tasks like password resets, MFA resets, unlocks, and account recovery for AD and Entra ID with secure workflows and logging.",
       icon: <Wrench size={32} strokeWidth={1.5} />,
     },
   ];
@@ -53,13 +53,13 @@ export default function Features() {
     >
       <div className="container">
         <div className={s["section-header"]}>
-          <p className={s.eyebrow}>Our Proprietary Tools</p>
+          <p className={s.eyebrow}>Proprietary Tools</p>
           <h2 className={s["section-title"]}>
-            Everything you need to secure and manage IT
+            Advanced Security and IT Management Tools Built by Professional Labs
           </h2>
           <p className={s["section-subtitle"]}>
-            From consultation to implementation — we deliver end-to-end IT
-            excellence with our proprietary tools and solutions.
+            Our proprietary tools help organizations detect vulnerabilities,
+            strengthen identity security, and streamline IT operations.
           </p>
         </div>
 

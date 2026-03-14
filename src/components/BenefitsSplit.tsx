@@ -12,24 +12,22 @@ export default function BenefitsSplit() {
     >
       <div className="container">
         <div className={s["section-header"]}>
-          <p className={s.eyebrow}>Trusted by IT teams and MSPs worldwide</p>
+          <p className={s.eyebrow}>Company Overview</p>
           <h2 className={s["section-heading"]}>
-            Delivering scalable &amp; innovative IT solutions that empower
-            businesses
+            Global Managed IT and Cybersecurity Experts
           </h2>
         </div>
 
         <div className={s["about-text"]}>
           <p>
-            The modern world relies on a complex array of technologies to keep
-            turning. Professional Labs aim is to simplify that complexity. Our
-            expertise helps organizations in accelerating their time to value
-            and achieve significant business impact.
+            The modern digital ecosystem depends on reliable technology
+            infrastructure. Professional Labs simplifies complex IT environments
+            by delivering secure, scalable, and cost-efficient solutions.
           </p>
           <p>
-            Founded in 1997 and headquartered in Dubai, we specialize in
-            simplifying complex problems for our customers with Cyber Security,
-            Cloud Services, and Managed Services.
+            Founded in 1997 and headquartered in Dubai, Professional Labs
+            specializes in Cybersecurity services, Managed IT services, Cloud
+            infrastructure management, and Microsoft ecosystem solutions.
           </p>
         </div>
 
@@ -51,12 +49,13 @@ export default function BenefitsSplit() {
                 <line x1="12" y1="17" x2="12" y2="21" />
               </svg>
             </div>
-            <h3 className={s["card-heading"]}>
-              Streamline IT with a powerful, simple platform
-            </h3>
+            <h2 className={s["card-heading"]}>
+              Streamline IT Operations with a Unified Management Platform
+            </h2>
             <p>
-              Automate endpoint management, reduce costs, and improve resiliency
-              across your organization with unified visibility and control.
+              With automated management, proactive monitoring, and advanced
+              analytics, organizations can reduce downtime, improve security
+              posture, and lower operational costs.
             </p>
             <div className={s["card-stats"]}>
               <div className={s["cs-item"]}>
@@ -85,13 +84,13 @@ export default function BenefitsSplit() {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             </div>
-            <h3 className={s["card-heading"]}>
-              Powerful, profitable, secure, and scalable
-            </h3>
+            <h2 className={s["card-heading"]}>
+              Security-First IT Infrastructure for Resilient Organizations
+            </h2>
             <p>
-              Deliver exceptional service with automation, insight, and rapid
-              remote access. Our security-first approach protects your
-              organization at every level.
+              By combining automation, monitoring, and proactive threat
+              intelligence, we help businesses protect their systems at every
+              level.
             </p>
             <div className={s["card-stats"]}>
               <div className={s["cs-item"]}>

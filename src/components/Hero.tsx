@@ -32,20 +32,20 @@ export default function Hero() {
             Smarter IT. Stronger Business.
           </div>
           <h1 className={s["hero-title"]}>
-            Unify IT.
-            <br />
-            Simplify work.
+            Managed IT Services &amp; Cybersecurity Solutions
           </h1>
           <p className={s["hero-subtitle"]}>
-            One platform to manage every device, protect every endpoint, and
-            support every employee.
+            Smarter IT starts with a unified approach. Professional Labs helps
+            businesses manage devices, secure endpoints, and support employees
+            through a centralized platform for IT operations, cybersecurity, and
+            cloud management.
           </p>
           <div className={s["hero-actions"]}>
-            <a href="#contact" className="btn btn-primary">
+            <a href="/contact" className="btn btn-primary">
               Get a Free Consultation
             </a>
             <a href="#services" className="btn btn-outline">
-              Explore Services
+              Download IT Security Checklist
             </a>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function Hero() {
           <div className={s["hero-person"]}>
             <Image
               src="/man-laptop.avif"
-              alt="IT Professional working on laptop"
+              alt="IT Professional working on laptop - managed IT services"
               width={620}
               height={700}
               className={s["person-img"]}
