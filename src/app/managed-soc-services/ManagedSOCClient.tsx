@@ -155,6 +155,8 @@ export default function ManagedSOCClient() {
                   width={550}
                   height={450}
                   className="sv-float-img"
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 550px"
                   priority
                 />
                 <motion.div
@@ -258,6 +260,8 @@ export default function ManagedSOCClient() {
                   width={600}
                   height={400}
                   className="sv-monitor-img"
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 />
               </div>
             </motion.div>

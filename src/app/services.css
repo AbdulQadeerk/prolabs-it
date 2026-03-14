@@ -226,8 +226,19 @@
     text-align: center;
   }
 
+  /* Specificity fix: .sv-soc .sv-hero-grid (2 classes) beats .sv-hero-grid (1 class),
+     so we must repeat the override here with equal or higher specificity */
+  .sv-soc .sv-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
   .sv-hero-btn-wrap {
     display: flex;
+    justify-content: center;
+  }
+
+  .sv-soc .sv-trust-bar {
     justify-content: center;
   }
 
@@ -242,6 +253,15 @@
   .sv-hero-cta {
     display: flex;
     justify-content: center;
+  }
+
+  /* SOC hero visual full width when stacked */
+  .sv-soc .sv-hero-visual {
+    width: 100%;
+  }
+
+  .sv-soc .sv-visual-container {
+    width: 100%;
   }
 }
 
@@ -2104,6 +2124,110 @@
   }
 }
 
+/* ==================== MARKET RESEARCH SERVICES MOBILE ==================== */
+@media (max-width: 768px) {
+  .sv-mktres-img-frame {
+    width: 100%;
+  }
+
+  .sv-mktres-cap-grid,
+  .sv-mktres-audience-grid,
+  .sv-mktres-core-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .sv-section-process .container > div > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .sv-section-process .container > div > div:first-child {
+    display: none !important;
+  }
+}
+
+/* ==================== WEB DEVELOPMENT SERVICES MOBILE ==================== */
+@media (max-width: 768px) {
+  .sv-webdev-img-frame {
+    width: 100%;
+  }
+
+  .sv-webdev-excellence-grid,
+  .sv-webdev-crafting-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ==================== IT HELP DESK SERVICES MOBILE ==================== */
+@media (max-width: 768px) {
+  .sv-helpdesk-img-frame {
+    width: 100%;
+  }
+
+  .sv-helpdesk-strengths-grid,
+  .sv-helpdesk-quick-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* ==================== CRM SERVICES MOBILE ==================== */
+@media (max-width: 768px) {
+  .sv-crm-img-frame {
+    width: 100%;
+  }
+
+  .sv-crm-benefits-grid,
+  .sv-crm-empower-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ==================== TICKETING SYSTEM SERVICES MOBILE ==================== */
+@media (max-width: 768px) {
+  .sv-ticketing-img-frame {
+    width: 100%;
+  }
+
+  .sv-ticketing-need-grid,
+  .sv-ticketing-collab-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ==================== SOC MOBILE IMAGE ==================== */
+@media (max-width: 768px) {
+  .sv-soc .sv-visual-container {
+    width: 100%;
+  }
+
+  .sv-soc .sv-float-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+  }
+
+  .sv-soc .sv-monitor-img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .sv-soc .sv-monitor-wrapper {
+    width: 100%;
+  }
+
+  .sv-soc .sv-monitor-wrapper::after {
+    display: none;
+  }
+}
+
 /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
 
 /* ---------- Tablet (max 1024px) ---------- */
@@ -2126,6 +2250,40 @@
 
   .sv-section-outcomes {
     padding: 70px 0;
+  }
+
+  /* SOC Section paddings at tablet */
+  .sv-why-section,
+  .sv-dark-section,
+  .sv-needs-section,
+  .sv-values-section,
+  .sv-consult-section {
+    padding: 80px 0;
+  }
+
+  /* SOC dark h2 at tablet */
+  .sv-dark-h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  }
+
+  /* SOC features grid at tablet — 2 columns */
+  .sv-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* SOC values grid at tablet — 2 columns */
+  .sv-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* SOC hero btn wrap centering */
+  .sv-soc .sv-trust-bar {
+    justify-content: center;
+  }
+
+  /* SOC compliance strip */
+  .sv-comp-item {
+    padding: 20px 30px;
   }
 }
 
@@ -2412,6 +2570,58 @@
     gap: 20px;
   }
 
+  /* SOC section paddings at mobile */
+  .sv-why-section,
+  .sv-dark-section,
+  .sv-needs-section,
+  .sv-values-section,
+  .sv-consult-section {
+    padding: 55px 0;
+  }
+
+  /* SOC feature cards — single column */
+  .sv-feature-card {
+    padding: 28px;
+  }
+
+  /* SOC compliance strip stacked */
+  .sv-compliance-strip {
+    margin: 30px 0;
+    gap: 12px;
+  }
+
+  .sv-comp-item {
+    padding: 16px 24px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* SOC btn-large reset on mobile */
+  .sv-btn-large {
+    font-size: 1rem;
+    padding: 14px 28px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* SOC consult CTA centering */
+  .sv-consult-cta {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* SOC dark section text center on mobile */
+  .sv-dark-p {
+    font-size: 1rem;
+  }
+
+  /* SOC industry tags */
+  .sv-industry-tags {
+    justify-content: flex-start;
+  }
+
   .sv-azure .sv-cat-name {
     font-size: 1.5rem;
   }
@@ -2539,6 +2749,34 @@
   }
 }
 
+/* ==================== SOC IMAGE — FULL WIDTH OVERRIDE (after general 768px) ==================== */
+/* Must come AFTER the general 768px block so cascade order wins */
+@media (max-width: 768px) {
+  .sv-soc .sv-float-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+    animation: none;
+  }
+
+  .sv-soc .sv-monitor-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+  }
+
+  .sv-soc .sv-visual-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sv-soc .sv-hero-visual {
+    width: 100%;
+  }
+}
+
 /* ---------- Small Mobile (max 480px) ---------- */
 @media (max-width: 480px) {
   .sv-hero-band {
@@ -2647,6 +2885,14 @@
   /* Hero image smaller on very small screens */
   .sv-float-img {
     max-height: 220px;
+  }
+
+  /* SOC images — no max-height cap, always full width */
+  .sv-soc .sv-float-img,
+  .sv-soc .sv-monitor-img {
+    max-height: none !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
   /* Versus table stacked on tiny screens */
