@@ -571,6 +571,10 @@
   border: none;
 }
 
+.sv-dark-card .sv-h2 {
+  color: #fff;
+}
+
 .sv-dark-card .sv-h3 {
   color: #fff;
 }
@@ -706,6 +710,20 @@
   color: var(--sv-accent);
 }
 
+/* Email page: reduce focus heading & add vertical gaps */
+.sv-email .sv-focus-text .sv-h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  margin-bottom: 20px;
+}
+
+.sv-focus-text .sv-h2 {
+  margin-bottom: 18px;
+}
+
+.sv-email .sv-benefits-head .sv-h2 {
+  margin-bottom: 20px;
+}
+
 /* ==================== CHECK LIST ==================== */
 .sv-check-list {
   list-style: none;
@@ -801,10 +819,23 @@
 
 .sv-benefit-card h4 {
   color: white;
+  margin-bottom: 16px;
+}
+
+.sv-benefit-card .sv-h4 {
+  margin-bottom: 16px;
 }
 
 .sv-benefit-card .sv-p {
   color: rgba(255, 255, 255, 0.85);
+}
+
+.sv-benefit-card .sv-check-list li {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.sv-benefit-card .sv-check-list li svg {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ==================== GRID CARDS (icon + title + desc) ==================== */
@@ -1855,6 +1886,20 @@
 .sv-iam .sv-section-faq,
 .sv-mktres .sv-section-faq {
   background: var(--sv-bg);
+}
+
+/* ==================== VAPT MOBILE IMAGE ==================== */
+@media (max-width: 768px) {
+  .sv-vapt-img-frame {
+    width: 100%;
+  }
+
+  .sv-vapt-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
 }
 
 /* ==================== RESPONSIVE ADJUSTMENTS ==================== */
