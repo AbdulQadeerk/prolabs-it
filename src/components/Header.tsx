@@ -118,7 +118,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "#services", label: "Services", hasDropdown: true },
-    { href: "#partnership", label: "Partnership" },
+    { href: "/partnership", label: "Partnership" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];

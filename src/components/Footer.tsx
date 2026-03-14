@@ -106,7 +106,7 @@ export default function Footer() {
                 <a href="#">Careers</a>
               </li>
               <li>
-                <a href="#">Partners</a>
+                <Link href="/partnership">Partnership</Link>
               </li>
             </ul>
           </div>
@@ -216,6 +216,7 @@ export default function Footer() {
               <a href="#">About Us</a>
               <a href="#">Our Tools</a>
               <Link href="/blog">Blog</Link>
+              <Link href="/partnership">Partnership</Link>
               <a href="#">Careers</a>
             </div>
           </details>
