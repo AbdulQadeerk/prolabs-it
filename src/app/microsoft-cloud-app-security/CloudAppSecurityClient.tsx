@@ -125,9 +125,7 @@ export default function CloudAppSecurityClient() {
             <span className="sep">/</span>
             <span className="active">Microsoft Cloud App Security</span>
           </nav>
-          <h1 className="sv-hero-h1">
-            Microsoft Cloud App Security Services
-          </h1>
+          <h1 className="sv-hero-h1">Microsoft Cloud App Security Services</h1>
         </div>
       </section>
 
@@ -144,7 +142,7 @@ export default function CloudAppSecurityClient() {
               viewport={{ once: true }}
               className="sv-hero-content"
             >
-              <motion.p variants={fadeInUp} className="sv-hero-p">
+              <motion.p variants={fadeInUp} className="sv-lead">
                 Secure cloud applications and protect sensitive data with
                 Microsoft Cloud App Security, now part of Microsoft Defender for
                 Cloud Apps.
@@ -276,8 +274,8 @@ export default function CloudAppSecurityClient() {
               <ul className="sv-check-list">
                 {capabilities.map((cap, idx) => (
                   <li key={idx}>
-                    <CheckCircle2 size={18} />{" "}
-                    <strong>{cap.title}</strong> – {cap.desc}
+                    <CheckCircle2 size={18} /> <strong>{cap.title}</strong> –{" "}
+                    {cap.desc}
                   </li>
                 ))}
               </ul>
@@ -441,9 +439,7 @@ export default function CloudAppSecurityClient() {
               >
                 <button
                   className="sv-faq-q"
-                  onClick={() =>
-                    setOpenFaq(openFaq === index ? null : index)
-                  }
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 >
                   <span className="sv-faq-qtext">{faq.question}</span>
                   <span className="sv-faq-ico">

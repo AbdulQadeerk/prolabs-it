@@ -1888,6 +1888,20 @@
   background: var(--sv-bg);
 }
 
+/* ==================== NETSEC MOBILE IMAGE ==================== */
+@media (max-width: 768px) {
+  .sv-netsec-img-frame {
+    width: 100%;
+  }
+
+  .sv-netsec-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+}
+
 /* ==================== VAPT MOBILE IMAGE ==================== */
 @media (max-width: 768px) {
   .sv-vapt-img-frame {
@@ -1899,6 +1913,194 @@
     height: auto;
     max-height: none;
     object-fit: contain;
+  }
+}
+
+/* ==================== IAM MOBILE IMAGE ==================== */
+@media (max-width: 768px) {
+  .sv-iam-img-frame {
+    width: 100%;
+  }
+
+  .sv-iam-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+}
+
+/* ==================== AZURE MOBILE IMAGE & GRID ==================== */
+@media (max-width: 768px) {
+  .sv-azure-img-frame {
+    width: 100%;
+  }
+
+  .sv-azure-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-azure-partner-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.sv-azure-partner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ==================== CITRIX MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-citrix-img-frame {
+    width: 100%;
+    max-height: none !important;
+  }
+
+  .sv-citrix-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-citrix-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sv-citrix-kits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== PKI MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-pki-img-frame {
+    width: 100%;
+  }
+
+  .sv-pki-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-pki-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== ACTIVE DIRECTORY MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-ad-img-frame {
+    width: 100%;
+  }
+
+  .sv-ad-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-ad-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== MODERN WORKPLACE MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-modern-workplace-img-frame {
+    width: 100%;
+  }
+
+  .sv-modern-workplace-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-modern-workplace-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== ADVANCED AI SOLUTIONS MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-ai-img-frame {
+    width: 100%;
+  }
+
+  .sv-ai-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-ai-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== DATA DRIVEN SOLUTIONS MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-data-driven-img-frame {
+    width: 100%;
+  }
+
+  .sv-data-driven-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-data-driven-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== CLOUD MANAGED SERVICES MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-cloud-img-frame {
+    width: 100%;
+  }
+
+  .sv-cloud-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-cloud-benefits-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== IT TRAINING SERVICES MOBILE IMAGE & GRIDS ==================== */
+@media (max-width: 768px) {
+  .sv-training-img-frame {
+    width: 100%;
+  }
+
+  .sv-training-img-frame .sv-float-img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+  }
+
+  .sv-training-benefits-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 

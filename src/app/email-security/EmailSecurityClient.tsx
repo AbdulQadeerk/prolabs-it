@@ -138,7 +138,7 @@ export default function EmailSecurityClient() {
               viewport={{ once: true }}
               className="sv-hero-content"
             >
-              <motion.p variants={fadeInUp} className="sv-hero-p">
+              <motion.p variants={fadeInUp} className="sv-display-h2">
                 Professional Labs Email Security defends your business from
                 cyber threats like phishing, ransomware, malware, and BEC,
                 protecting communications, sensitive data, and inboxes.
@@ -411,9 +411,7 @@ export default function EmailSecurityClient() {
               </p>
             </div>
             <div className="sv-benefit-card blue">
-              <h4 className="sv-h4 mb-4">
-                Email Security - Cloud Integrated
-              </h4>
+              <h4 className="sv-h4 mb-4">Email Security - Cloud Integrated</h4>
               <p className="sv-p mb-4">
                 Cloud-integrated email security can be deployed within minutes
                 and is particularly effective for organizations using Microsoft
