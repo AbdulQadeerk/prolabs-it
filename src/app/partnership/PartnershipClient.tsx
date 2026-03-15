@@ -292,7 +292,7 @@ export default function PartnershipClient() {
             {/* ═══ SECTION 6 — WHY PROFESSIONAL LABS (dark bg) ═══ */}
             <section className="sv-section-analysis">
                 <div className="container">
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
+                    <div className="sv-partnership-why-grid">
                         <div>
                             <h2 className="sv-h2" style={{ color: "white", marginBottom: "36px" }}>
                                 Why Partner with Professional Labs?

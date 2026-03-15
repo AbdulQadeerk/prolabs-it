@@ -3092,3 +3092,18 @@
     gap: 40px;
   }
 }
+
+/* ==================== PARTNERSHIP: WHY PARTNER GRID ==================== */
+.sv-partnership-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .sv-partnership-why-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
