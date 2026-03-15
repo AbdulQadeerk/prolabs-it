@@ -418,6 +418,9 @@
 .sv-float-img {
   animation: svFloat 6s ease-in-out infinite;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.08));
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @keyframes svFloat {
@@ -2925,9 +2928,167 @@
     padding: 22px;
   }
 
+
   /* Check list items */
   .sv-check-list li {
     font-size: 0.88rem;
     gap: 8px;
+  }
+}
+
+/* ==================== RESPONSIVE: FULL-WIDTH IMAGES (security pages) ==================== */
+/* Remove max-height cap so images always fill the frame */
+@media (max-width: 768px) {
+  .sv-azure .sv-float-img,
+  .sv-def .sv-float-img,
+  .sv-email .sv-float-img,
+  .sv-mcas .sv-float-img,
+  .sv-identity .sv-float-img,
+  .sv-vapt .sv-float-img {
+    max-height: none !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  .sv-img-frame {
+    width: 100%;
+  }
+}
+
+/* ==================== RESPONSIVE: VAPT PAGE ==================== */
+@media (max-width: 1024px) {
+  /* 3-col VAPT services grid → 2 col */
+  .sv-vapt .sv-features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 3-col VAPT services grid → 1 col */
+  .sv-vapt .sv-features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==================== RESPONSIVE: AZURE VIRTUAL DESKTOP PAGE ==================== */
+@media (max-width: 1024px) {
+  /* AMMP 2-col grid → 1 col */
+  .sv-azure .sv-section-info div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .sv-mssp-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .sv-azure .sv-section-info div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+/* ==================== RESPONSIVE: MARKET RESEARCH PAGE ==================== */
+/* --- Desktop defaults for named grid classes --- */
+.sv-mktres-cap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.sv-mktres-audience-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sv-mktres-mini-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.sv-mktres-core-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.sv-mktres-process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  position: relative;
+}
+
+/* --- Tablet (1024px) → 1 column --- */
+@media (max-width: 1024px) {
+  .sv-mktres-cap-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sv-mktres-audience-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .sv-mktres-core-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .sv-mktres-process-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sv-mktres .sv-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- Mobile (768px) → tighter spacing --- */
+@media (max-width: 768px) {
+  .sv-mktres-mini-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sv-mktres .sv-hero-image {
+    order: -1;
+  }
+
+  .sv-mktres-process-grid {
+    gap: 30px;
+  }
+
+  /* Hide the circular center hub on mobile */
+  .sv-mktres-process-hub {
+    display: none;
+  }
+}
+
+
+/* ==================== AZURE VIRTUAL DESKTOP: AMMP GRID ==================== */
+.sv-avd-ammp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .sv-avd-ammp-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }

@@ -1,5 +1,5 @@
 .about-hero-section {
-  padding: 100px 0 20px;
+  padding: 130px 0 20px;
   background: #f8fafc;
 }
 .banner-outer {
@@ -239,7 +239,7 @@
 /* ===== Desktop (md and above) ===== */
 @media (min-width: 768px) {
   .about-hero-section {
-    padding: 140px 0 40px;
+    padding: 160px 0 40px;
   }
   .banner-outer {
     padding: 0 24px;

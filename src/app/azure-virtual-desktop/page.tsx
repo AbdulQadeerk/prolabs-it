@@ -437,14 +437,7 @@ export default function AzureVirtualDesktopPage() {
       {/* ═══ SECTION 6 — AMMP ═══ */}
       <section className="sv-section-info" style={{ background: "#fff" }}>
         <div className="container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "60px",
-              alignItems: "center",
-            }}
-          >
+          <div className="sv-avd-ammp-grid">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
