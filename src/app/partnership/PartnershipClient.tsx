@@ -13,9 +13,12 @@ import {
     Briefcase,
     CheckCircle2,
     ChevronRight,
+    ChevronDown,
+    ChevronUp,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 /* ── Data ── */
 
@@ -23,37 +26,37 @@ const cards = [
     {
         title: "Accelerated Path to Azure",
         description:
-            "From single-application migrations to full data center transformations, Professional Labs results-driven assessment, planning, design, migration, deployment.",
+            "From application migrations to full data center transformations, Professional Labs provides assessment, architecture design, migration planning, and deployment services that enable faster cloud adoption.",
         icon: <Rocket size={24} />,
     },
     {
-        title: "White Labeled Services",
+        title: "White-Labeled Azure Services",
         description:
-            "Professional Labs offer White Labeled services for CSP's where we act as an extension of your team enabling you to achieve more.",
+            "Our white-labeled cloud services allow CSP partners to deliver enterprise-grade Azure solutions under their own brand while leveraging Professional Labs expertise behind the scenes.",
         icon: <Users size={24} />,
     },
     {
-        title: "Reduce Complexity",
+        title: "Reduced Cloud Complexity",
         description:
-            "Professional Labs with 24x7x365 support to simplify operations and reduce lead times. Professional Labs is always up to date with Azure's continual evolution.",
+            "Professional Labs provides 24/7/365 cloud support to help partners manage Azure environments efficiently while staying aligned with the latest Microsoft cloud updates and best practices.",
         icon: <Zap size={24} />,
     },
     {
-        title: "Heightened Security and Reliability",
+        title: "Enhanced Security and Reliability",
         description:
-            "Professional Labs provides flexible security offerings as an extension of native Azure security capabilities, helping to protect against advanced threats and cyberattacks.",
+            "We extend Azure's built-in security capabilities with additional services including threat protection, compliance monitoring, and advanced security architecture.",
         icon: <Shield size={24} />,
     },
     {
-        title: "Hybrid and Multi-Cloud-Ready",
+        title: "Hybrid and Multi-Cloud Ready",
         description:
-            "Enterprise IT complexity requires multi-cloud and hybrid strategies. Professional Labs integrates private cloud, bare metal and hybrid components.",
+            "Modern enterprises require hybrid and multi-cloud environments. Professional Labs supports integrations across private cloud infrastructure, Azure environments, and hybrid architectures.",
         icon: <Cloud size={24} />,
     },
     {
-        title: "Azure or M365 Pre Sales",
+        title: "Azure and Microsoft 365 Pre-Sales Support",
         description:
-            "From Lead Generation to content creation or Email Marketing, we help with it all. We understand the B2B market and curate customized strategies.",
+            "From lead generation to marketing support and technical consulting, Professional Labs helps partners win new deals. Our team supports content creation, campaign strategy, and technical pre-sales consulting tailored for the B2B market.",
         icon: <TrendingUp size={24} />,
     },
 ];
@@ -65,12 +68,40 @@ const stats = [
 ];
 
 const whyPartner = [
-    "Deep expertise in Microsoft Azure ecosystem",
-    "Seamless execution of multi-cloud strategies",
-    "24/7/365 operational excellence",
-    "Customized pre-sales and lead gen strategies",
-    "White-labeled services tailored to your brand",
-    "Certified Azure architects and engineers",
+    "Deep expertise in the Microsoft Azure ecosystem",
+    "Seamless multi-cloud and hybrid cloud implementation",
+    "24/7/365 cloud operations and technical support",
+    "Customized pre-sales and lead generation strategies",
+    "White-labeled cloud services aligned with your brand",
+    "Certified Azure architects and cloud engineers",
+];
+
+const faqItems = [
+    {
+        question: "What is the CSP Partner Program?",
+        answer:
+            "The Cloud Solution Provider (CSP) Partner Program allows businesses to sell Microsoft cloud services such as Azure and Microsoft 365 while providing value-added services, billing, and support to customers.",
+    },
+    {
+        question: "How does Professional Labs support CSP partners?",
+        answer:
+            "Professional Labs supports CSP partners with Azure architecture, cloud migrations, white-labeled services, security solutions, and 24/7 technical support.",
+    },
+    {
+        question: "Can Professional Labs provide white-labeled cloud services?",
+        answer:
+            "Yes. Professional Labs offers white-labeled Azure services that allow partners to deliver enterprise cloud solutions under their own brand.",
+    },
+    {
+        question: "What services can CSP partners offer with Professional Labs?",
+        answer:
+            "Partners can offer Azure cloud infrastructure, virtual desktop environments, cloud security, managed IT services, migration services, and hybrid cloud solutions.",
+    },
+    {
+        question: "Do you provide technical support for Azure deployments?",
+        answer:
+            "Yes. Professional Labs provides 24/7 cloud support, architecture consulting, and deployment assistance for Azure and Microsoft cloud solutions.",
+    },
 ];
 
 const fadeInUp = {
@@ -84,6 +115,8 @@ const staggerContainer = {
 };
 
 export default function PartnershipClient() {
+    const [openFaq, setOpenFaq] = useState<number | null>(0);
+
     return (
         <main className="sv-page sv-azure">
             {/* ═══ SECTION 1 — HERO BAND ═══ */}
@@ -94,14 +127,14 @@ export default function PartnershipClient() {
                         <span className="sep">/</span>
                         <span className="active">CSP Partner Program</span>
                     </nav>
-                    <h1 className="sv-hero-h1">CSP Partner Program</h1>
+                    <h1 className="sv-hero-h1">CSP Partner Program for Azure Cloud Growth</h1>
                 </div>
             </section>
 
             {/* ═══ SECTION 2 — HERO MAIN (text + CTA) ═══ */}
             <section className="sv-hero-main">
                 <div className="container">
-                    <div className="sv-hero-grid">
+                    <div className="sv-hero-grid sv-partnership-hero-grid">
                         <motion.div
                             variants={staggerContainer}
                             initial="initial"
@@ -110,11 +143,13 @@ export default function PartnershipClient() {
                             className="sv-hero-content"
                         >
                             <motion.h2 variants={fadeInUp} className="sv-display-h2">
-                                Elevate Your CSP Business with Expert Precision
+                                Elevate Your CSP Business with Azure Expertise
                             </motion.h2>
                             <motion.p variants={fadeInUp} className="sv-hero-p">
-                                Accelerate your revenue with Professional Labs end-to-end Azure solutions.
-                                We act as a seamless extension of your team, solving cloud complexity and driving competitive advantage.
+                                Accelerate your Microsoft cloud revenue with the Professional Labs CSP Partner Program.
+                                Our certified Azure experts act as a seamless extension of your team, helping you deliver
+                                scalable cloud solutions, simplify complex deployments, and create competitive advantages
+                                for your customers.
                             </motion.p>
 
                             <motion.div
@@ -130,7 +165,7 @@ export default function PartnershipClient() {
                             <motion.div variants={fadeInUp} className="sv-meta-tags">
                                 <span className="sv-tag">Global CSP Partner Program</span>
                                 <span className="sv-tag">Azure Solutions Partner</span>
-                                <span className="sv-tag">White Labeled Services</span>
+                                <span className="sv-tag">White-Labeled Cloud Services</span>
                                 <span className="sv-tag">24/7 Cloud Support</span>
                             </motion.div>
                         </motion.div>
@@ -141,7 +176,7 @@ export default function PartnershipClient() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
-                            className="sv-hero-image"
+                            className="sv-hero-image sv-partnership-stats-panel"
                         >
                             <div
                                 style={{
@@ -220,11 +255,17 @@ export default function PartnershipClient() {
                 <div className="container">
                     <div style={{ maxWidth: "860px", margin: "0 auto", textAlign: "center", marginBottom: "60px" }}>
                         <h2 className="sv-h2" style={{ marginBottom: "24px" }}>
-                            Committed to Your Long-Term Success
+                            Committed to Your Long-Term CSP Success
                         </h2>
                         <p className="sv-subtitle">
-                            Many CSPs are seeking certified experts to assist them with the complexity of Microsoft Azure.
-                            Professional Labs has the tools and expertise to help you unravel cloud complexities faster and easier.
+                            Many Cloud Solution Providers (CSPs) are seeking experienced Azure specialists to help navigate
+                            the complexity of Microsoft cloud environments. Professional Labs delivers the expertise, tools,
+                            and support required to simplify cloud adoption and accelerate business growth.
+                        </p>
+                        <p className="sv-subtitle" style={{ marginTop: "20px" }}>
+                            Our team works closely with partners to deliver reliable Azure cloud architecture, migrations,
+                            security, and managed services, enabling CSPs to focus on expanding their customer base and
+                            increasing recurring revenue.
                         </p>
                     </div>
                 </div>
@@ -238,7 +279,8 @@ export default function PartnershipClient() {
                             Strategic Partnership Advantages
                         </h2>
                         <p className="sv-subtitle">
-                            Comprehensive services to accelerate your CSP revenue and cloud growth
+                            Professional Labs provides comprehensive services designed to help CSP partners grow faster
+                            and deliver high-value cloud solutions.
                         </p>
                     </div>
                     <div className="sv-tech-grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
@@ -263,7 +305,7 @@ export default function PartnershipClient() {
                 </div>
             </section>
 
-            {/* ═══ SECTION 5 — B2B MARKETING (focus text) ═══ */}
+            {/* ═══ SECTION 5 — MORE THAN TECHNICAL SUPPORT ═══ */}
             <section className="sv-section-focus" style={{ background: "var(--sv-bg)" }}>
                 <div className="container">
                     <motion.div
@@ -273,17 +315,18 @@ export default function PartnershipClient() {
                         className="sv-focus-box"
                         style={{ flexDirection: "column", maxWidth: "900px", textAlign: "left" }}
                     >
-                        <h3 className="sv-h2" style={{ marginBottom: "20px" }}>
+                        <h2 className="sv-h2" style={{ marginBottom: "20px" }}>
                             More Than Just Technical Support
-                        </h3>
+                        </h2>
                         <p className="sv-p" style={{ marginBottom: "18px", color: "var(--sv-gray)" }}>
-                            Professional Labs understands the B2B market and curates a highly customized strategy for your business interest.
-                            From lead generation to content creation or email marketing, we help with it all.
+                            Professional Labs provides strategic partnership support beyond technical services. Our team
+                            helps CSP partners grow by providing marketing insights, sales enablement support, and
+                            technical expertise required to succeed in the modern cloud ecosystem.
                         </p>
                         <p className="sv-p" style={{ color: "var(--sv-gray)" }}>
-                            We provide the latest tools and technologies to help you compete in the modern cloud landscape.
-                            Our team of certified Azure experts works as a seamless extension of your organization,
-                            ensuring rapid cloud adoption and improved business outcomes.
+                            We equip partners with the latest tools and technologies to compete in the global cloud
+                            marketplace. Our certified Azure engineers work alongside your team to ensure faster
+                            deployments, improved customer satisfaction, and scalable cloud solutions.
                         </p>
                     </motion.div>
                 </div>
@@ -330,9 +373,9 @@ export default function PartnershipClient() {
                                 textAlign: "center",
                             }}
                         >
-                            <h3 className="sv-h3" style={{ color: "white", marginBottom: "20px" }}>
-                                Expert Consultation
-                            </h3>
+                            <h2 className="sv-h2" style={{ color: "white", marginBottom: "20px" }}>
+                                Expert Azure Consultation
+                            </h2>
                             <p
                                 style={{
                                     color: "rgba(255,255,255,0.65)",
@@ -341,8 +384,9 @@ export default function PartnershipClient() {
                                     marginBottom: "36px",
                                 }}
                             >
-                                Accelerate your cloud journey with a free strategy session with our Azure certified architects.
-                                Partner with Professional Labs and transform your business outcomes with certified Azure experts by your side.
+                                Accelerate your cloud journey with a free strategy session with our Azure-certified
+                                architects. Professional Labs helps CSP partners design scalable cloud architectures,
+                                optimize Azure deployments, and deliver secure cloud solutions to customers.
                             </p>
                             <Link href="/contact" className="sv-btn-white">
                                 Schedule a Strategy Meeting <ArrowRight size={18} />
@@ -352,11 +396,15 @@ export default function PartnershipClient() {
                 </div>
             </section>
 
-            {/* ═══ SECTION 7 — STATS (feature cards) ═══ */}
+            {/* ═══ SECTION 7 — GLOBAL REACH (stats) ═══ */}
             <section className="sv-why-section">
                 <div className="container">
                     <div className="sv-section-header">
                         <h2 className="sv-h2">Our Global Reach</h2>
+                        <p className="sv-subtitle" style={{ marginTop: "16px" }}>
+                            Professional Labs supports partners and organizations across global markets with
+                            enterprise-grade cloud solutions.
+                        </p>
                     </div>
                     <div className="sv-features-grid">
                         {stats.map((stat, idx) => (
@@ -383,7 +431,54 @@ export default function PartnershipClient() {
                 </div>
             </section>
 
-            {/* ═══ SECTION 8 — CTA ═══ */}
+            {/* ═══ SECTION 8 — FAQ ═══ */}
+            <section className="sv-section-faq" style={{ background: "#fff" }}>
+                <div className="container">
+                    <h2 className="sv-h2" style={{ textAlign: "center", marginBottom: "60px" }}>
+                        Frequently Asked Questions
+                    </h2>
+                    <div className="sv-faq-wrap" style={{ maxWidth: "900px", margin: "0 auto" }}>
+                        {faqItems.map((faq, index) => (
+                            <div
+                                key={index}
+                                className={`sv-faq-item ${openFaq === index ? "sv-active" : ""}`}
+                            >
+                                <button
+                                    className="sv-faq-q"
+                                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                                >
+                                    <span className="sv-faq-qtext" style={{ fontWeight: 700 }}>
+                                        {faq.question}
+                                    </span>
+                                    <span className="sv-faq-ico">
+                                        {openFaq === index ? (
+                                            <ChevronUp size={20} />
+                                        ) : (
+                                            <ChevronDown size={20} />
+                                        )}
+                                    </span>
+                                </button>
+                                <AnimatePresence>
+                                    {openFaq === index && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            className="sv-faq-a"
+                                        >
+                                            <div className="sv-faq-ainner">
+                                                <p style={{ lineHeight: "1.8" }}>{faq.answer}</p>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══ SECTION 9 — CTA ═══ */}
             <section className="sv-section-cta">
                 <div className="container">
                     <motion.div
@@ -400,12 +495,14 @@ export default function PartnershipClient() {
                                 color: "rgba(255,255,255,0.8)",
                                 fontSize: "1.15rem",
                                 marginBottom: "40px",
-                                maxWidth: "600px",
+                                maxWidth: "700px",
                                 margin: "0 auto 40px",
                             }}
                         >
-                            Partner with Professional Labs and transform your business outcomes with certified Azure experts by your side.
-                            Join over 500+ successful partners worldwide.
+                            Partner with Professional Labs and unlock new opportunities in the Microsoft cloud ecosystem.
+                            Our Azure experts help CSP partners expand service offerings, increase recurring revenue, and
+                            deliver advanced cloud solutions to customers worldwide. Join 500+ successful partners who
+                            trust Professional Labs for their cloud expertise.
                         </p>
                         <div style={{ display: "flex", justifyContent: "center" }}>
                             <Link href="/contact" className="sv-btn-white">

@@ -3107,3 +3107,57 @@
     gap: 40px;
   }
 }
+
+/* ==================== PARTNERSHIP: HERO GRID MOBILE ==================== */
+/* Stats panel takes full width on mobile */
+.sv-partnership-stats-panel {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Make the stats visual panel full-width on mobile */
+  .sv-azure .sv-hero-main {
+    padding: 60px 0;
+  }
+
+  .sv-partnership-stats-panel > div {
+    padding: 32px 20px !important;
+    border-radius: 20px !important;
+    gap: 16px !important;
+  }
+
+  .sv-partnership-stats-panel > div > div {
+    padding: 20px 18px !important;
+    border-radius: 14px !important;
+    gap: 14px !important;
+  }
+
+  /* Ensure the stats panel appears below the text */
+  .sv-partnership-hero-grid {
+    display: flex !important;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sv-partnership-hero-grid .sv-hero-content {
+    text-align: center;
+  }
+
+  .sv-partnership-hero-grid .sv-hero-btn-wrap {
+    justify-content: center;
+  }
+
+  .sv-partnership-hero-grid .sv-meta-tags {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .sv-partnership-stats-panel > div {
+    padding: 24px 16px !important;
+  }
+
+  .sv-partnership-stats-panel > div > div {
+    padding: 16px 14px !important;
+  }
+}
