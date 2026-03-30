@@ -6,7 +6,7 @@ const post = {
   category: "Insights",
   date: "March 12, 2026",
   author: "Professional Labs Team",
-  image: "/illustrations/cloud-infrastructure.svg",
+  image: "/blog-images/blog_6_delaware_cyber.png",
   readTime: "8 min read",
   excerpt: "An in-depth look into Delaware Cybersecurity Services Professional Labs Security Guide and how it can help transform your business operations in the modern digital era.",
 };

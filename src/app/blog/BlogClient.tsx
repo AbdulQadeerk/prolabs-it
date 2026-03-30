@@ -41,7 +41,7 @@ const blogPosts = [
       "Discover why enterprises in Qatar are rapidly shifting toward managed IT models to drive digital transformation and operational excellence.",
     date: "Feb 22, 2026",
     author: "Security Team",
-    image: "/illustrations/benefit-efficiency.svg",
+    image: "/blog-images/blog_1_qatar_it.png",
     readTime: "6 min read",
   },
   {
@@ -54,7 +54,7 @@ const blogPosts = [
       "A deep dive into how Delaware businesses are leveraging 24/7 Security Operations Centers to mitigate advanced persistent threats (APTs).",
     date: "Feb 20, 2026",
     author: "Cyber Analyst",
-    image: "/illustrations/benefit-security.svg",
+    image: "/blog-images/blog_2_soc_delaware.png",
     readTime: "8 min read",
     featured: true,
   },
@@ -68,7 +68,7 @@ const blogPosts = [
       "The landscape of cloud infrastructure is changing. Here is what UAE enterprises need to know about the future of managed cloud.",
     date: "Feb 18, 2026",
     author: "Cloud Architect",
-    image: "/illustrations/cloud-infrastructure.svg",
+    image: "/blog-images/blog_3_dubai_cloud.png",
     readTime: "5 min read",
   },
   {
@@ -80,7 +80,7 @@ const blogPosts = [
       "Unpacking the value of Azure for Middle Eastern businesses, from cost optimization to scalable application hosting.",
     date: "Feb 15, 2026",
     author: "Azure Expert",
-    image: "/illustrations/dashboard-preview.svg",
+    image: "/blog-images/blog_4_azure_dubai.png",
     readTime: "7 min read",
   },
   {
@@ -93,7 +93,7 @@ const blogPosts = [
       "Professional Labs provides tailor-made IT solutions for local Delaware businesses. Learn how we support your growth.",
     date: "Feb 12, 2026",
     author: "Tech Consultant",
-    image: "/illustrations/benefit-compliance.svg",
+    image: "/blog-images/blog_5_delaware_it.png",
     readTime: "4 min read",
   },
   {
@@ -105,7 +105,7 @@ const blogPosts = [
       "Comprehensive guide for mid-market and enterprise businesses on building a resilient security posture in today's threat landscape.",
     date: "Feb 10, 2026",
     author: "SOC Lead",
-    image: "/illustrations/benefit-security.svg",
+    image: "/blog-images/blog_6_delaware_cyber.png",
     readTime: "10 min read",
   },
   {
@@ -118,7 +118,7 @@ const blogPosts = [
       "In-depth look at our proprietary security stack and how our Delaware-based team protects your data around the clock.",
     date: "Feb 08, 2026",
     author: "Security Expert",
-    image: "/illustrations/benefit-security.svg",
+    image: "/blog-images/blog_2_soc_delaware.png",
     readTime: "6 min read",
   },
   {
@@ -130,7 +130,7 @@ const blogPosts = [
       "Real-time visibility into your multi-cloud environment. Why visibility is the first step in performance optimization.",
     date: "Feb 05, 2026",
     author: "Cloud Specialist",
-    image: "/illustrations/dashboard-preview.svg",
+    image: "/blog-images/blog_3_dubai_cloud.png",
     readTime: "5 min read",
   },
   {
@@ -142,7 +142,7 @@ const blogPosts = [
       "Cloud costs spiraling? Use these Citrix-proven methods to streamline your virtual desktop infrastructure and save.",
     date: "Feb 02, 2026",
     author: "Citrix Architect",
-    image: "/illustrations/benefit-efficiency.svg",
+    image: "/blog-images/blog_4_azure_dubai.png",
     readTime: "9 min read",
   },
   {
@@ -154,7 +154,7 @@ const blogPosts = [
       "Choosing between traditional managed services and pure cloud models can be tough. We break down the Pros and Cons for you.",
     date: "Jan 28, 2026",
     author: "Business Strategist",
-    image: "/illustrations/benefit-scaling.svg",
+    image: "/blog-images/blog_1_qatar_it.png",
     readTime: "8 min read",
   },
 ];

@@ -6,7 +6,7 @@ const post = {
   category: "Insights",
   date: "March 12, 2026",
   author: "Professional Labs Team",
-  image: "/illustrations/cloud-infrastructure.svg",
+  image: "/blog-images/blog_2_soc_delaware.png",
   readTime: "8 min read",
   excerpt: "An in-depth look into Managed Soc Services In Delaware How Enterprises Detect Stop Cyber Threats 24 7 and how it can help transform your business operations in the modern digital era.",
 };

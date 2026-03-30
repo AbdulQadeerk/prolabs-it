@@ -6,7 +6,7 @@ const post = {
   category: "Insights",
   date: "March 12, 2026",
   author: "Professional Labs Team",
-  image: "/illustrations/cloud-infrastructure.svg",
+  image: "/blog-images/blog_5_delaware_it.png",
   readTime: "8 min read",
   excerpt: "An in-depth look into Best Managed It Services For Delaware Businesses Professional Labs and how it can help transform your business operations in the modern digital era.",
 };
