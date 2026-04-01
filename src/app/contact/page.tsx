@@ -36,24 +36,97 @@ const phoneNumbers = [
   { country: "USA", number: "+1 206 350 9033" },
 ];
 
+const interestsList = [
+  "Managed IT Services",
+  "Cyber Security",
+  "Cloud Solutions",
+  "Market Research",
+  "Software Development",
+  "IT Consulting",
+];
+
 export default function ContactPage() {
   const { ref: headerRef, isVisible: headerVisible } = useScrollReveal();
   const { ref: formRef, isVisible: formVisible } = useScrollReveal();
   const { ref: officeRef, isVisible: officeVisible } = useScrollReveal();
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+    interests: [] as string[],
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleCheckboxChange = (interest: string) => {
+    setFormData((prev) => {
+      if (prev.interests.includes(interest)) {
+        return { ...prev, interests: prev.interests.filter((i) => i !== interest) };
+      }
+      return { ...prev, interests: [...prev.interests, interest] };
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMsg("");
+    setIsSuccess(false);
+
+    const subject = formData.interests.length > 0
+      ? `Interests: ${formData.interests.join(", ")}`
+      : "Contact Form Submission";
+
+    const fullMessage = `Company: ${formData.company}\n\nMessage:\n${formData.message}`;
+
+    try {
+      const response = await fetch("https://api.baawancrm.com/api/1/cms/front/contact-us", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Tenant-ID": "25",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phoneNumber: formData.phone,
+          subject: subject,
+          message: fullMessage,
+        }),
+      });
+
+      let data;
+      try {
+        data = await response.json();
+      } catch (jsonError) {
+        data = null;
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Failed to submit form");
+      }
+      
       setIsSuccess(true);
-      // Auto-hide success message after 5 seconds
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+        interests: [],
+      });
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    } catch (err: any) {
+      console.error("Contact submission error:", err);
+      setErrorMsg(err.message || "Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,12 +164,24 @@ export default function ContactPage() {
                       <span>Message sent successfully! We'll get back to you soon.</span>
                     </div>
                   )}
+                  {errorMsg && (
+                    <div className="error-banner" style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '12px', borderRadius: '8px', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px' }}>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                      </svg>
+                      <span>{errorMsg}</span>
+                    </div>
+                  )}
                   <div className="form-grid-2col">
                     <div className="form-group">
                       <input
                         type="text"
                         placeholder="First and last name*"
                         required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
                     <div className="form-group">
@@ -104,13 +189,27 @@ export default function ContactPage() {
                         type="email"
                         placeholder="Business email*"
                         required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
                     </div>
                     <div className="form-group">
-                      <input type="tel" placeholder="Phone number*" required />
+                      <input 
+                        type="tel" 
+                        placeholder="Phone number*" 
+                        required 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
                     </div>
                     <div className="form-group">
-                      <input type="text" placeholder="Company name*" required />
+                      <input 
+                        type="text" 
+                        placeholder="Company name*" 
+                        required 
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      />
                     </div>
                   </div>
 
@@ -120,29 +219,26 @@ export default function ContactPage() {
                       Feel free to ask a question or simply leave a comment
                     </p>
                     <div className="checkbox-grid">
-                      <label>
-                        <input type="checkbox" /> Managed IT Services
-                      </label>
-                      <label>
-                        <input type="checkbox" /> Cyber Security
-                      </label>
-                      <label>
-                        <input type="checkbox" /> Cloud Solutions
-                      </label>
-                      <label>
-                        <input type="checkbox" /> Market Research
-                      </label>
-                      <label>
-                        <input type="checkbox" /> Software Development
-                      </label>
-                      <label>
-                        <input type="checkbox" /> IT Consulting
-                      </label>
+                      {interestsList.map((interest) => (
+                        <label key={interest}>
+                          <input 
+                            type="checkbox" 
+                            checked={formData.interests.includes(interest)}
+                            onChange={() => handleCheckboxChange(interest)}
+                          /> {interest}
+                        </label>
+                      ))}
                     </div>
                   </div>
 
                   <div className="form-group">
-                    <textarea placeholder="Message" rows={4} required></textarea>
+                    <textarea 
+                      placeholder="Message" 
+                      rows={4} 
+                      required
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    ></textarea>
                   </div>
                   <button type="submit" className="submit-btn" disabled={isSubmitting}>
                     {isSubmitting && (
@@ -229,3 +325,4 @@ export default function ContactPage() {
     </>
   );
 }
+
