@@ -26,6 +26,33 @@
   flex-direction: column;
   gap: 16px;
 }
+.form-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .form-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+.success-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #f0fdf4;
+  color: #166534;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #bbf7d0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.success-icon {
+  color: #16a34a;
+  flex-shrink: 0;
+}
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -78,11 +105,22 @@
   transition:
     transform 0.2s,
     background 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    opacity 0.2s;
   margin-top: 10px;
   box-shadow: 0 4px 15px rgba(34, 167, 224, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
-.submit-btn:hover {
+.submit-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.submit-btn:not(:disabled):hover {
   background: #178dc8;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(34, 167, 224, 0.35);
@@ -175,6 +213,17 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 .contact-hero,

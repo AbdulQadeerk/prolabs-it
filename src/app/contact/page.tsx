@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import { useScrollReveal } from "@/components/animations";
 import "./contact.css";
 
@@ -40,6 +41,21 @@ export default function ContactPage() {
   const { ref: formRef, isVisible: formVisible } = useScrollReveal();
   const { ref: officeRef, isVisible: officeVisible } = useScrollReveal();
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1500);
+  };
+
   return (
     <>
       <main className="contact-page">
@@ -64,27 +80,38 @@ export default function ContactPage() {
               <div className="form-container">
                 <form
                   className="contact-form"
-                  onSubmit={(e) => e.preventDefault()}
+                  onSubmit={handleSubmit}
                 >
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      placeholder="First and last name*"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      placeholder="Business email*"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input type="tel" placeholder="Phone number*" required />
-                  </div>
-                  <div className="form-group">
-                    <input type="text" placeholder="Company name*" required />
+                  {isSuccess && (
+                    <div className="success-banner">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="success-icon">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                      <span>Message sent successfully! We'll get back to you soon.</span>
+                    </div>
+                  )}
+                  <div className="form-grid-2col">
+                    <div className="form-group">
+                      <input
+                        type="text"
+                        placeholder="First and last name*"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="email"
+                        placeholder="Business email*"
+                        required
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input type="tel" placeholder="Phone number*" required />
+                    </div>
+                    <div className="form-group">
+                      <input type="text" placeholder="Company name*" required />
+                    </div>
                   </div>
 
                   <div className="services-interest">
@@ -115,9 +142,21 @@ export default function ContactPage() {
                   </div>
 
                   <div className="form-group">
-                    <textarea placeholder="Message" rows={4}></textarea>
+                    <textarea placeholder="Message" rows={4} required></textarea>
                   </div>
-                  <button type="submit" className="submit-btn">
+                  <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                    {isSubmitting && (
+                      <svg className="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="2" x2="12" y2="6"></line>
+                        <line x1="12" y1="18" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="6" y2="12"></line>
+                        <line x1="18" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                      </svg>
+                    )}
                     Contact us
                   </button>
                   <p className="form-disclaimer">
